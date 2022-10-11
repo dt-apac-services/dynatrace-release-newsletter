@@ -1,6 +1,6 @@
 Script Design:
 1. Synthetic test or Script checks Release notes page once a day
-2. On new release of SaaS/Managed/OneAgent/ActiveGate - Scipt goes to step 4, else exits.
+2. On new release of SaaS/Managed/OneAgent/ActiveGate - Scipt goes to step 3, else exits.
 3. Update local release_info.json file with new version
 4. Navigate to new version page
     - Scrape all h1, h2, h3 & p
