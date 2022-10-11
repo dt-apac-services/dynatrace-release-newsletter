@@ -1,55 +1,52 @@
 {
-    "Dynatrace SaaS": [
-        "1.251",
-        "1.250",
-        "1.249",
-        "1.248",
-        "1.247",
-        "1.246",
-        "1.245",
-        "1.244",
-        "1.243",
-        "1.242",
-        "1.241"
-    ],
-    "Dynatrace Managed": [
-        "1.250",
-        "1.248",
-        "1.246",
-        "1.244",
-        "1.242",
-        "1.240"
-    ],
-    "Dynatrace OneAgent": [
-        "1.249",
-        "1.247",
-        "1.245",
-        "1.243",
-        "1.241",
-        "1.239",
-        "1.237"
-    ],
-    "Dynatrace ActiveGate": [
-        "1.249",
-        "1.247",
-        "1.245",
-        "1.243",
-        "1.241",
-        "1.239",
-        "1.237",
-        "1.235"
-    ],
-    "Dynatrace Cloud": [
-        "253.1.0.",
-        "248.1.0.",
-        "244.1.0.",
-        "242.1.0.",
-        "240.1.0.",
-        "238.3.0.",
-        "238.2.0.",
-        "238.1.0.",
-        "233.1.0.",
-        "232.1.0.",
-        "228.1.0."
-    ]
+    "Dynatrace SaaS": {
+        "1.251": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-251",
+        "1.250": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-250",
+        "1.249": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-249",
+        "1.248": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-248",
+        "1.247": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-247",
+        "1.246": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-246",
+        "1.245": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-245",
+        "1.244": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-244",
+        "1.243": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-243",
+        "1.242": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-242",
+        "1.252": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252"
+    },
+    "Dynatrace Managed": {
+        "1.250": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-250",
+        "1.248": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-248",
+        "1.246": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-246",
+        "1.244": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-244",
+        "1.242": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-242",
+        "1.240": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-240"
+    },
+    "Dynatrace OneAgent": {
+        "1.249": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-249",
+        "1.247": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-247",
+        "1.245": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-245",
+        "1.243": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-243",
+        "1.241": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-241",
+        "1.239": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-239"
+    },
+    "Dynatrace ActiveGate": {
+        "1.249": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-249",
+        "1.247": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-247",
+        "1.245": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-245",
+        "1.243": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-243",
+        "1.241": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-241",
+        "1.239": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-239"
+    },
+    "Dynatrace Cloud": {
+        "253.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-253-1-0",
+        "248.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-248-1-0",
+        "244.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-244-1-0",
+        "242.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-242-1-0",
+        "240.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-240-1-0",
+        "238.3.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-238-3-0",
+        "238.2.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-238-2-0",
+        "238.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-238",
+        "233.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-233",
+        "232.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-232",
+        "228.1.0.": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-228"
+    }
 }
