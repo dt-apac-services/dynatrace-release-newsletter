@@ -18,12 +18,10 @@ def main():
     release_info_from_web = release_notes.get_latest_versions(release_info)
 
     for c in release_info_from_web:
-        for v, l in release_info_from_web[c].items():            
-            # for x,y in release_info_from_file[c].items():
+        for v, l in release_info_from_web[c].items():                        
             if v not in release_info_from_file[c]:
-                print("New Version Available for "+ c)
-                print(v+":"+l)
-                #print(c+": "+v)
+                print("New Version Available for "+ c+": "+v)        
+                
                 # Kick off gathering of info
 
     

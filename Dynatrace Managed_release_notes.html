@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 style='text-align:left'>Dynatrace Managed release notes version 1.250</h1>
+<p style='text-align:left;margin-left: 25px;'>  Published date: 2022-09-19</p>
+<p style='text-align:left;margin-left: 25px;'>  These release notes relate to Dynatrace Managed-specific changes. To learn about general Dynatrace changes included in this Dynatrace Managed release, see:</p>
+<li style='text-align:left;margin-left: 25px;'>    Dynatrace SaaS release notes version 1.250 and Dynatrace SaaS release notes version 1.249</li>
+<li style='text-align:left;margin-left: 25px;'>    Dynatrace API changelog version 1.250 and Dynatrace API changelog version 1.249</li>
+<li style='text-align:left;margin-left: 25px;'>    Dynatrace OneAgent release notes version 1.249</li>
+  
+<h2 style='text-align:left'>New features and enhancements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>  End-of-support news</h3>
+<p style='text-align:left;margin-left: 25px;'>  The End-of-support news page now has a Dynatrace Managed section that clarifies our end-of-support policy. We use that page to communicate our de-support plans well in advance, so we recommend that you review it regularly to prepare for support changes from Dynatrace.</p>
+<h3 style='text-align:left;margin-left: 25px;'>  Internet proxy configuration for air-gapped deployments</h3>
+<p style='text-align:left;margin-left: 25px;'>  You can now configure a proxy configuration in the Cluster Management Console for air-gapped (offline) deployments. The configured proxy is used by external problem notification services, such as ServiceNow, Jira, and webhooks.</p>
+<h3 style='text-align:left;margin-left: 25px;'>  Sign-in page mode configuration is now available for embedded admin user account</h3>
+<p style='text-align:left;margin-left: 25px;'>  To change the sign-in page mode in previous versions, there had to be at least one cluster admin when sign via SSO. Now, when SSO is down, you can sign in to the cluster via the /admin page and adjust the sign-in page configuration.</p>
+<h3 style='text-align:left;margin-left: 25px;'>  Extended automation is enabled with "after installation" token Cluster Token Management scope</h3>
+<p style='text-align:left;margin-left: 25px;'>  A cluster administrator that wants a fully-automated cluster setup was limited to using only REST API authorized by Service Provide API token scope. We've extended this token with Cluster Token Management scope. Now, a user can also automatically generate other tokens as needed, such as a token with read/write settings.</p>
+<h3 style='text-align:left;margin-left: 25px;'>  Available and reserved space values for cluster node storages have been adjusted</h3>
+<p style='text-align:left;margin-left: 25px;'>  We've adjusted the values we show in Cluster Management Console - cluster nodes page and in cluster events so they match the behavior of truncating data. In practice, new values are more restrictive to ensure cluster deployment health robustness. You may observe less available space and more reserved space.</p>
+<h3 style='text-align:left;margin-left: 25px;'>  Improved navigation</h3>
+<p style='text-align:left;margin-left: 25px;'>  We have added a new settings group breadcrumb item to Settings 2.0 pages linking to the first setting in a settings group.</p>
+<h3 style='text-align:left;margin-left: 25px;'>  Account permission label in Cluster Management Console renamed</h3>
+<p style='text-align:left;margin-left: 25px;'>  Account permission View product usage & manage account info has been renamed Edit billing & account info to match the permission name in Dynatrace SaaS.</p>
+  
+</body>
+</html>
