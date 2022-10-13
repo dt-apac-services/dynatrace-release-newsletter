@@ -15,7 +15,7 @@ def main():
 
     # Scrape release note page to find new releases
     release_info = copy.deepcopy(release_info_from_file)                                # Required to prevent reference
-    release_info_from_web = release_notes.get_latest_versions(release_info)
+    release_info_from_web,rollout_data = release_notes.get_latest_versions(release_info)
 
     for c in release_info_from_web:
         for v, l in release_info_from_web[c].items():                        

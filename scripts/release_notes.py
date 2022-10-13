@@ -1,3 +1,4 @@
+from ast import pattern
 import re
 import json
 import requests
@@ -6,13 +7,14 @@ from bs4 import BeautifulSoup
 
 def get_latest_versions(release_info):
 
+    release_info = {} #temp replacement for testing
     ## Read Release notes page
     URL="https://www.dynatrace.com/support/help/whats-new/release-notes"    
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, 'html.parser')
 
     results = soup.find_all(title=re.compile("Release notes*"))
-
+    
     for i in results:
         component = re.findall("(Dynatrace\s[\w]+)",i['title'])[0]
         version = re.findall("[version|release]\s*([\d.]+)",i['title'])[0]
@@ -21,9 +23,35 @@ def get_latest_versions(release_info):
         if component not in release_info:
             release_info[component]={}
         if version not in release_info[component]:            
-            release_info[component][version] = link        
+            release_info[component][version] = link     
+
+    tags = ['h2','td']    
+    regex = "((?:Changelog\s)?[Vv]ersion\s.*|\w*\s\d{1,2},\s\d{4}|^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$)"
+    rollouts = soup.find_all(tags,string=re.compile(regex))
     
-    return release_info
+    rollout_data={}    
+    component=""
+    ver = ""
+    for i in rollouts:
+        print(i.text.strip())
+        val = i.text.strip()
+        comp = re.compile("^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$")
+        if comp.match(val):
+            if val not in rollout_data:
+                rollout_data[val]={}            
+            component = val
+        else:
+            version = re.compile("(?:Changelog\s)?[Vv]ersion\s.*")
+            date = re.compile("\w*\s\d{1,2},\s\d{4}")
+            if version.match(val):
+                rollout_data[component][val]=""
+                ver = val
+            if date.match(val):
+                rollout_data[component][ver]=val
+
+    # print(json.dumps(rollout_data,indent=4))
+    
+    return release_info,rollout_data
 
 def scrape_specific_release_page(component, page_url):
     component="Dynatrace Managed" #temp replacement for testing
@@ -39,9 +67,7 @@ def scrape_specific_release_page(component, page_url):
     file_name = component+"_release_notes.html"
 
     with open(file_name,'w') as f:
-        print("<!DOCTYPE html>",file=f)
-        print("<html>",file=f)
-        print("<body>",file=f)
+        
     # creating a list of all common heading tags
         tags = ["h1", "h2", "h3","p","li"]
         position = 0   
@@ -71,9 +97,7 @@ def scrape_specific_release_page(component, page_url):
                 if position > 0:
                     # info = (val[:150] + '...<a href='+page_url+'>Read more</a>') if len(val) > 150 else val
                     # print("<p style='text-align:left;margin-left: 30px;'>"+"     - "+info+"</p>",file=f)
-                    print("<li style='text-align:left;margin-left: 25px;'>"+"    "+val+"</li>",file=f)
-        print("</body>",file=f)
-        print("</html>",file=f)
+                    print("<li style='text-align:left;margin-left: 25px;'>"+"    "+val+"</li>",file=f)        
         
     f.close()
     
