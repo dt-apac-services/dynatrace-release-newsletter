@@ -1,4 +1,3 @@
-from ast import pattern
 import re
 import json
 import requests
@@ -13,45 +12,92 @@ def get_latest_versions(release_info):
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, 'html.parser')
 
-    results = soup.find_all(title=re.compile("Release notes*"))
+    # results = soup.find_all(title=re.compile("Release notes*"))
     
-    for i in results:
-        component = re.findall("(Dynatrace\s[\w]+)",i['title'])[0]
-        version = re.findall("[version|release]\s*([\d.]+)",i['title'])[0]
-        link = "https://dynatrace.com"+i['href']        
+    # for i in results:
+    #     print (i)
+    #     component = re.findall("(Dynatrace\s[\w]+)",i['title'])[0]
+    #     version = re.findall("[version|release]\s*([\d.]+)",i['title'])[0]
+    #     link = "https://dynatrace.com"+i['href']        
     
-        if component not in release_info:
-            release_info[component]={}
-        if version not in release_info[component]:            
-            release_info[component][version] = link     
+    #     if component not in release_info:
+    #         release_info[component]={}
+    #     if version not in release_info[component]:            
+    #         release_info[component][version] = {"url":link}     
 
     tags = ['h2','td']    
-    regex = "((?:Changelog\s)?[Vv]ersion\s.*|\w*\s\d{1,2},\s\d{4}|^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$)"
-    rollouts = soup.find_all(tags,string=re.compile(regex))
-    
-    rollout_data={}    
-    component=""
-    ver = ""
-    for i in rollouts:
-        print(i.text.strip())
+    # regex = "((?:Changelog )?[Vv]ersion\s.*|\w*\s\d{1,2},\s\d{4}|^Dynatrace SaaS$|Dynatrace Managed$|^OneAgent$|^ActiveGate$)"
+    regex = "((?:Changelog )?[Vv]ersion\s.*|\w*\s\d{1,2},\s\d{4}|^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$)"
+    results = soup.find_all(tags,string=re.compile(regex))
+    # c_list = ['Dynatrace SaaS','OneAgent','ActiveGate','Dynatrace Managed']
+    # exclude_list = ['dynatrace-api','cloud-automation','github']
+    ver_regex = "(?:Changelog )?[Vv]ersion\s(.*)"
+    # version = re.compile("(?:Changelog\s)?[Vv]ersion\s.*")
+
+    component = ""    
+    for i in results:
         val = i.text.strip()
-        comp = re.compile("^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$")
-        if comp.match(val):
-            if val not in rollout_data:
-                rollout_data[val]={}            
+        if i.name == "h2":
             component = val
-        else:
-            version = re.compile("(?:Changelog\s)?[Vv]ersion\s.*")
-            date = re.compile("\w*\s\d{1,2},\s\d{4}")
-            if version.match(val):
-                rollout_data[component][val]=""
-                ver = val
-            if date.match(val):
-                rollout_data[component][ver]=val
+            if component not in release_info:
+                release_info[component]={}
+            # print(component)
+        else:            
+            a = i.find('a')
+            if a:
+                if "github" in a.get('href'):
+                    url = a.get('href')
+                else:
+                    url = "https://dynatrace.com"+a.get('href')                        
+                version = re.match(ver_regex,val).group(1)
+                release_info[component][version]={}
+                release_info[component][version]["url"] = url
+            # print(i.text.strip()+": "+a.get('href'))                
+            else:
+                release_info[component][version]["rollout"] = val
+                # print(i.text.strip())
+
+
+
+
+
+
+
+    
+    # rollout_data={}    
+    # component=""
+    # ver = ""
+    # ver_regex = "(?:Changelog )?[Vv]ersion\s(.*)"
+    # for i in rollouts:
+    #     a = i.find('a')
+    #     if a:
+    #         print (a.get('href'))
+    #     print(i.text.strip())
+    #     val = i.text.strip()
+    #     comp = re.compile("^Dynatrace SaaS$|Dynatrace Managed$|^OneAgent$|^ActiveGate$")
+    #     if comp.match(val):            
+    #         if val not in rollout_data:
+    #             rollout_data[val]={}            
+    #         component = val
+    #     else:
+    #         version = re.compile("(?:Changelog\s)?[Vv]ersion\s.*")
+    #         date = re.compile("\w*\s\d{1,2},\s\d{4}")
+    #         if version.match(val):
+    #             rollout_data[component][val]=""
+    #             ver = re.match(ver_regex,val).group(1)
+    #         if date.match(val):
+    #             rollout_data[component][ver]=val                
+    #             if (component == "OneAgent") or (component == "ActiveGate"):
+    #                 component = "Dynatrace "+component
+    #             release_info[component][ver]["rollout date"] = val
+
+    
+
 
     # print(json.dumps(rollout_data,indent=4))
     
-    return release_info,rollout_data
+    return release_info
+
 
 def scrape_specific_release_page(component, page_url):
     component="Dynatrace Managed" #temp replacement for testing
