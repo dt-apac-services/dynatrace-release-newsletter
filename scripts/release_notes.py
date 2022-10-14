@@ -1,12 +1,12 @@
+import os
+from pathlib import Path
 import re
-import json
 import requests
 from bs4 import BeautifulSoup
 
 
 def get_latest_versions(release_info):
-
-    release_info = {} #temp replacement for testing
+    
     ## Read Release notes page
     URL="https://www.dynatrace.com/support/help/whats-new/release-notes"    
     page = requests.get(URL)
@@ -41,17 +41,14 @@ def get_latest_versions(release_info):
 
 
 def scrape_specific_release_page(component, page_url):
-    component="Dynatrace Managed" #temp replacement for testing
-    page_url = "https://www.dynatrace.com/support/help/whats-new/release-notes/managed/sprint-250" #temp replacement for testing
     
     page = requests.get(page_url)
     soup = BeautifulSoup(page.content, 'html.parser')
-
-    # exclude_list = ['Home','What\'s new','Release notes','SaaS','Managed']
-    exclude_list = ['Dynatrace API','Resolved issues','Operating systems support','Operating systems','Other support changes','OneAgent for Android resolved issues','OneAgent for iOS resolved issues','OneAgent for JavaScript resolved issues']
-    # include_list = ['Announcements','New features and enhancements']
     
-    file_name = component+"_release_notes.html"
+    exclude_list = ['Dynatrace API','Resolved issues','Operating systems support','Operating systems','Other support changes','OneAgent for Android resolved issues','OneAgent for iOS resolved issues','OneAgent for JavaScript resolved issues']    
+    
+    file_name = os.path.join(Path(__file__).parent.parent,"data",component+"_release_notes.html")
+
 
     with open(file_name,'w') as f:
         
@@ -75,17 +72,12 @@ def scrape_specific_release_page(component, page_url):
                 print("<h3 style='text-align:left;margin-left: 25px;'>"+"  "+val+"</h3>",file=f)
                 position += 1
             if tag.name == "p":
-                if "|" not in val:
-                    # info = (val[:150] + '...<a href='+page_url+'>Read more</a>') if len(val) > 150 else val
-                    # print("<p style='text-align:left;margin-left: 25px;'>"+"    "+info+"</p>",file=f)
+                if "|" not in val:                    
                     print("<p style='text-align:left;margin-left: 25px;'>"+"  "+val+"</p>",file=f)
                 position += 1
             if tag.name == "li":
-                if position > 0:
-                    # info = (val[:150] + '...<a href='+page_url+'>Read more</a>') if len(val) > 150 else val
-                    # print("<p style='text-align:left;margin-left: 30px;'>"+"     - "+info+"</p>",file=f)
-                    print("<li style='text-align:left;margin-left: 25px;'>"+"    "+val+"</li>",file=f)        
-        
+                if position > 0:                    
+                    print("<li style='text-align:left;margin-left: 25px;'>"+"    "+val+"</li>",file=f)                
     f.close()
     
 

@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
 <h1 style='text-align:left'>Dynatrace SaaS release notes version 1.252</h1>
   
 <h2 style='text-align:left'>Announcements</h2>
@@ -9,6 +6,19 @@
 <p style='text-align:left;margin-left: 25px;'>  For options and best practices on managing the push of problem notifications to your preferred third-party incident management or ChatOps service, see problem notifications documentation.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>  Log storage configuration</h3>
+<p style='text-align:left;margin-left: 25px;'>  Dynatrace allows you to include and exclude specific log sources for analysis by Dynatrace Log Monitoring with identity access management and API support.</p>
+<p style='text-align:left;margin-left: 25px;'>  The storage configuration is based on rules that use matchers for hierarchy, log path, and process groups. These rules determine the upload of log files known to OneAgent, auto-detected log files, and custom log files defined per process group.</p>
+<li style='text-align:left;margin-left: 25px;'>    Log storage configuration</li>
+<h3 style='text-align:left;margin-left: 25px;'>  Remote configuration management</h3>
+<p style='text-align:left;margin-left: 25px;'>  We introduced a mechanism for remote configuration management for OneAgents and ActiveGates.</p>
+<p style='text-align:left;margin-left: 25px;'>  You can now perform bulk configuration at scale and control it centrally from the Dynatrace Deployment status page or by using the Dynatrace API.</p>
+<p style='text-align:left;margin-left: 25px;'>  The following configuration options are now available for remote configuration management:</p>
+<li style='text-align:left;margin-left: 25px;'>    Host group assignment</li>
+<li style='text-align:left;margin-left: 25px;'>    Network zone assignment</li>
+<li style='text-align:left;margin-left: 25px;'>    ActiveGate group assignment</li>
+<li style='text-align:left;margin-left: 25px;'>    Network zone assignment</li>
+<p style='text-align:left;margin-left: 25px;'>  For more information, see Remote configuration management of OneAgents and ActiveGates.</p>
 <h3 style='text-align:left;margin-left: 25px;'>  Custom chart filter added</h3>
 <p style='text-align:left;margin-left: 25px;'>  If you are upgrading Custom charts to Data explorer charts, we have added a Custom charts: Yes filter to the Dashboards table to make it easy for you to identify dashboards that still need to be upgraded. For details, see Upgrade your dashboards and tiles.</p>
 <h3 style='text-align:left;margin-left: 25px;'>  Email templates for problem notifications</h3>
@@ -17,14 +27,12 @@
 <p style='text-align:left;margin-left: 25px;'>  Resolved third-party vulnerabilities can now be muted and unmuted. Muted resolved third-party vulnerabilities remain muted if they are reopened.</p>
 <h3 style='text-align:left;margin-left: 25px;'>  New filters on the Kubernetes workload page</h3>
 <p style='text-align:left;margin-left: 25px;'>  You can now filter the Kubernetes workload list by:</p>
-<p style='text-align:left;margin-left: 30px;'>    Kubernetes service</p>
-<p style='text-align:left;margin-left: 30px;'>    Kubernetes service name</p>
-<p style='text-align:left;margin-left: 30px;'>    Kubernetes service type</p>
+<li style='text-align:left;margin-left: 25px;'>    Kubernetes service</li>
+<li style='text-align:left;margin-left: 25px;'>    Kubernetes service name</li>
+<li style='text-align:left;margin-left: 25px;'>    Kubernetes service type</li>
 <h3 style='text-align:left;margin-left: 25px;'>  Kubernetes services</h3>
-<p style='text-align:left;margin-left: 30px;'>    The Kubernetes service page, like other Kubernetes pages, now displays a warning message for outdated ActiveGates.</p>
-<p style='text-align:left;margin-left: 30px;'>    The Kubernetes service page, in the Properties section, now displays the externalName field. This property is only defined for Kubernetes services of type ExternalName.</p>
+<li style='text-align:left;margin-left: 25px;'>    The Kubernetes service page, like other Kubernetes pages, now displays a warning message for outdated ActiveGates.</li>
+<li style='text-align:left;margin-left: 25px;'>    The Kubernetes service page, in the Properties section, now displays the externalName field. This property is only defined for Kubernetes services of type ExternalName.</li>
 <h3 style='text-align:left;margin-left: 25px;'>  Request attribute section</h3>
 <p style='text-align:left;margin-left: 25px;'>  When you Expand  a trace from the Distributed traces list, the trace overview hosts all the related request attributes in a dedicated section.</p>
   
-</body>
-</html>

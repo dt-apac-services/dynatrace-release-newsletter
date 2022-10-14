@@ -1,7 +1,5 @@
 import copy
 import json
-import logging
-import math
 import os
 from pathlib import Path
 import scripts.release_notes as release_notes
@@ -19,19 +17,16 @@ def main():
     for c in release_info_from_web:        
         for k, v in release_info_from_web[c].items():        
             if k not in release_info_from_file[c]:
-                print("New Version Available for "+ c)
-                print(k)
-                print(v)        
-                
+                print("New Version Available for "+ c +": "+k)
                 # Kick off gathering of info
-
+                release_notes.scrape_specific_release_page(c,v["url"])                   
     
     write_release_info_to_local_file(release_info_from_web)
 
 # Read local release info file
 def read_release_info_file():
-    #local_release_info_file = Path(__file__).parent/"release_info.json"
-    local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
+    local_release_info_file = Path(__file__).parent/"release_info.json"
+    #local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
     
     # Create file if not present
     if not os.path.exists(local_release_info_file):
@@ -52,8 +47,8 @@ def read_release_info_file():
 
 # Write into local release info file
 def write_release_info_to_local_file(release_info_from_web):
-    #local_release_info_file = Path(__file__).parent/"release_info.json"
-    local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
+    local_release_info_file = Path(__file__).parent/"release_info.json"
+    # local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
     f = open(local_release_info_file,"w")
     f.write(json.dumps(release_info_from_web, indent=4))
     f.close()
