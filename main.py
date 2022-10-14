@@ -9,18 +9,19 @@ import scripts.release_notes as release_notes
 # global release_info_from_file
 
 def main():    
-    # Setup logger        
-    release_info_from_file = read_release_info_file()
-    #print(release_info_from_file["Dynatrace SaaS"])
+    
+    release_info_from_file = read_release_info_file()    
 
     # Scrape release note page to find new releases
     release_info = copy.deepcopy(release_info_from_file)                                # Required to prevent reference
-    release_info_from_web,rollout_data = release_notes.get_latest_versions(release_info)
+    release_info_from_web = release_notes.get_latest_versions(release_info)
 
-    for c in release_info_from_web:
-        for v, l in release_info_from_web[c].items():                        
-            if v not in release_info_from_file[c]:
-                print("New Version Available for "+ c+": "+v)        
+    for c in release_info_from_web:        
+        for k, v in release_info_from_web[c].items():        
+            if k not in release_info_from_file[c]:
+                print("New Version Available for "+ c)
+                print(k)
+                print(v)        
                 
                 # Kick off gathering of info
 
@@ -34,7 +35,7 @@ def read_release_info_file():
     
     # Create file if not present
     if not os.path.exists(local_release_info_file):
-        dict = {"Dynatrace SaaS":{},"Dynatrace Managed":{},"Dynatrace OneAgent":{},"Dynatrace ActiveGate":{},"Dynatrace Cloud":{}}
+        dict = {"Dynatrace SaaS":{},"Dynatrace Managed":{},"OneAgent":{},"ActiveGate":{},"Dynatrace API":{},"Cloud Automation":{},"Dynatrace Operator":{}}
         new_file = open(local_release_info_file,"w")        
         new_file.write(json.dumps(dict, indent=4))    
         new_file.close()
