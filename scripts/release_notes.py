@@ -59,6 +59,7 @@ def scrape_specific_release_page(component, page_url):
             # print(tags.name + ' -> ' + tags.text.strip())        
             val = tag.text.strip()
             if tag.name == "h1":
+                val= tag.text.replace("release notes", "")
                 print("<h1 style='text-align:left'>"+val+"</h1>",file=f)
                 position += 1         
             if tag.name == "h2":          

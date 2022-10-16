@@ -19,7 +19,7 @@ def main():
             if k not in release_info_from_file[c]:
                 print("New Version Available for "+ c +": "+k)
                 # Kick off gathering of info
-                release_notes.scrape_specific_release_page(c,v["url"])                   
+                release_notes.scrape_specific_release_page(c,v["url"])              
     
     write_release_info_to_local_file(release_info_from_web)
 
