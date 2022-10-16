@@ -70,15 +70,15 @@ def scrape_specific_release_page(component, page_url):
                     break
                 position += 1
             if tag.name == "h3":
-                print("<h3 style='text-align:left;margin-left: 25px;'>"+"  "+val+"</h3>",file=f)
+                print("<h3 style='text-align:left;margin-left: 25px;'>"+val+"</h3>",file=f)
                 position += 1
             if tag.name == "p":
                 if "|" not in val:                    
-                    print("<p style='text-align:left;margin-left: 25px;'>"+"  "+val+"</p>",file=f)
+                    print("<p style='text-align:left;margin-left: 25px;'>"+val+"</p>",file=f)
                 position += 1
             if tag.name == "li":
                 if position > 0:                    
-                    print("<li style='text-align:left;margin-left: 25px;'>"+"    "+val+"</li>",file=f)                
+                    print("<p style='text-align:left;margin-left: 25px;'>"+"• "+val+"</p>",file=f)                
     f.close()
     
 

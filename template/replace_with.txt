@@ -1,0 +1,11 @@
+release_notes_template.html
+<!--REPLACE_WITH_RELEASE_NOTES_BLOCK_1-->
+<!--REPLACE_WITH_BLOG_BLOCK-->
+
+release_block.html
+<!--REPLACE_WITH_RELEASE_NOTES-->
+REPLACE_WITH_RELEASE_NOTES_URL
+
+blog_block.html
+<!--REPLACE WITH BLOGS-->
+
