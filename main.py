@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 import scripts.release_notes as release_notes
+import scripts.newsletter as newsletter
 
 # global release_info_from_file
 
@@ -14,14 +15,20 @@ def main():
     release_info = copy.deepcopy(release_info_from_file)                                # Required to prevent reference
     release_info_from_web = release_notes.get_latest_versions(release_info)
 
+    component = ""
+    version = ""
+
     for c in release_info_from_web:        
         for k, v in release_info_from_web[c].items():        
             if k not in release_info_from_file[c]:
-                print("New Version Available for "+ c +": "+k)
+                print("New Version Available for "+ c +": "+k)                
+                write_release_info_to_local_file(release_info_from_web)
                 # Kick off gathering of info
-                release_notes.scrape_specific_release_page(c,v["url"])              
+                release_notes.scrape_specific_release_page(c,v["url"])  
     
-    write_release_info_to_local_file(release_info_from_web)
+    newsletter.create_newsletter()
+    
+    
 
 # Read local release info file
 def read_release_info_file():
