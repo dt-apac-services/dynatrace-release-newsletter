@@ -18,8 +18,6 @@ def main():
     release_info_from_web = release_notes.get_latest_versions(release_info)
 
     components = {}
-    
-
     for c in release_info_from_web:        
         for k, v in release_info_from_web[c].items():        
             if k not in release_info_from_file[c]:
@@ -30,9 +28,10 @@ def main():
                 # Kick off gathering of info
                 release_notes.scrape_specific_release_page(c,k)
     
-    blogs_list = blogs_latest.scrape_latest_blogs()
+    blogs_latest.scrape_latest_blogs()
+    blogs_latest.write_to_html(components, read_write.read_release_info_file())
     
-    newsletter.create_newsletter(components,blogs_list)
+    newsletter.create_newsletter(components)
 
 if __name__ == "__main__":
     main()

@@ -66,11 +66,11 @@ def scrape_latest_blogs():
         writer.writerows(new_blog_csv)
 
     # ############# Write to html file ##############
-    # write_to_html(new_blog_csv)
+    write_to_html(new_blog_csv)
 
     ############# Write to markdown file ##########
     write_to_md_file()
-    
+
 
 ############# Write to md file ##############
 def write_to_md_file():
@@ -114,7 +114,6 @@ def write_to_md_file():
 
 
 def write_to_html(blogs_list):
-
     # file_name = os.path.join(Path(__file__).parent.parent,"data","blogs.html")
     file_name = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.html"
     position = 0
