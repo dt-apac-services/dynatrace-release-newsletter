@@ -11,15 +11,12 @@ import time
 
 def scrape_latest_blogs():
 
-    pages_to_retrieve = 3
-    for i in range(pages_to_retrieve):
-        print(i)
+    pages_to_retrieve = 3    
 
     # read existing csv file
-
-    # csv_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
-    csv_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
-    with open(csv_file, newline='',encoding='utf-8') as f:
+    blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
+    # blog_csv = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
+    with open(blog_csv, newline='',encoding='utf-8') as f:
         local_data = list(csv.reader(f))
         f.close()
 
@@ -32,80 +29,55 @@ def scrape_latest_blogs():
         regex = re.compile('feeditem js-feeditem hentry h-entry post-.*')        
         blog_data = soup.find_all(True, {"class":regex})
 
-        for item in blog_data:
-            # print(i['href'])
-            # print(i.find('h2').text.strip())
-            # print(i.find('time').text.strip())
-            # print(i.find("span",{"class":"fn p-name"}).text.strip())
-            
+        for item in blog_data:            
             blog_url = item['href']
             blog_title = item.find('h2').text.strip()
             blog_date = item.find('time').text.strip()
-            blog_author = item.find("span",{"class":"fn p-name"}).text.strip()
-            blog_entry = [blog_title,blog_date,blog_author,blog_url]            
+            blog_author = item.find("span",{"class":"fn p-name"}).text.strip()            
+            blog_entry = [blog_title,blog_date,blog_author,blog_url] 
+            
+            # Get blog post tags
+            blog_classes = item['class']
+            for c in blog_classes:
+                if ("tag-" in c):
+                    blog_entry.append(c.split("-",1)[1])                
 
-            if blog_title == local_data[1][0]:
+            if blog_title == local_data[1][0]: 
                 break
+            elif any(blog_title in entry for entry in local_data):
+                print(blog_title)
+                continue
             else:
                 blog_list.append(blog_entry)
         else:
             continue
         break
     
-        
-    
-
-            
-
-
-        # blog_parent_div = soup.find(class_ = re.compile("feed--grid feed--grid--3cols * js-feed"))   
-        # for a in blog_parent_div.find_all('a', href=True): 
-        #     if a.text:
-        #         link=(a['href'])            
-        #         cl=(a['class']) 
-        #         n_list=list(filter(None, a.text.replace("\n","").split('  ')))
-        #         n_list.append(link)            
-        #         for txt in cl:
-        #             if txt.startswith("tag-"):
-        #                 n_list.append(txt.split("-",1)[1])  
-        #         if (n_list[0] == local_data[1][0]):         
-        #             break
-        #         else:
-        #             blog_list.append(n_list)
-        #     else:
-        #         continue
-        # else:
-        #     continue
-        # break      
-        # time.sleep(1)
-        # i+=1
-    
-
-
     ############# Write to csv file file ##############
-    new_csv=[]
-    new_csv.extend(local_data)
+    new_blog_csv=[]
+    new_blog_csv.extend(local_data)
     position = 1
     for i in blog_list:
-        new_csv.insert(position, i)
+        new_blog_csv.insert(position, i)
         position+=1
 
-    with open(csv_file, 'w', newline='',encoding="utf-8") as f:
+    with open(blog_csv, 'w', newline='',encoding="utf-8") as f:
         writer = csv.writer(f)    
-        writer.writerows(new_csv)
+        writer.writerows(new_blog_csv)
 
-    write_to_html(new_csv)
+    # ############# Write to html file ##############
+    # write_to_html(new_blog_csv)
 
+    ############# Write to markdown file ##########
     write_to_md_file()
-
-    return blog_list
-
+    
 
 ############# Write to md file ##############
 def write_to_md_file():
     
-    csv_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
-    with open(csv_file, newline='',encoding='utf-8') as f:
+    # blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
+    blog_csv = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
+    with open(blog_csv, newline='',encoding='utf-8') as f:
         data = list(csv.reader(f))
 
     count=0
@@ -131,8 +103,8 @@ def write_to_md_file():
             table.append(table_line)
             count+=1
 
-    md_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","blogs.md"))
-    # md_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\blogs.md"
+    # md_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","blogs.md"))
+    md_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\blogs.md"
     file = open(md_file, "w",encoding='utf-8')
     for line in table:
         file.write(line)
