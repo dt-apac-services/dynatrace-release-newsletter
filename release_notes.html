@@ -169,42 +169,45 @@
                     <td class="pad">
                         <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
                             <h1 style='text-align:left'>Dynatrace SaaS  version 1.252</h1>
+<p style='text-align:left'>Rollout start: Oct 11, 2022</p>
   
 <h2 style='text-align:left'>Announcements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>  Davis Assistant end of life</h3>
-<p style='text-align:left;margin-left: 25px;'>  Dynatrace Davis Assistant will reach end of life on January 31, 2023. After this date, the service will be shut down, and interactions with Davis Assistant will no longer be possible. Existing integrations, for example, with Slack or Microsoft Teams, will cease to work at that time.</p>
-<p style='text-align:left;margin-left: 25px;'>  For options and best practices on managing the push of problem notifications to your preferred third-party incident management or ChatOps service, see problem notifications documentation.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Davis Assistant end of life</h3>
+<p style='text-align:left;margin-left: 25px;'>Dynatrace Davis Assistant will reach end of life on January 31, 2023. After this date, the service will be shut down, and interactions with Davis Assistant will no longer be possible. Existing integrations, for example, with Slack or Microsoft Teams, will cease to work at that time.</p>
+<p style='text-align:left;margin-left: 25px;'>For options and best practices on managing the push of problem notifications to your preferred third-party incident management or ChatOps service, see problem notifications documentation.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>  Log storage configuration</h3>
-<p style='text-align:left;margin-left: 25px;'>  Dynatrace allows you to include and exclude specific log sources for analysis by Dynatrace Log Monitoring with identity access management and API support.</p>
-<p style='text-align:left;margin-left: 25px;'>  The storage configuration is based on rules that use matchers for hierarchy, log path, and process groups. These rules determine the upload of log files known to OneAgent, auto-detected log files, and custom log files defined per process group.</p>
-<li style='text-align:left;margin-left: 25px;'>    Log storage configuration</li>
-<h3 style='text-align:left;margin-left: 25px;'>  Remote configuration management</h3>
-<p style='text-align:left;margin-left: 25px;'>  We introduced a mechanism for remote configuration management for OneAgents and ActiveGates.</p>
-<p style='text-align:left;margin-left: 25px;'>  You can now perform bulk configuration at scale and control it centrally from the Dynatrace Deployment status page or by using the Dynatrace API.</p>
-<p style='text-align:left;margin-left: 25px;'>  The following configuration options are now available for remote configuration management:</p>
-<li style='text-align:left;margin-left: 25px;'>    Host group assignment</li>
-<li style='text-align:left;margin-left: 25px;'>    Network zone assignment</li>
-<li style='text-align:left;margin-left: 25px;'>    ActiveGate group assignment</li>
-<li style='text-align:left;margin-left: 25px;'>    Network zone assignment</li>
-<p style='text-align:left;margin-left: 25px;'>  For more information, see Remote configuration management of OneAgents and ActiveGates.</p>
-<h3 style='text-align:left;margin-left: 25px;'>  Custom chart filter added</h3>
-<p style='text-align:left;margin-left: 25px;'>  If you are upgrading Custom charts to Data explorer charts, we have added a Custom charts: Yes filter to the Dashboards table to make it easy for you to identify dashboards that still need to be upgraded. For details, see Upgrade your dashboards and tiles.</p>
-<h3 style='text-align:left;margin-left: 25px;'>  Email templates for problem notifications</h3>
-<p style='text-align:left;margin-left: 25px;'>  You can avail of a larger email body size when configuring email templates for problem notifications—the size of the email body has been increased from 5,000 characters to 10,000 characters.</p>
-<h3 style='text-align:left;margin-left: 25px;'>  Resolved vulnerabilities can be muted</h3>
-<p style='text-align:left;margin-left: 25px;'>  Resolved third-party vulnerabilities can now be muted and unmuted. Muted resolved third-party vulnerabilities remain muted if they are reopened.</p>
-<h3 style='text-align:left;margin-left: 25px;'>  New filters on the Kubernetes workload page</h3>
-<p style='text-align:left;margin-left: 25px;'>  You can now filter the Kubernetes workload list by:</p>
-<li style='text-align:left;margin-left: 25px;'>    Kubernetes service</li>
-<li style='text-align:left;margin-left: 25px;'>    Kubernetes service name</li>
-<li style='text-align:left;margin-left: 25px;'>    Kubernetes service type</li>
-<h3 style='text-align:left;margin-left: 25px;'>  Kubernetes services</h3>
-<li style='text-align:left;margin-left: 25px;'>    The Kubernetes service page, like other Kubernetes pages, now displays a warning message for outdated ActiveGates.</li>
-<li style='text-align:left;margin-left: 25px;'>    The Kubernetes service page, in the Properties section, now displays the externalName field. This property is only defined for Kubernetes services of type ExternalName.</li>
-<h3 style='text-align:left;margin-left: 25px;'>  Request attribute section</h3>
-<p style='text-align:left;margin-left: 25px;'>  When you Expand  a trace from the Distributed traces list, the trace overview hosts all the related request attributes in a dedicated section.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Log storage configuration</h3>
+<p style='text-align:left;margin-left: 25px;'>Dynatrace allows you to include and exclude specific log sources for analysis by Dynatrace Log Monitoring with identity access management and API support.</p>
+<p style='text-align:left;margin-left: 25px;'>The storage configuration is based on rules that use matchers for hierarchy, log path, and process groups. These rules determine the upload of log files known to OneAgent, auto-detected log files, and custom log files defined per process group.</p>
+<p style='text-align:left;margin-left: 25px;'>- Log storage configuration</p>
+<h3 style='text-align:left;margin-left: 25px;'>Remote configuration management</h3>
+<p style='text-align:left;margin-left: 25px;'>We introduced a mechanism for remote configuration management for OneAgents and ActiveGates.</p>
+<p style='text-align:left;margin-left: 25px;'>You can now perform bulk configuration at scale and control it centrally from the Dynatrace Deployment status page or by using the Dynatrace API.</p>
+<p style='text-align:left;margin-left: 25px;'>The following configuration options are now available for remote configuration management:</p>
+<h4 style='text-align:left;margin-left: 25px;'>OneAgent configuration</h4>
+<p style='text-align:left;margin-left: 25px;'>- Host group assignment</p>
+<p style='text-align:left;margin-left: 25px;'>- Network zone assignment</p>
+<h4 style='text-align:left;margin-left: 25px;'>ActiveGate configuration</h4>
+<p style='text-align:left;margin-left: 25px;'>- ActiveGate group assignment</p>
+<p style='text-align:left;margin-left: 25px;'>- Network zone assignment</p>
+<p style='text-align:left;margin-left: 25px;'>For more information, see Remote configuration management of OneAgents and ActiveGates.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Custom chart filter added</h3>
+<p style='text-align:left;margin-left: 25px;'>If you are upgrading Custom charts to Data explorer charts, we have added a Custom charts: Yes filter to the Dashboards table to make it easy for you to identify dashboards that still need to be upgraded. For details, see Upgrade your dashboards and tiles.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Email templates for problem notifications</h3>
+<p style='text-align:left;margin-left: 25px;'>You can avail of a larger email body size when configuring email templates for problem notifications—the size of the email body has been increased from 5,000 characters to 10,000 characters.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Resolved vulnerabilities can be muted</h3>
+<p style='text-align:left;margin-left: 25px;'>Resolved third-party vulnerabilities can now be muted and unmuted. Muted resolved third-party vulnerabilities remain muted if they are reopened.</p>
+<h3 style='text-align:left;margin-left: 25px;'>New filters on the Kubernetes workload page</h3>
+<p style='text-align:left;margin-left: 25px;'>You can now filter the Kubernetes workload list by:</p>
+<p style='text-align:left;margin-left: 25px;'>- Kubernetes service</p>
+<p style='text-align:left;margin-left: 25px;'>- Kubernetes service name</p>
+<p style='text-align:left;margin-left: 25px;'>- Kubernetes service type</p>
+<h3 style='text-align:left;margin-left: 25px;'>Kubernetes services</h3>
+<p style='text-align:left;margin-left: 25px;'>- The Kubernetes service page, like other Kubernetes pages, now displays a warning message for outdated ActiveGates.</p>
+<p style='text-align:left;margin-left: 25px;'>- The Kubernetes service page, in the Properties section, now displays the externalName field. This property is only defined for Kubernetes services of type ExternalName.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Request attribute section</h3>
+<p style='text-align:left;margin-left: 25px;'>When you Expand  a trace from the Distributed traces list, the trace overview hosts all the related request attributes in a dedicated section.</p>
   
 
                         </div>
@@ -215,7 +218,7 @@
                 <tr>
                     <td class="pad" style="padding-bottom:40px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
                         <div class="alignment" align="center">
-                            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252" style="height:52px;width:136px;v-text-anchor:middle;" arcsize="8%" stroke="false" fillcolor="#8a3c90"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px"><![endif]--><a href="https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#8a3c90;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:10px;padding-bottom:10px;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:30px;padding-right:30px;font-size:16px;display:inline-block;letter-spacing:normal;"><span dir="ltr" style="word-break: break-word; line-height: 32px;">Read More</span></span></a>
+                            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252" style="height:52px;width:136px;v-text-anchor:middle;" arcsize="8%" stroke="false" fillcolor="#8a3c90"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px"><![endif]--><a href="https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#8a3c90;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:10px;padding-bottom:10px;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:30px;padding-right:30px;font-size:16px;display:inline-block;letter-spacing:normal;"><span dir="ltr" style="word-break: break-word; line-height: 32px;">Read More</span></span></a>
                             <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
                         </div>
                     </td>
@@ -224,9 +227,143 @@
         </td>
     </tr>
 </tbody>
-                                        <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_2-->
-                                        <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_3-->
-                                        <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_4-->
+                                        <tbody>
+    <tr>
+        <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+            <table class="html_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad">
+                        <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
+                            <h1 style='text-align:left'>Dynatrace Managed  version 1.252</h1>
+<p style='text-align:left'>Rollout start: Oct 19, 2022</p>
+<p style='text-align:left;margin-left: 25px;'>Published date: 2022-10-12</p>
+<p style='text-align:left;margin-left: 25px;'>These release notes relate to Dynatrace Managed specific changes. To learn about general Dynatrace changes included in this Dynatrace Managed release, see:</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace SaaS release notes version 1.252 and Dynatrace SaaS release notes version 1.251</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace API changelog version 1.252 and Dynatrace API changelog version 1.251</p>
+  
+<h2 style='text-align:left'>Announcements</h2>
+<p style='text-align:left;margin-left: 25px;'>- CentOS/RHEL/OL 8.2, CentOS 8.4, CentOS 8.5, Suse LES 11.4 operating systems are no longer allowed to install new cluster nodes. Dynatrace Managed version 1.258 will be the last one that you can upgrade at one of these operating systems.</p>
+  
+<h2 style='text-align:left'>New features and enhancements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Predictable data retention management</h3>
+<p style='text-align:left;margin-left: 25px;'>When there's not enough free disk space to store new data, the Dynatrace Managed cluster automatically adjusts the retention times of data stored in Elasticsearch and transaction storage if both are placed on the same disk partition. The data retention adjustment is applied equally to all environments in the cluster.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Application Security threat intelligence automatically updated</h3>
+<p style='text-align:left;margin-left: 25px;'>To ensure you always have up-to-date Dynatrace threat intelligence in the Application Security module, third-party vulnerability feed metadata is automatically downloaded from Mission Control. If you have enabled Application Security, you can't opt out from downloading the metadata—it's an essential part of this solution. Feeds are downloaded on demand. You can audit each successful and failed attempt on the Cluster Management Console Events page.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Improved SAML-based SSO configuration</h3>
+<p style='text-align:left;margin-left: 25px;'>The HTTP Content Security Policy (CSP) form-action directive restricts the URLs that can be used as the target of form submissions from a given context. If there is a redirect from the Identity Provider (IdP) to other hosts during sign-in or sign-out, you can add them in the new configuration input field.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<h3 style='text-align:left;margin-left: 25px;'>Upgraded JRE</h3>
+<p style='text-align:left;margin-left: 25px;'>To take advantage of performance improvements, the latest security-vulnerability enhancements, and bug fixes, we've upgraded JRE for the following cluster node components:</p>
+<p style='text-align:left;margin-left: 25px;'>- Cassandra and Elasticsearch now use JRE 8u345</p>
+<p style='text-align:left;margin-left: 25px;'>- Other components now use JRE 11.0.16.1</p>
+<h3 style='text-align:left;margin-left: 25px;'>Improved email validation in CMC</h3>
+<p style='text-align:left;margin-left: 25px;'>When setting up user accounts and notifications, you can now use email addresses with a single letter in a top-level domain.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Simplified file structure of Dynatrace Managed installation</h3>
+<p style='text-align:left;margin-left: 25px;'>When a custom Linux system user is used to run Dynatrace Managed services, there was a custom directory created under the user's home directory (/home/<user running managed>/.javacpp/cache/). This is the technical directory that was moved to /var/opt/dynatrace-managed/.javacpp/cache/ to ease the management of the deployment.</p>
+  
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad" style="padding-bottom:40px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+                        <div class="alignment" align="center">
+                            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-252" style="height:52px;width:136px;v-text-anchor:middle;" arcsize="8%" stroke="false" fillcolor="#8a3c90"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px"><![endif]--><a href="https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-252" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#8a3c90;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:10px;padding-bottom:10px;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:30px;padding-right:30px;font-size:16px;display:inline-block;letter-spacing:normal;"><span dir="ltr" style="word-break: break-word; line-height: 32px;">Read More</span></span></a>
+                            <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</tbody>
+                                        <tbody>
+    <tr>
+        <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+            <table class="html_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad">
+                        <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
+                            <h1 style='text-align:left'>OneAgent  version 1.249</h1>
+<p style='text-align:left'>Rollout start: Sep 15, 2022</p>
+  
+<h2 style='text-align:left'>New features and enhancements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Milan and Jakarta regions are now detected</h3>
+<p style='text-align:left;margin-left: 25px;'>Milan and Jakarta AWS regions are now detected as the EC2 cloud type by OneAgents deployed in these regions.</p>
+<h3 style='text-align:left;margin-left: 25px;'>SwiftUI instrumentation</h3>
+<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent for iOS version 8.249, we support auto-instrumentation of SwiftUI controls.</p>
+<h4 style='text-align:left;margin-left: 25px;'>Requirements</h4>
+<p style='text-align:left;margin-left: 25px;'>- SwiftUI version 2.0+</p>
+<p style='text-align:left;margin-left: 25px;'>- iOS 14+</p>
+<p style='text-align:left;margin-left: 25px;'>- OneAgent for iOS</p>
+<h4 style='text-align:left;margin-left: 25px;'>Supported controls</h4>
+<p style='text-align:left;margin-left: 25px;'>- Button</p>
+<p style='text-align:left;margin-left: 25px;'>- Stepper</p>
+<p style='text-align:left;margin-left: 25px;'>- Picker</p>
+<p style='text-align:left;margin-left: 25px;'>- Toggle</p>
+<p style='text-align:left;margin-left: 25px;'>- Slider</p>
+<p style='text-align:left;margin-left: 25px;'>For more information, see Instrument SwiftUI controls.</p>
+  
+<h2 style='text-align:left'>z/OS</h2>
+<p style='text-align:left;margin-left: 25px;'>- oneagentzos-R12490.pax is now available. See Upgrade and Maintenance for upgrade instructions.</p>
+  
+<h2 style='text-align:left'>Go</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 1.8 - 1.10</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for PostgreSQL (jackc/pgx) 4.7.0 - 4.16.1</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Go 1.19</p>
+  
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad" style="padding-bottom:40px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+                        <div class="alignment" align="center">
+                            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-249" style="height:52px;width:136px;v-text-anchor:middle;" arcsize="8%" stroke="false" fillcolor="#8a3c90"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px"><![endif]--><a href="https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-249" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#8a3c90;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:10px;padding-bottom:10px;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:30px;padding-right:30px;font-size:16px;display:inline-block;letter-spacing:normal;"><span dir="ltr" style="word-break: break-word; line-height: 32px;">Read More</span></span></a>
+                            <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</tbody>
+                                        <tbody>
+    <tr>
+        <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+            <table class="html_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad">
+                        <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
+                            <h1 style='text-align:left'>ActiveGate  version 1.249</h1>
+<p style='text-align:left'>Rollout start: Sep 15, 2022</p>
+<h3 style='text-align:left;margin-left: 25px;'>Chromium support for private Synthetic locations</h3>
+<p style='text-align:left;margin-left: 25px;'>- Ubuntu 18.04, 20.04, and 22.04.</p>
+<p style='text-align:left;margin-left: 25px;'>- Red Hat Enterprise Linux 7 and 8.</p>
+<p style='text-align:left;margin-left: 25px;'>- CentOS 7 and 8.</p>
+  
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad" style="padding-bottom:40px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+                        <div class="alignment" align="center">
+                            <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-249" style="height:52px;width:136px;v-text-anchor:middle;" arcsize="8%" stroke="false" fillcolor="#8a3c90"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:16px"><![endif]--><a href="https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-249" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#8a3c90;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:10px;padding-bottom:10px;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:30px;padding-right:30px;font-size:16px;display:inline-block;letter-spacing:normal;"><span dir="ltr" style="word-break: break-word; line-height: 32px;">Read More</span></span></a>
+                            <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</tbody>
 									</table>
 								</td>
 							</tr>
