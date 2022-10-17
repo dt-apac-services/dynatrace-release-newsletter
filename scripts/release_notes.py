@@ -3,6 +3,7 @@ from pathlib import Path
 import re
 import requests
 from bs4 import BeautifulSoup
+import pkg.read_write as read_write
 
 
 def get_latest_versions(release_info):
@@ -40,7 +41,14 @@ def get_latest_versions(release_info):
     return release_info
 
 
-def scrape_specific_release_page(component, page_url):
+def scrape_specific_release_page(component, version):
+
+    # local_release_info_file = Path(__file__).parent/"release_info.json"
+    # local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
+
+    release_info_from_file=read_write.read_release_info_file()
+    page_url = release_info_from_file[component][version]["url"]
+    rollout_start = release_info_from_file[component][version]["rollout"]
     
     page = requests.get(page_url)
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -48,20 +56,27 @@ def scrape_specific_release_page(component, page_url):
     exclude_list = ['Dynatrace API','Resolved issues','Operating systems support','Operating systems','Other support changes','OneAgent for Android resolved issues','OneAgent for iOS resolved issues','OneAgent for JavaScript resolved issues']    
     
     file_name = os.path.join(Path(__file__).parent.parent,"data",component+"_release_notes.html")
+    line_skip = False # Used to skip default "Rollout start" line in OneAgent & ActiveGate release notes.
 
 
     with open(file_name,'w') as f:
         
     # creating a list of all common heading tags
-        tags = ["h1", "h2", "h3","p","li"]
+        tags = ["h1", "h2", "h3","h4","p","li"]
         position = 0   
         for tag in soup.find_all(tags):
             # print(tags.name + ' -> ' + tags.text.strip())        
             val = tag.text.strip()
             if tag.name == "h1":
+                val= tag.text.replace("release notes", "")
                 print("<h1 style='text-align:left'>"+val+"</h1>",file=f)
+                print("<p style='text-align:left'>"+"Rollout start: "+rollout_start+"</p>",file=f)
+                if component in ['OneAgent','ActiveGate']:
+                    line_skip = True
                 position += 1         
-            if tag.name == "h2":          
+            if tag.name == "h2":
+                if component in ['OneAgent','ActiveGate']:  # Remove skip as soon as h2 is encountered
+                    line_skip = False         
                 print("  ",file=f)
                 if val not in exclude_list:
                     print("<h2 style='text-align:left'>"+val+"</h2>",file=f)
@@ -69,17 +84,20 @@ def scrape_specific_release_page(component, page_url):
                     break
                 position += 1
             if tag.name == "h3":
-                print("<h3 style='text-align:left;margin-left: 25px;'>"+"  "+val+"</h3>",file=f)
+                print("<h3 style='text-align:left;margin-left: 25px;'>"+val+"</h3>",file=f)
+                position += 1
+            if tag.name == "h4":
+                print("<h4 style='text-align:left;margin-left: 25px;'>"+val+"</h4>",file=f)
                 position += 1
             if tag.name == "p":
-                if "|" not in val:                    
-                    print("<p style='text-align:left;margin-left: 25px;'>"+"  "+val+"</p>",file=f)
-                position += 1
+                if not line_skip:
+                    if "|" not in val:                                        
+                        print("<p style='text-align:left;margin-left: 25px;'>"+val+"</p>",file=f)
+                    position += 1
             if tag.name == "li":
                 if position > 0:                    
-                    print("<li style='text-align:left;margin-left: 25px;'>"+"    "+val+"</li>",file=f)                
+                    print("<p style='text-align:left;margin-left: 25px;'>"+"- "+val+"</p>",file=f)                
     f.close()
-    
 
 
 

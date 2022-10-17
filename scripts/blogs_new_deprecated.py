@@ -1,15 +1,17 @@
 import requests
-import regex as re
+import re
 from bs4 import BeautifulSoup
 import csv
 import os
 
-with open('blog_list.csv', newline='',encoding='utf-8') as f:
+
+csv_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
+with open(csv_file, newline='',encoding='utf-8') as f:
     data = list(csv.reader(f))
     f.close()
 
 page_number=1
-last_page=2
+last_page=3
 blog_list=[]
 count=0
 while page_number < last_page:
@@ -46,7 +48,7 @@ new_data=[]
 new_data.extend(blog_list)
 new_data.extend(data)
 
-with open('blog_list.csv', 'w', newline='',encoding="utf-8") as f:
+with open(csv_file, 'w', newline='',encoding="utf-8") as f:
     writer = csv.writer(f)
     writer.writerow(["Name", "Date", "Author","Link","Tag1","Tag2","Tag3","Tag4","Tag5","Tag6","Tag7"])
     writer.writerows(new_data)
@@ -78,8 +80,9 @@ for line in table:
     write_string[:-1]
 
 table_start="|---------|---------|---------|---------|"
-file_path="D:\\OneDrive\\Projects\\Website\\SREngineer\\content\\dynatrace\\other\\dynatrace-blogs.md"
-with open(file_path, 'r+', encoding='utf-8') as f:
+# file_path="D:\\OneDrive\\Projects\\Website\\SREngineer\\content\\dynatrace\\other\\dynatrace-blogs.md"
+md_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","blogs.md"))
+with open(md_file, 'r+', encoding='utf-8') as f:
         content = f.read().replace(table_start,write_string[:-1])
         f.seek(0)
         f.truncate

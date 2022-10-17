@@ -1,4 +1,4 @@
-## This script 'all' blog post details from dynatrace.com
+## This script pulls 'all' blog post details from dynatrace.com
 # Run only once!
 
 import re
@@ -7,15 +7,7 @@ from bs4 import BeautifulSoup
 import time
 
 # Specify number of pages to retrieve. At the time of editing the max pages available were 72
-pages_to_retrieve = 3
-
-# read existing csv file
-import csv
-import os
-csv_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","blogs.csv"))
-with open(csv_file, newline='',encoding='utf-8') as f:
-    existing_data = list(csv.reader(f))
-    f.close()
+pages_to_retrieve = 72
 
 i=1
 blog_titles=[]
@@ -34,30 +26,19 @@ while i < pages_to_retrieve:
             n_list.append(link)            
             for txt in cl:
                 if txt.startswith("tag-"):
-                    n_list.append(txt.split("-",1)[1])  
-            if (n_list[0] == existing_data[1][0]):         
-                break
-            else:
-                blog_list.append(n_list)
-        else:
-            continue
-    else:
-        continue
-    break      
+                    n_list.append(txt.split("-",1)[1])
+            blog_list.append(n_list)
     time.sleep(1)
     i+=1
 
-############# Write to csv file file ##############
-new_csv=[]
-new_csv.extend(existing_data)
-position = 1
-for i in blog_list:
-    new_csv.insert(position, i)
-    position+=1
 
+import csv
+import os
+csv_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","blogs.csv"))
 with open(csv_file, 'w', newline='',encoding="utf-8") as f:
-    writer = csv.writer(f)    
-    writer.writerows(new_csv)
+    writer = csv.writer(f)
+    writer.writerow(["Name", "Date", "Author","Link","Tag1","Tag2","Tag3","Tag4","Tag5","Tag6","Tag7"])
+    writer.writerows(blog_list)
 
 ## Write to md file
 
@@ -69,7 +50,7 @@ count=0
 hlink=[]
 tags=[]
 table=[]
-table.append("|Blog     |Author   |Date     | Tags    |")
+table.append("|Blog     |Date   |Author     | Tags    |")
 table.append("|---------|---------|---------|---------|")
 for i in data:
     if (i[0] != "Show more") and (i[0] != "Name"):
