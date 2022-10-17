@@ -12,50 +12,79 @@ import time
 def scrape_latest_blogs():
 
     pages_to_retrieve = 3
+    for i in range(pages_to_retrieve):
+        print(i)
 
     # read existing csv file
 
     # csv_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
     csv_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
     with open(csv_file, newline='',encoding='utf-8') as f:
-        existing_data = list(csv.reader(f))
+        local_data = list(csv.reader(f))
         f.close()
 
-    i=1
-    blog_titles=[]
-    links_with_text = []
+    i=1    
     blog_list=[]
-    while i < pages_to_retrieve:
+    for i in range(pages_to_retrieve):
         val="https://www.dynatrace.com/news/page/"+str(i)+"/?post_type=post"    
         page = requests.get(val)
         soup = BeautifulSoup(page.content, 'html.parser')
-        section = soup.find(class_ = re.compile("feed--grid feed--grid--3cols * js-feed"))    
-        for a in section.find_all('a', href=True): 
-            if a.text:
-                link=(a['href'])            
-                cl=(a['class']) 
-                n_list=list(filter(None, a.text.replace("\n","").split('  ')))
-                n_list.append(link)            
-                for txt in cl:
-                    if txt.startswith("tag-"):
-                        n_list.append(txt.split("-",1)[1])  
-                if (n_list[0] == existing_data[1][0]):         
-                    break
-                else:
-                    blog_list.append(n_list)
+        regex = re.compile('feeditem js-feeditem hentry h-entry post-.*')        
+        blog_data = soup.find_all(True, {"class":regex})
+
+        for item in blog_data:
+            # print(i['href'])
+            # print(i.find('h2').text.strip())
+            # print(i.find('time').text.strip())
+            # print(i.find("span",{"class":"fn p-name"}).text.strip())
+            
+            blog_url = item['href']
+            blog_title = item.find('h2').text.strip()
+            blog_date = item.find('time').text.strip()
+            blog_author = item.find("span",{"class":"fn p-name"}).text.strip()
+            blog_entry = [blog_title,blog_date,blog_author,blog_url]            
+
+            if blog_title == local_data[1][0]:
+                break
             else:
-                continue
+                blog_list.append(blog_entry)
         else:
             continue
-        break      
-        time.sleep(1)
-        i+=1
+        break
+    
+        
+    
+
+            
+
+
+        # blog_parent_div = soup.find(class_ = re.compile("feed--grid feed--grid--3cols * js-feed"))   
+        # for a in blog_parent_div.find_all('a', href=True): 
+        #     if a.text:
+        #         link=(a['href'])            
+        #         cl=(a['class']) 
+        #         n_list=list(filter(None, a.text.replace("\n","").split('  ')))
+        #         n_list.append(link)            
+        #         for txt in cl:
+        #             if txt.startswith("tag-"):
+        #                 n_list.append(txt.split("-",1)[1])  
+        #         if (n_list[0] == local_data[1][0]):         
+        #             break
+        #         else:
+        #             blog_list.append(n_list)
+        #     else:
+        #         continue
+        # else:
+        #     continue
+        # break      
+        # time.sleep(1)
+        # i+=1
     
 
 
     ############# Write to csv file file ##############
     new_csv=[]
-    new_csv.extend(existing_data)
+    new_csv.extend(local_data)
     position = 1
     for i in blog_list:
         new_csv.insert(position, i)
