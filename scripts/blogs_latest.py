@@ -14,8 +14,8 @@ def scrape_blogs(components):
     write_to_md_file(new_blog_csv_data)
 
     # ############# Write to html file ##############
-    if len(components) > 0:
-        write_to_html(components, new_blog_csv_data)
+    # if len(components) > 0:
+    write_to_html(components)
 
 
 def scrape_and_update_local_blogs_file():
@@ -113,9 +113,10 @@ def write_to_md_file(new_blog_csv_data):
 
 
 
-def write_to_html(components, new_blog_csv_data):
+def write_to_html(components):
     # file_name = os.path.join(Path(__file__).parent.parent,"data","blogs.html")
     last_newsletter_date_json = read_write.read_last_newsletter_date_json()
+    blog_csv_data = read_write.read_local_blogs_csv_file()
 
     last_newsletter_date = ""
     
@@ -127,7 +128,7 @@ def write_to_html(components, new_blog_csv_data):
     # file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.html"
     position = 0
     with open(file,'w') as f:
-        for blog in new_blog_csv_data:
+        for blog in blog_csv_data:
             if position > 0:
                 parsed_blog_date = datetime.strptime(blog[1],"%B %d, %Y")
                 # days_since = datetime.now() - parsed_blog_date
