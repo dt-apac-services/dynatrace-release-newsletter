@@ -4,6 +4,7 @@ import scripts.release_notes as release_notes
 import scripts.newsletter as newsletter
 import pkg.read_write as read_write
 import scripts.blogs_latest as blogs_latest
+import scripts.email as email
 
 # global release_info_from_file
 
@@ -22,6 +23,9 @@ def main():
 
         # Write newsletter date to local file
         read_write.write_last_newsletter_date_json(components)
+
+        # Send email
+        email.send_email()
     
     else:
         print("All up to date")

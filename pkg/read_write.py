@@ -79,3 +79,25 @@ def write_last_newsletter_date_json(components):
     f = open(file_path,"w")
     f.write(json.dumps(content, indent=4))
     f.close()
+
+def read_email_creds():
+    file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","email_creds.json"))
+    
+    f = open(file_path,"r")
+    content = f.read()
+    if content != "":
+        email_creds= json.loads(content)
+    f.close()
+
+    return email_creds
+
+def read_release_notes_html():
+    file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","release_notes.html"))
+    
+    f = open(file_path,"r")
+    content = f.read()
+    if content != "":
+        release_notes = content
+    f.close()
+
+    return release_notes
