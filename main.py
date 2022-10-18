@@ -13,14 +13,9 @@ def main():
     components = release_notes.scrape_release_page()
 
     # Get latest blogs and save to html file
-
-    # Create newsletter and email
+    blogs_latest.scrape_blogs(components)
     
-    
-    
-    blogs_latest.scrape_latest_blogs()
-    blogs_latest.write_to_html(components, read_write.read_release_info_file())
-    
+    # Create newsletter and email    
     newsletter.create_newsletter(components)
 
 if __name__ == "__main__":

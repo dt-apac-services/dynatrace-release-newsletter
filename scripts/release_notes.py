@@ -17,14 +17,14 @@ def scrape_release_page():
     # Get the new release - component & version - and create html file(s)
     components = {}
     for component in release_info_from_web:        
-        for version, value in release_info_from_web[component].items():        
+        for version in release_info_from_web[component]:        
             if version not in release_info_from_file[component]:
                 print("New Version Available for "+ component +": "+version)                
                 components[component] = version     
 
                 # Kick off gathering of specific component release info
-                page_url = release_info_from_file[component][version]["url"]
-                rollout_start = release_info_from_file[component][version]["rollout"]
+                page_url = release_info_from_web[component][version]["url"]
+                rollout_start = release_info_from_web[component][version]["rollout"]
                 scrape_specific_release_page_and_save_html(component, page_url,rollout_start)
     
     # Write new info into local file

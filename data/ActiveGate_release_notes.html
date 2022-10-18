@@ -1,7 +1,67 @@
-<h1 style='text-align:left'>ActiveGate  version 1.249</h1>
-<p style='text-align:left'>Rollout start: Sep 15, 2022</p>
-<h3 style='text-align:left;margin-left: 25px;'>Chromium support for private Synthetic locations</h3>
-<p style='text-align:left;margin-left: 25px;'>- Ubuntu 18.04, 20.04, and 22.04.</p>
-<p style='text-align:left;margin-left: 25px;'>- Red Hat Enterprise Linux 7 and 8.</p>
-<p style='text-align:left;margin-left: 25px;'>- CentOS 7 and 8.</p>
+<h1 style='text-align:left'>ActiveGate  version 1.251</h1>
+<p style='text-align:left'>Rollout start: Oct 14, 2022</p>
+  
+<h2 style='text-align:left'>SQL data source</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Microsoft SQL extensions</h3>
+<p style='text-align:left;margin-left: 25px;'>The Extensions 2.0 framework now enables you to extend your application observability into data acquired directly from your Microsoft SQL Server layer. For more information, see:</p>
+<p style='text-align:left;margin-left: 25px;'>- Microsoft SQL Server monitoring configuration</p>
+<p style='text-align:left;margin-left: 25px;'>- Manage Microsoft SQL Server extensions</p>
+<h3 style='text-align:left;margin-left: 25px;'>SQL extensions support SSL communication</h3>
+<p style='text-align:left;margin-left: 25px;'>With this ActiveGate release, Extensions 2.0 framework supports SSL connections to the databases for all the database monitoring extensions. For more information, see</p>
+<p style='text-align:left;margin-left: 25px;'>- Oracle Database monitoring configuration</p>
+<p style='text-align:left;margin-left: 25px;'>- Microsoft SQL Server monitoring configuration</p>
+  
+<h2 style='text-align:left'>SNMP traps extensions support SNMP v3</h2>
+<p style='text-align:left;margin-left: 25px;'>With this release SNMP Traps extension is capable of processing SNMP v3 traps.</p>
+<p style='text-align:left;margin-left: 25px;'>The reported traps are stored as log events with variable bindings represented as log attributes.</p>
+<p style='text-align:left;margin-left: 25px;'>You can also view the trap events on a dedicated unified analysis page.</p>
+<p style='text-align:left;margin-left: 25px;'>For more information, see SNMP traps data source.</p>
+  
+<h2 style='text-align:left'>Prometheus extensions</h2>
+<p style='text-align:left;margin-left: 25px;'>You can now configure your Prometheus-based extension using a DNS-based service discovery configuration.</p>
+<p style='text-align:left;margin-left: 25px;'>Supported extensions:</p>
+<p style='text-align:left;margin-left: 25px;'>- HAProxy</p>
+<p style='text-align:left;margin-left: 25px;'>- MongoDB</p>
+<p style='text-align:left;margin-left: 25px;'>- Confluent Cloud (Kafka)</p>
+<p style='text-align:left;margin-left: 25px;'>- RabbitMQ</p>
+<p style='text-align:left;margin-left: 25px;'>For more information, see Manage Prometheus extensions.</p>
+  
+<h2 style='text-align:left'>ActiveGate on s390 CPU architecture</h2>
+<p style='text-align:left;margin-left: 25px;'>Starting with version 1.251, ActiveGate is supported on Linux on the IBM Z architecuture, or, in other words, on the s390 CPU architecture.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Linux distributions supported for s390 architecture</h3>
+<p style='text-align:left;margin-left: 25px;'>The s390 architecture is supported on selected versions of the following Linux distributions.</p>
+<p style='text-align:left;margin-left: 25px;'>- Red Hat Enterprise Linux</p>
+<p style='text-align:left;margin-left: 25px;'>- Suse Enterprise Linux</p>
+<p style='text-align:left;margin-left: 25px;'>- Ubuntu</p>
+<p style='text-align:left;margin-left: 25px;'>For details, see Hardware and system requirements for routing/monitoring ActiveGates on Linux.</p>
+<h3 style='text-align:left;margin-left: 25px;'>ActiveGate purposes on s390 architecture</h3>
+<p style='text-align:left;margin-left: 25px;'>ActiveGate on s390 supports a subset of purposes. For example, Synthetic Monitoring and extensions aren't supported. For details, see ActiveGate purposes and functionality.</p>
+  
+<h2 style='text-align:left'>Ubuntu 16 for private Synthetic locations end of support</h2>
+<p style='text-align:left;margin-left: 25px;'>As Chromium development for Ubuntu 16.04 stopped at version 90, we can no longer assure a high enough level of stability and security for synthetic monitor execution on Ubuntu 16. We will discontinue our support for installing Synthetic-enabled ActiveGate on Ubuntu 16 after ActiveGate version 1.251. That is, ActiveGate version 1.251 is the last Synthetic-enabled ActiveGate supported on Ubuntu 16.</p>
+  
+<h2 style='text-align:left'>Chromium support for private Synthetic locations</h2>
+<p style='text-align:left;margin-left: 25px;'>Chromium 105 is the latest supported version for Synthetic-enabled ActiveGate installed on:</p>
+<p style='text-align:left;margin-left: 25px;'>- Ubuntu 18.04, 20.04, and 22.04</p>
+<p style='text-align:left;margin-left: 25px;'>- Red Hat Enterprise Linux 7 and 8</p>
+<p style='text-align:left;margin-left: 25px;'>- CentOS 7</p>
+<p style='text-align:left;margin-left: 25px;'>- Amazon Linux 2</p>
+<p style='text-align:left;margin-left: 25px;'>Chromium 105 is bundled with the Windows ActiveGate installer.</p>
+<p style='text-align:left;margin-left: 25px;'>For more information on supported and provided Chromium versions, see Requirements for private Synthetic locations and Create a private Synthetic location.</p>
+  
+<h2 style='text-align:left'>Operating system support</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Future Dynatrace ActiveGate operating systems support changes</h3>
+<p style='text-align:left;margin-left: 25px;'>- Linux: Red Hat Enterprise Linux 8.2Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- Linux: Ubuntu 14.04Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- Vendor announcement</p>
+<h3 style='text-align:left;margin-left: 25px;'>Past Dynatrace ActiveGate operating systems support changes</h3>
+<p style='text-align:left;margin-left: 25px;'>- Linux: Amazon Linux AMI 2014.03, 2017.09x86-64Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- x86-64</p>
+<p style='text-align:left;margin-left: 25px;'>- Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- Linux: CentOS 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.0, 8.1, 8.2, 8.3, 8.4x86-64Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- x86-64</p>
+<p style='text-align:left;margin-left: 25px;'>- Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- Linux: Red Hat Enterprise Linux 6.x, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.0, 8.1, 8.3Vendor announcement</p>
+<p style='text-align:left;margin-left: 25px;'>- Vendor announcement</p>
   

@@ -1,4 +1,6 @@
 Name,Date,Author,Link,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7
+Dynatrace Grail: The data lakehouse for observability and security analysis and automation,"October 4, 2022",Christian Kiesewetter,https://www.dynatrace.com/news/blog/why-you-need-a-data-lakehouse/,data-lake,data-lakehouse,featured,grail
+"Any analysis, any time: Dynatrace Log Management and Analytics powered by Grail","October 4, 2022",Ulf Weihbold,https://www.dynatrace.com/news/blog/any-analysis-any-time/,featured
 Applying real-world AIOps use cases to your operations,"October 17, 2022",Bipin Singh,https://www.dynatrace.com/news/blog/applying-real-world-aiops-use-cases-to-your-operations/,ai,aiops,aiops-benefits,aiops-platform,aiops-use-cases,cloudops,devops,secops
 Metric events: Set up anomaly detection based on your business needs,"October 17, 2022",David Bruendl,https://www.dynatrace.com/news/blog/metric-events-set-up-anomaly-detection-based-on-your-business-needs/,anomaly-detection,davis-ai,dynatrace-version-1-253,metric-events
 What is AIOps? An insider’s guide to AI for ITOps — and beyond,"October 17, 2022",Bipin Singh,https://www.dynatrace.com/news/blog/what-is-aiops-2/,ai-for-it-operations,aiops,deterministic-ai,it-operations
@@ -17,7 +19,7 @@ What is a data lakehouse? Combining data lakes and warehouses for the best of bo
 How unified data and analytics offers a new approach to software intelligence,"October 4, 2022",Bipin Singh,https://www.dynatrace.com/news/blog/new-approach-to-software-intelligence/,analytics-engine,data-lakehouse,log-management-and-analytics,observability,root-cause-analysis,software-intelligence
 Business analytics tools: Use cases and best practices for IT business analytics,"September 29, 2022",Gary Kaiser,https://www.dynatrace.com/news/blog/business-analytics-tools-use-cases-and-best-practices-for-it-business-analytics/,business-analytics,business-analytics-tools
 Dynatrace SaaS release notes version 1.251,"September 28, 2022",Ilya Gutin,https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-251/
-Dynatrace expands root cause analysis for Kubernetes with Davis AI,"September 26, 2022",Matthew Reider,https://www.dynatrace.com/news/blog/root-cause-analysis-in-kubernetes-with-davis-ai/,featured,kubernetes,root-cause-analysis
+Dynatrace expands root cause analysis for Kubernetes with Davis AI,"September 26, 2022",Matthew Reider,https://www.dynatrace.com/news/blog/root-cause-analysis-in-kubernetes-with-davis-ai/,kubernetes,root-cause-analysis
 IT automation central to navigating cloud complexity and data explosion,"September 23, 2022",Lauren Horwitz,https://www.dynatrace.com/news/blog/it-automation-key-to-navigating-cloud-complexity/,aiops,cloud-complexity,data-explosion,data-lakehouse,it-automation,multicloud-complexity
 What is DevOps automation?,"September 22, 2022",Saif Gunja,https://www.dynatrace.com/news/blog/what-is-devops-automation/,devops,devops-automation,devops-automation-tools
 Why digital transformation hinges on SRE teams,"September 20, 2022",Sydney Reynolds,https://www.dynatrace.com/news/blog/why-digital-transformation-hinges-on-sre/,devops,sre

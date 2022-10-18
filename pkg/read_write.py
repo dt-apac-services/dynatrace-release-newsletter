@@ -1,4 +1,5 @@
 # Read local release info file
+import csv
 import json
 import os
 from pathlib import Path
@@ -32,3 +33,33 @@ def write_release_info_to_local_file(release_info_from_web):
     f = open(local_release_info_file,"w")
     f.write(json.dumps(release_info_from_web, indent=4))
     f.close()
+
+
+def read_local_blogs_csv_file():
+    blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
+    # blog_csv = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
+
+    with open(blog_csv, newline='',encoding='utf-8') as f:
+        local_blog_csv_data = list(csv.reader(f))
+        f.close()
+
+    return local_blog_csv_data
+
+def write_local_blogs_csv_file(new_blog_csv_data):
+    blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
+    # blog_csv = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
+    
+    with open(blog_csv, 'w', newline='',encoding="utf-8") as f:
+        writer = csv.writer(f)    
+        writer.writerows(new_blog_csv_data)
+
+def read_last_newsletter_date_json():
+    file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","last_newsletter_date.json"))
+    
+    f = open(file_path,"r")
+    content = f.read()
+    if content != "":
+        last_newsletter_date= json.loads(content)
+    f.close()
+
+    return last_newsletter_date
