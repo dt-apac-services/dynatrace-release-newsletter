@@ -71,7 +71,7 @@ def scrape_specific_release_page_and_save_html(component, page_url, rollout_star
     page = requests.get(page_url)
     soup = BeautifulSoup(page.content, 'html.parser')
     
-    exclude_list = ['Dynatrace API','Resolved issues','Operating systems support','Operating systems','Other support changes','OneAgent for Android resolved issues','OneAgent for iOS resolved issues','OneAgent for JavaScript resolved issues']    
+    exclude_list = ['Dynatrace API','Resolved issues','Operating systems support','Operating system support','Operating systems','Other support changes','OneAgent for Android resolved issues','OneAgent for iOS resolved issues','OneAgent for JavaScript resolved issues']    
     
     file_name = os.path.join(Path(__file__).parent.parent,"data",component+"_release_notes.html")
     line_skip = False # Used to skip default "Rollout start" line in OneAgent & ActiveGate release notes.

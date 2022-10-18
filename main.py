@@ -25,7 +25,7 @@ def main():
         read_write.write_last_newsletter_date_json(components)
 
         # Send email
-        email.send_email()
+        email.send_email(components)
     
     else:
         print("All up to date")

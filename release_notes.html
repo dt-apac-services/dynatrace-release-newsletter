@@ -168,48 +168,35 @@
                 <tr>
                     <td class="pad">
                         <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
-                            <h1 style='text-align:left'>Dynatrace SaaS  version 1.252</h1>
-<p style='text-align:left'>Rollout start: Oct 11, 2022</p>
-<p style='text-align:left;margin-left: 25px;'>- Getting answers from data starts with automated log acquisition, at any scaleDynatrace enables configuration-as-code for logs, making data acquisition, filtering, masking, and anonymizing scalable in enterprise environments. Orchestrating a fleet of OneAgents from a central configuration point removes error-prone manual work for DevOps and SRE teams across dynamic IT landscapes.</p>
-<p style='text-align:left;margin-left: 25px;'>Dynatrace enables configuration-as-code for logs, making data acquisition, filtering, masking, and anonymizing scalable in enterprise environments. Orchestrating a fleet of OneAgents from a central configuration point removes error-prone manual work for DevOps and SRE teams across dynamic IT landscapes.</p>
+                            <h1 style='text-align:left'>Dynatrace Managed  version 1.252</h1>
+<p style='text-align:left'>Rollout start: Oct 19, 2022</p>
+<p style='text-align:left;margin-left: 25px;'>Published date: 2022-10-12</p>
+<p style='text-align:left;margin-left: 25px;'>These release notes relate to Dynatrace Managed specific changes. To learn about general Dynatrace changes included in this Dynatrace Managed release, see:</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace SaaS release notes version 1.252 and Dynatrace SaaS release notes version 1.251</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace API changelog version 1.252 and Dynatrace API changelog version 1.251</p>
   
 <h2 style='text-align:left'>Announcements</h2>
+<p style='text-align:left;margin-left: 25px;'>- CentOS/RHEL/OL 8.2, CentOS 8.4, CentOS 8.5, Suse LES 11.4 operating systems are no longer allowed to install new cluster nodes. Dynatrace Managed version 1.258 will be the last one that you can upgrade at one of these operating systems.</p>
 <h3 style='text-align:left;margin-left: 25px;'>Davis Assistant end of life</h3>
 <p style='text-align:left;margin-left: 25px;'>Dynatrace Davis Assistant will reach end of life on January 31, 2023. After this date, the service will be shut down, and interactions with Davis Assistant will no longer be possible. Existing integrations, for example, with Slack or Microsoft Teams, will cease to work at that time.</p>
 <p style='text-align:left;margin-left: 25px;'>For options and best practices on managing the push of problem notifications to your preferred third-party incident management or ChatOps service, see problem notifications documentation.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Log storage configuration</h3>
-<p style='text-align:left;margin-left: 25px;'>Dynatrace allows you to include and exclude specific log sources for analysis by Dynatrace Log Monitoring with identity access management and API support.</p>
-<p style='text-align:left;margin-left: 25px;'>The storage configuration is based on rules that use matchers for hierarchy, log path, and process groups. These rules determine the upload of log files known to OneAgent, auto-detected log files, and custom log files defined per process group.</p>
-<p style='text-align:left;margin-left: 25px;'>- Log storage configuration</p>
-<h3 style='text-align:left;margin-left: 25px;'>Remote configuration management</h3>
-<p style='text-align:left;margin-left: 25px;'>We introduced a mechanism for remote configuration management for OneAgents and ActiveGates.</p>
-<p style='text-align:left;margin-left: 25px;'>You can now perform bulk configuration at scale and control it centrally from the Dynatrace Deployment status page or by using the Dynatrace API.</p>
-<p style='text-align:left;margin-left: 25px;'>The following configuration options are now available for remote configuration management:</p>
-<h4 style='text-align:left;margin-left: 25px;'>OneAgent configuration</h4>
-<p style='text-align:left;margin-left: 25px;'>- Host group assignment</p>
-<p style='text-align:left;margin-left: 25px;'>- Network zone assignment</p>
-<h4 style='text-align:left;margin-left: 25px;'>ActiveGate configuration</h4>
-<p style='text-align:left;margin-left: 25px;'>- ActiveGate group assignment</p>
-<p style='text-align:left;margin-left: 25px;'>- Network zone assignment</p>
-<p style='text-align:left;margin-left: 25px;'>For more information, see Remote configuration management of OneAgents and ActiveGates.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Custom chart filter added</h3>
-<p style='text-align:left;margin-left: 25px;'>If you are upgrading Custom charts to Data explorer charts, we have added a Custom charts: Yes filter to the Dashboards table to make it easy for you to identify dashboards that still need to be upgraded. For details, see Upgrade your dashboards and tiles.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Email templates for problem notifications</h3>
-<p style='text-align:left;margin-left: 25px;'>You can avail of a larger email body size when configuring email templates for problem notificationsï¿½the size of the email body has been increased from 5,000 characters to 10,000 characters.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Resolved vulnerabilities can be muted</h3>
-<p style='text-align:left;margin-left: 25px;'>Resolved third-party vulnerabilities can now be muted and unmuted. Muted resolved third-party vulnerabilities remain muted if they are reopened.</p>
-<h3 style='text-align:left;margin-left: 25px;'>New filters on the Kubernetes workload page</h3>
-<p style='text-align:left;margin-left: 25px;'>You can now filter the Kubernetes workload list by:</p>
-<p style='text-align:left;margin-left: 25px;'>- Kubernetes service</p>
-<p style='text-align:left;margin-left: 25px;'>- Kubernetes service name</p>
-<p style='text-align:left;margin-left: 25px;'>- Kubernetes service type</p>
-<h3 style='text-align:left;margin-left: 25px;'>Kubernetes services</h3>
-<p style='text-align:left;margin-left: 25px;'>- The Kubernetes service page, like other Kubernetes pages, now displays a warning message for outdated ActiveGates.</p>
-<p style='text-align:left;margin-left: 25px;'>- The Kubernetes service page, in the Properties section, now displays the externalName field. This property is only defined for Kubernetes services of type ExternalName.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Request attribute section</h3>
-<p style='text-align:left;margin-left: 25px;'>When you Expand  a trace from the Distributed traces list, the trace overview hosts all the related request attributes in a dedicated section.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Predictable data retention management</h3>
+<p style='text-align:left;margin-left: 25px;'>When there's not enough free disk space to store new data, the Dynatrace Managed cluster automatically adjusts the retention times of data stored in Elasticsearch and transaction storage if both are placed on the same disk partition. The data retention adjustment is applied equally to all environments in the cluster.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Application Security threat intelligence automatically updated</h3>
+<p style='text-align:left;margin-left: 25px;'>To ensure you always have up-to-date Dynatrace threat intelligence in the Application Security module, third-party vulnerability feed metadata is automatically downloaded from Mission Control. If you have enabled Application Security, you can't opt out from downloading the metadata—it's an essential part of this solution. Feeds are downloaded on demand. You can audit each successful and failed attempt on the Cluster Management Console Events page.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Improved SAML-based SSO configuration</h3>
+<p style='text-align:left;margin-left: 25px;'>The HTTP Content Security Policy (CSP) form-action directive restricts the URLs that can be used as the target of form submissions from a given context. If there is a redirect from the Identity Provider (IdP) to other hosts during sign-in or sign-out, you can add them in the new configuration input field.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<h3 style='text-align:left;margin-left: 25px;'>Upgraded JRE</h3>
+<p style='text-align:left;margin-left: 25px;'>To take advantage of performance improvements, the latest security-vulnerability enhancements, and bug fixes, we've upgraded JRE for the following cluster node components:</p>
+<p style='text-align:left;margin-left: 25px;'>- Cassandra now uses JRE 8u345</p>
+<p style='text-align:left;margin-left: 25px;'>- Other components now use JRE 11.0.16.1</p>
+<h3 style='text-align:left;margin-left: 25px;'>Improved email validation in CMC</h3>
+<p style='text-align:left;margin-left: 25px;'>When setting up user accounts and notifications, you can now use email addresses with a single letter in a top-level domain.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Simplified file structure of Dynatrace Managed installation</h3>
+<p style='text-align:left;margin-left: 25px;'>When a custom Linux system user is used to run Dynatrace Managed services, there was a custom directory created under the user's home directory (/home/<user running managed>/.javacpp/cache/). This is the technical directory that was moved to /var/opt/dynatrace-managed/.javacpp/cache/ to ease the management of the deployment.</p>
   
 
                         </div>
@@ -224,7 +211,7 @@
 						<tr>
 						<td align="center" bgcolor="#8a3c90" style="padding:9px 15px;" valign="top">
 						<![endif]-->
-						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
+						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-252" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
                             <strong style="text-decoration: none; color: #ffffff;">Read More</strong>
                         </a>
 						<!--[if mso]>
@@ -238,7 +225,86 @@
         </td>
     </tr>
 </tbody>
-                                        <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_2-->
+                                        <tbody>
+    <tr>
+        <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+            <table class="html_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad">
+                        <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
+                            <h1 style='text-align:left'>OneAgent  version 1.251</h1>
+<p style='text-align:left'>Rollout start: Oct 14, 2022</p>
+  
+<h2 style='text-align:left'>Announcements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Npcap installed by default starting OneAgent version 1.255</h3>
+<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent version 1.255, the OneAgent installer on Windows installs the Npcap driver by default.</p>
+<p style='text-align:left;margin-left: 25px;'>This may cause potential network disruption during OneAgent installation on Windows Server 2016, or Windows Server 2019 build 1809 and Windows 10 build 1809 without the KB4571748 hotfix or any of its superseding hotfixes.</p>
+<p style='text-align:left;margin-left: 25px;'>If your hosts don't have the KB4571748 hotfix, upgrade them now or use other documented options to prevent potential disruptions.</p>
+  
+<h2 style='text-align:left'>New features and enhancements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>RUM JavaScript API</h3>
+<p style='text-align:left;margin-left: 25px;'>- Removed functionality from startThirdParty, stopThirdParty, and sendSignal dtrum methods.</p>
+<p style='text-align:left;margin-left: 25px;'>- In the enterXhrAction dtrum method, the  xmode paramter with value of 2 is now deprecated and will fall back to the value of 1.</p>
+<p style='text-align:left;margin-left: 25px;'>- In the enterAction dtrum method, the type parameter is now deprecated and will no longer have any effect.</p>
+  
+<h2 style='text-align:left'>Java</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Akka Http client 10.0, 10.2</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Apache HttpCore 5.x</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Jetty HTTP server 10</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry agent 1.17.x - 1.18.x</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Oracle HotSpot VM 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenJDK 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for SAP JVM 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Amazon Corretto 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Azul Platform Core (Zulu) 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Bellsoft Liberica 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Eclipse Temurin (a.k.a. 'Adoptium') 19</p>
+  
+<h2 style='text-align:left'>Node.js</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Node.js (AWS Lambda functions) 16</p>
+<p style='text-align:left;margin-left: 25px;'>- Certain frameworks use setTimeout to delay the actual client requests. Increasing the default internal timeout tracking limit to 51 ms allows you to trace such requests as long as the delay is below this limit.</p>
+  
+<h2 style='text-align:left'>Go</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for PostgreSQL (jackc/pgx) 4.11.0 - 4.17.2</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Go (GCP functions)</p>
+  
+<h2 style='text-align:left'>PHP</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.12</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.13</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.14</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.15</p>
+  
+<h2 style='text-align:left'>Mainframe</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for IBM z/OS Connect EE MQ service provider).</p>
+<p style='text-align:left;margin-left: 25px;'>- The CICS code module can now capture the CICS transaction class, Service class, and Reporting service class as defined by the z/OS Workload Manager. These attributes are shown on the CICS distributed traces page if available.</p>
+  
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad" style="padding-bottom:40px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">                        
+                        <!--[if mso]>
+						<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+						<td align="center" bgcolor="#8a3c90" style="padding:9px 15px;" valign="top">
+						<![endif]-->
+						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-251" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
+                            <strong style="text-decoration: none; color: #ffffff;">Read More</strong>
+                        </a>
+						<!--[if mso]>
+						</td>
+						</tr>
+						</table>
+						<![endif]-->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</tbody>
                                         <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_3-->
                                         <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_4-->
 									</table>
@@ -287,55 +353,7 @@
 							<tr>
 								<td>
 									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px;" width="680">
-                                        <h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/why-you-need-a-data-lakehouse/>Dynatrace Grail: The data lakehouse for observability and security analysis and automation</a></h2>
-<p style='text-align:left'>October 4, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/any-analysis-any-time/>Any analysis, any time: Dynatrace Log Management and Analytics powered by Grail</a></h2>
-<p style='text-align:left'>October 4, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/applying-real-world-aiops-use-cases-to-your-operations/>Applying real-world AIOps use cases to your operations</a></h2>
-<p style='text-align:left'>October 17, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/metric-events-set-up-anomaly-detection-based-on-your-business-needs/>Metric events: Set up anomaly detection based on your business needs</a></h2>
-<p style='text-align:left'>October 17, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-aiops-2/>What is AIOps? An insiderï¿½s guide to AI for ITOps ï¿½ and beyond</a></h2>
-<p style='text-align:left'>October 17, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-artificial-intelligence/>What is artificial intelligence? See how it differs from machine learning in IT ops</a></h2>
-<p style='text-align:left'>October 14, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/getting-answers-from-data-starts-with-automated-log-acquisition-at-any-scale/>Getting answers from data starts with automated log acquisition, at any scale</a></h2>
-<p style='text-align:left'>October 14, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/dynatrace-managed-release-notes-version-1-252/>Dynatrace Managed release notes version 1.252</a></h2>
-<p style='text-align:left'>October 14, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-252/>Dynatrace SaaS release notes version 1.252</a></h2>
-<p style='text-align:left'>October 11, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/how-to-maximize-serverless-benefits/>How to maximize serverless benefits and overcome its challenges</a></h2>
-<p style='text-align:left'>October 10, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/bootstrapping-devops-automation-best-practices/>Bootstrapping DevOps automation: How to accelerate your SRE journey with DevOps automation best practices</a></h2>
-<p style='text-align:left'>October 10, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/opentelemetry-demo-application-with-dynatrace/>Running the OpenTelemetry demo application with Dynatrace</a></h2>
-<p style='text-align:left'>October 6, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/cybersecurity-awareness-month-cybersecurity-best-practices/>Cybersecurity Awareness Month: Essential cybersecurity best practices to safeguard your organization</a></h2>
-<p style='text-align:left'>October 5, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/data-lakehouse-brings-data-insights-to-life/>How a data lakehouse brings data insights to life</a></h2>
-<p style='text-align:left'>October 4, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-a-data-lakehouse/>What is a data lakehouse? Combining data lakes and warehouses for the best of both worlds</a></h2>
-<p style='text-align:left'>October 4, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/new-approach-to-software-intelligence/>How unified data and analytics offers a new approach to software intelligence</a></h2>
-<p style='text-align:left'>October 4, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/business-analytics-tools-use-cases-and-best-practices-for-it-business-analytics/>Business analytics tools: Use cases and best practices for IT business analytics</a></h2>
-<p style='text-align:left'>September 29, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-251/>Dynatrace SaaS release notes version 1.251</a></h2>
-<p style='text-align:left'>September 28, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/root-cause-analysis-in-kubernetes-with-davis-ai/>Dynatrace expands root cause analysis for Kubernetes with Davis AI</a></h2>
-<p style='text-align:left'>September 26, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/it-automation-key-to-navigating-cloud-complexity/>IT automation central to navigating cloud complexity and data explosion</a></h2>
-<p style='text-align:left'>September 23, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-devops-automation/>What is DevOps automation?</a></h2>
-<p style='text-align:left'>September 22, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/why-digital-transformation-hinges-on-sre/>Why digital transformation hinges on SRE teams</a></h2>
-<p style='text-align:left'>September 20, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/dynatrace-managed-release-notes-version-1-250/>Dynatrace Managed release notes version 1.250</a></h2>
-<p style='text-align:left'>September 20, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/understand-and-replay-android-app-crashes-with-session-replay/>Understand and replay Android app crashes with Session Replay</a></h2>
-<p style='text-align:left'>September 20, 2022</p>
-
+                                        
 									</table>
 								</td>
 							</tr>

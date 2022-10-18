@@ -4,14 +4,28 @@ import smtplib, ssl
 import pkg.read_write as read_write
 
 
-def send_email():
+def send_email(components):
     email_creds = read_write.read_email_creds()
     release_notes = read_write.read_release_notes_html()
+
+    component_version = ""
+    component_string = ""
+    for component,version in components.items():
+
+        if len(components) == 1:
+            component_string = component
+            component_version = version
+        if len(components) > 1:            
+            component_string += ", " + component + " - " + version
+            component_version = ""
+
+    if component_string[0] == ",":
+        component_string = component_string[2:]
 
     port = 465  # For SSL
 
     message = MIMEMultipart("alternative")
-    message["Subject"] = "Dynatrace Release Update"
+    message["Subject"] = "Dynatrace Release Update - " + component_string + component_version
     message["From"] = email_creds["sender_email"]
     message["To"] = email_creds["receiver_email"]
     body = MIMEText(release_notes,"html")
