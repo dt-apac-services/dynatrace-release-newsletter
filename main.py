@@ -18,5 +18,8 @@ def main():
     # Create newsletter and email    
     newsletter.create_newsletter(components)
 
+    # Write newsletter date to local file
+    read_write.write_last_newsletter_date_json(components)
+
 if __name__ == "__main__":
     main()

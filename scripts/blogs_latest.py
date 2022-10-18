@@ -50,7 +50,8 @@ def scrape_and_update_local_blogs_file():
             if blog_title == local_blog_csv_data[1][0]: 
                 break
             elif any(blog_title in entry for entry in local_blog_csv_data):
-                # print(blog_title)
+                continue
+            elif any(blog_title in entry for entry in blog_list):
                 continue
             else:
                 blog_list.append(blog_entry)
@@ -121,7 +122,7 @@ def write_to_html(components, new_blog_csv_data):
     for component in components:
         last_newsletter_date = last_newsletter_date_json[component]        
 
-    parsed_last_newsletter_date = datetime.strptime(last_newsletter_date,'%d/%m/%Y')
+    parsed_last_newsletter_date = datetime.strptime(last_newsletter_date,"%b %d, %Y")
     file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.html"))
     # file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.html"
     position = 0

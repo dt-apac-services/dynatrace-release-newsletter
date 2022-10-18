@@ -138,6 +138,7 @@ def scrape_specific_release_page_and_save_html(component, page_url, rollout_star
 
 
 
+
     # for tags in soup.find_all(heading_tags):
     #     print(tags.name + ' -> ' + tags.text.strip())        
     #     if tags.name == "h2":            

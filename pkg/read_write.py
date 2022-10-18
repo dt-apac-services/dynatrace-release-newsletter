@@ -63,3 +63,19 @@ def read_last_newsletter_date_json():
     f.close()
 
     return last_newsletter_date
+
+def write_last_newsletter_date_json(components):
+    file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","last_newsletter_date.json"))
+    
+    f = open(file_path,"r")
+    content = json.loads(f.read())
+    f.close()
+
+    release_info_from_file = read_release_info_file()
+
+    for component,version in components.items():
+        content[component] = release_info_from_file[component][version]["rollout"]
+    
+    f = open(file_path,"w")
+    f.write(json.dumps(content, indent=4))
+    f.close()
