@@ -8,7 +8,7 @@ import shutil
 import pkg.read_write as read_write
 
 
-def create_newsletter(components, blogs_list):
+def create_newsletter(components):
     position = 1    
     master_file_template = os.path.join(Path(__file__).parent.parent,"templates","release_notes_template.html")
     release_block = os.path.join(Path(__file__).parent.parent,"templates","release_block.html")
@@ -17,6 +17,9 @@ def create_newsletter(components, blogs_list):
     # copy template to root folder
     shutil.copyfile(master_file_template,master_file)
     
+
+
+    # Update Release Notes section
     release_info_from_file=read_write.read_release_info_file()
 
     for k in components:
@@ -54,6 +57,25 @@ def create_newsletter(components, blogs_list):
         f.close()
 
         position+=1
+    
+    # Update blogs section
+
+    blogs_html = os.path.join(Path(__file__).parent.parent,"data","blogs.html")
+    
+    f = open(blogs_html,"r")        
+    blogs = f.read()
+    f.close()
+
+    f = open(master_file,"r")
+    master = f.read()
+    f.close()
+    master = re.sub("<!--REPLACE_WITH_BLOG_BLOCK-->",blogs,master)
+
+    f = open(master_file,"w")
+    f.write(master)
+    f.close()
+
+
 
         
 
