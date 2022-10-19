@@ -14,7 +14,7 @@ def send_email(components):
 
         if len(components) == 1:
             component_string = component
-            component_version = version
+            component_version = " - " + version
         if len(components) > 1:            
             component_string += ", " + component + " - " + version
             component_version = ""

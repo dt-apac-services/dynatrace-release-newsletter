@@ -14,7 +14,6 @@ def scrape_blogs(components):
     write_to_md_file(new_blog_csv_data)
 
     # ############# Write to html file ##############
-    # if len(components) > 0:
     write_to_html(components)
 
 
@@ -73,12 +72,7 @@ def scrape_and_update_local_blogs_file():
 
 
 ############# Write to md file ##############
-def write_to_md_file(new_blog_csv_data):
-    
-    # blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
-    # blog_csv = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
-    # with open(blog_csv, newline='',encoding='utf-8') as f:
-    #     data = list(csv.reader(f))
+def write_to_md_file(new_blog_csv_data):   
 
     count=0
     hlink=[]
@@ -103,8 +97,7 @@ def write_to_md_file(new_blog_csv_data):
             table.append(table_line)
             count+=1
 
-    # md_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","blogs.md"))
-    md_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\blogs.md"
+    md_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","blogs.md"))    
     file = open(md_file, "w",encoding='utf-8')
     for line in table:
         file.write(line)

@@ -2,7 +2,6 @@
 
 import os
 from pathlib import Path
-from re import Pattern
 import re
 import shutil
 import pkg.read_write as read_write
@@ -24,15 +23,10 @@ def create_newsletter(components):
 
     for k in components:
         
-        update_file = os.path.join(Path(__file__).parent.parent,"data",k+"_release_notes.html")
+        update_file = os.path.join(Path(__file__).parent.parent,"data",k+"_release_notes.html")     
+                     
         
-        # update_file="C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\"+k+"_release_notes.html"
-        # master_file_template="C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\templates\\release_notes_template.html"
-        # release_block="C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\templates\\release_block.html"
-        # master_file="C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_note.html"                
-        
-        url = release_info_from_file[k][components[k]]["url"]
-        # url="https://www.dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252"        
+        url = release_info_from_file[k][components[k]]["url"]     
 
         # add block and then replace value in block        
         f = open(release_block,"r")        

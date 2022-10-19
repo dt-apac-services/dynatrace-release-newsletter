@@ -6,8 +6,7 @@ from pathlib import Path
 
 
 def read_release_info_file():
-    local_release_info_file = Path(__file__).parent.parent/"release_info.json"
-    # local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
+    local_release_info_file = Path(__file__).parent.parent/"release_info.json"    
     
     # Create file if not present
     if not os.path.exists(local_release_info_file):
@@ -17,7 +16,6 @@ def read_release_info_file():
         new_file.close()
 
     # Open local release info file and read content
-    # release_info_from_file = []
     f = open(local_release_info_file,"r")
     content = f.read()
     if content != "":
@@ -29,7 +27,6 @@ def read_release_info_file():
 # Write into local release info file
 def write_release_info_to_local_file(release_info_from_web):
     local_release_info_file = Path(__file__).parent.parent/"release_info.json"
-    # local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
     f = open(local_release_info_file,"w")
     f.write(json.dumps(release_info_from_web, indent=4))
     f.close()
@@ -37,7 +34,6 @@ def write_release_info_to_local_file(release_info_from_web):
 
 def read_local_blogs_csv_file():
     blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
-    # blog_csv = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
 
     with open(blog_csv, newline='',encoding='utf-8') as f:
         local_blog_csv_data = list(csv.reader(f))
@@ -47,7 +43,6 @@ def read_local_blogs_csv_file():
 
 def write_local_blogs_csv_file(new_blog_csv_data):
     blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs.csv"))
-    # blog_csv = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\data\\blogs.csv"
     
     with open(blog_csv, 'w', newline='',encoding="utf-8") as f:
         writer = csv.writer(f)    
