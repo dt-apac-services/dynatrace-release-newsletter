@@ -1,3 +1,4 @@
+import copy
 import os
 from pathlib import Path
 import re
@@ -6,7 +7,31 @@ from bs4 import BeautifulSoup
 import pkg.read_write as read_write
 
 
-def get_latest_versions(release_info):
+def scrape_release_page():
+    release_info_from_file = read_write.read_release_info_file()
+    
+    # Scrape release note page and get all available components and versions
+    release_info = copy.deepcopy(release_info_from_file)                                # Required to prevent reference
+    release_info_from_web = get_component_and_versions(release_info)
+
+    # Get the new release - component & version - and create html file(s)
+    components = {}
+    for component in release_info_from_web:        
+        for version in release_info_from_web[component]:        
+            if version not in release_info_from_file[component]:
+                print("New Version Available for "+ component +": "+version)                
+                components[component] = version     
+
+                # Kick off gathering of specific component release info
+                page_url = release_info_from_web[component][version]["url"]
+                rollout_start = release_info_from_web[component][version]["rollout"]
+                scrape_specific_release_page_and_save_html(component, page_url,rollout_start)
+    
+    # Write new info into local file
+    read_write.write_release_info_to_local_file(release_info_from_web)
+    return components
+
+def get_component_and_versions(release_info):
     
     ## Read Release notes page
     URL="https://www.dynatrace.com/support/help/whats-new/release-notes"    
@@ -41,23 +66,15 @@ def get_latest_versions(release_info):
     return release_info
 
 
-def scrape_specific_release_page(component, version):
-
-    # local_release_info_file = Path(__file__).parent/"release_info.json"
-    # local_release_info_file = "C:\\Users\\arun.krishnan\\OneDrive - Dynatrace\\Projects\\github\\dynatrace-release-newsletter\\release_info.json"
-
-    release_info_from_file=read_write.read_release_info_file()
-    page_url = release_info_from_file[component][version]["url"]
-    rollout_start = release_info_from_file[component][version]["rollout"]
+def scrape_specific_release_page_and_save_html(component, page_url, rollout_start):    
     
     page = requests.get(page_url)
     soup = BeautifulSoup(page.content, 'html.parser')
     
-    exclude_list = ['Dynatrace API','Resolved issues','Operating systems support','Operating systems','Other support changes','OneAgent for Android resolved issues','OneAgent for iOS resolved issues','OneAgent for JavaScript resolved issues']    
+    exclude_list = ['Dynatrace API','Resolved issues','Operating systems support','Operating system support','Operating systems','Other support changes','OneAgent for Android resolved issues','OneAgent for iOS resolved issues','OneAgent for JavaScript resolved issues']    
     
     file_name = os.path.join(Path(__file__).parent.parent,"data",component+"_release_notes.html")
     line_skip = False # Used to skip default "Rollout start" line in OneAgent & ActiveGate release notes.
-
 
     with open(file_name,'w') as f:
         
@@ -98,6 +115,7 @@ def scrape_specific_release_page(component, version):
                 if position > 0:                    
                     print("<p style='text-align:left;margin-left: 25px;'>"+"- "+val+"</p>",file=f)                
     f.close()
+
 
 
 

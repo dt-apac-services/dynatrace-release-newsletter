@@ -1,28 +1,46 @@
-<h1 style='text-align:left'>OneAgent  version 1.249</h1>
-<p style='text-align:left'>Rollout start: Sep 15, 2022</p>
+<h1 style='text-align:left'>OneAgent  version 1.251</h1>
+<p style='text-align:left'>Rollout start: Oct 14, 2022</p>
+  
+<h2 style='text-align:left'>Announcements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Npcap installed by default starting OneAgent version 1.255</h3>
+<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent version 1.255, the OneAgent installer on Windows installs the Npcap driver by default.</p>
+<p style='text-align:left;margin-left: 25px;'>This may cause potential network disruption during OneAgent installation on Windows Server 2016, or Windows Server 2019 build 1809 and Windows 10 build 1809 without the KB4571748 hotfix or any of its superseding hotfixes.</p>
+<p style='text-align:left;margin-left: 25px;'>If your hosts don't have the KB4571748 hotfix, upgrade them now or use other documented options to prevent potential disruptions.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Milan and Jakarta regions are now detected</h3>
-<p style='text-align:left;margin-left: 25px;'>Milan and Jakarta AWS regions are now detected as the EC2 cloud type by OneAgents deployed in these regions.</p>
-<h3 style='text-align:left;margin-left: 25px;'>SwiftUI instrumentation</h3>
-<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent for iOS version 8.249, we support auto-instrumentation of SwiftUI controls.</p>
-<h4 style='text-align:left;margin-left: 25px;'>Requirements</h4>
-<p style='text-align:left;margin-left: 25px;'>- SwiftUI version 2.0+</p>
-<p style='text-align:left;margin-left: 25px;'>- iOS 14+</p>
-<p style='text-align:left;margin-left: 25px;'>- OneAgent for iOS</p>
-<h4 style='text-align:left;margin-left: 25px;'>Supported controls</h4>
-<p style='text-align:left;margin-left: 25px;'>- Button</p>
-<p style='text-align:left;margin-left: 25px;'>- Stepper</p>
-<p style='text-align:left;margin-left: 25px;'>- Picker</p>
-<p style='text-align:left;margin-left: 25px;'>- Toggle</p>
-<p style='text-align:left;margin-left: 25px;'>- Slider</p>
-<p style='text-align:left;margin-left: 25px;'>For more information, see Instrument SwiftUI controls.</p>
+<h3 style='text-align:left;margin-left: 25px;'>RUM JavaScript API</h3>
+<p style='text-align:left;margin-left: 25px;'>- Removed functionality from startThirdParty, stopThirdParty, and sendSignal dtrum methods.</p>
+<p style='text-align:left;margin-left: 25px;'>- In the enterXhrAction dtrum method, the  xmode paramter with value of 2 is now deprecated and will fall back to the value of 1.</p>
+<p style='text-align:left;margin-left: 25px;'>- In the enterAction dtrum method, the type parameter is now deprecated and will no longer have any effect.</p>
   
-<h2 style='text-align:left'>z/OS</h2>
-<p style='text-align:left;margin-left: 25px;'>- oneagentzos-R12490.pax is now available. See Upgrade and Maintenance for upgrade instructions.</p>
+<h2 style='text-align:left'>Java</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Akka Http client 10.0, 10.2</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Apache HttpCore 5.x</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Jetty HTTP server 10</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry agent 1.17.x - 1.18.x</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Oracle HotSpot VM 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenJDK 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for SAP JVM 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Amazon Corretto 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Azul Platform Core (Zulu) 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Bellsoft Liberica 19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Eclipse Temurin (a.k.a. 'Adoptium') 19</p>
+  
+<h2 style='text-align:left'>Node.js</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Node.js (AWS Lambda functions) 16</p>
+<p style='text-align:left;margin-left: 25px;'>- Certain frameworks use setTimeout to delay the actual client requests. Increasing the default internal timeout tracking limit to 51 ms allows you to trace such requests as long as the delay is below this limit.</p>
   
 <h2 style='text-align:left'>Go</h2>
-<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 1.8 - 1.10</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for PostgreSQL (jackc/pgx) 4.7.0 - 4.16.1</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Go 1.19</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for PostgreSQL (jackc/pgx) 4.11.0 - 4.17.2</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Go (GCP functions)</p>
+  
+<h2 style='text-align:left'>PHP</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.12</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.13</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.14</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.15</p>
+  
+<h2 style='text-align:left'>Mainframe</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for IBM z/OS Connect EE MQ service provider).</p>
+<p style='text-align:left;margin-left: 25px;'>- The CICS code module can now capture the CICS transaction class, Service class, and Reporting service class as defined by the z/OS Workload Manager. These attributes are shown on the CICS distributed traces page if available.</p>
   
