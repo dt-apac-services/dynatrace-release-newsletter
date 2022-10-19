@@ -3,6 +3,7 @@ import csv
 import json
 import os
 from pathlib import Path
+from datetime import datetime
 
 
 def read_release_info_file():
@@ -48,6 +49,21 @@ def write_local_blogs_csv_file(new_blog_csv_data):
         writer = csv.writer(f)    
         writer.writerows(new_blog_csv_data)
 
+def write_latest_blogs_csv_file(blogs_list):
+    blog_csv = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","blogs_latest.csv"))    
+    with open(blog_csv, 'w', newline='',encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Name", "Date", "Author","Link","Tag1","Tag2","Tag3","Tag4","Tag5","Tag6","Tag7"])
+        writer.writerows(blogs_list)
+
+def write_local_md_file(table,file_name):
+    md_file = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..",file_name+".md"))    
+    file = open(md_file, "w",encoding='utf-8')
+    for line in table:
+        file.write(line)
+        file.write('\n')
+    file.close()
+
 def read_last_newsletter_date_json():
     file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","last_newsletter_date.json"))
     
@@ -61,6 +77,7 @@ def read_last_newsletter_date_json():
 
 def write_last_newsletter_date_json(components):
     file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","last_newsletter_date.json"))
+    script_run_date = datetime.today().strftime('%b %d, %Y')
     
     f = open(file_path,"r")
     content = json.loads(f.read())
@@ -70,6 +87,7 @@ def write_last_newsletter_date_json(components):
 
     for component,version in components.items():
         content[component] = release_info_from_file[component][version]["rollout"]
+    content["Newsletter"] = script_run_date
     
     f = open(file_path,"w")
     f.write(json.dumps(content, indent=4))
