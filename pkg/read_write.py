@@ -114,3 +114,14 @@ def read_release_notes_html():
     f.close()
 
     return release_notes
+
+def read_github_creds():
+    file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","github_creds.json"))
+    
+    f = open(file_path,"r")
+    content = f.read()
+    if content != "":
+        email_creds= json.loads(content)
+    f.close()
+
+    return email_creds
