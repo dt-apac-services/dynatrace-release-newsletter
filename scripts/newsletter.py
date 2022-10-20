@@ -11,6 +11,7 @@ def create_newsletter(components):
     position = 1    
     master_file_template = os.path.join(Path(__file__).parent.parent,"templates","release_notes_template.html")
     release_block = os.path.join(Path(__file__).parent.parent,"templates","release_block.html")
+    blog_block = os.path.join(Path(__file__).parent.parent,"templates","blog_block.html")
     master_file = os.path.join(Path(__file__).parent.parent,"release_notes.html")                
     
     # copy template to root folder
@@ -55,7 +56,11 @@ def create_newsletter(components):
     # Update blogs section
 
     blogs_html = os.path.join(Path(__file__).parent.parent,"data","blogs.html")
-    
+
+    f = open(blog_block,"r")        
+    blog_block = f.read()
+    f.close()
+
     f = open(blogs_html,"r")        
     blogs = f.read()
     f.close()
@@ -63,8 +68,9 @@ def create_newsletter(components):
     f = open(master_file,"r")
     master = f.read()
     f.close()
-    master = re.sub("<!--REPLACE_WITH_BLOG_BLOCK-->",blogs,master)
-
+    master = re.sub("<!--REPLACE_WITH_BLOG_BLOCK-->",blog_block,master)
+    master = re.sub("<!--REPLACE WITH BLOGS-->",blogs,master)    
+    
     f = open(master_file,"w")
     f.write(master)
     f.close()
