@@ -1,0 +1,46 @@
+<h1 style='text-align:left'>v0.9.1</h1>
+<p style='text-align:left'>Rollout start: Oct 20, 2022</p>
+<h3 style='text-align:left;margin-left: 25px;'>Installation</h3>
+<p style='text-align:left;margin-left: 25px;'>For information on how to install the dynatrace-operater please visit our official Documentation.</p>
+<p style='text-align:left;margin-left: 25px;'>The Operator can be upgraded from the last release with, the following commands.</p>
+<h4 style='text-align:left;margin-left: 25px;'>Kubernetes (with CSI driver)</h4>
+<h4 style='text-align:left;margin-left: 25px;'>Kubernetes (default)</h4>
+<h4 style='text-align:left;margin-left: 25px;'>Openshift (with CSI driver)</h4>
+<h4 style='text-align:left;margin-left: 25px;'>Openshift (default)</h4>
+<h4 style='text-align:left;margin-left: 25px;'>Helm</h4>
+<p style='text-align:left;margin-left: 25px;'>The Operator's helm chart can be upgraded from the last version with,</p>
+  
+<h2 style='text-align:left'>What's Changed</h2>
+<p style='text-align:left;margin-left: 25px;'>Warning
+Activegate Authtoken support is now enabled by default</p>
+<p style='text-align:left;margin-left: 25px;'>- requires additional api token scope: activeGateTokenManagement.create</p>
+<p style='text-align:left;margin-left: 25px;'>- feature.dynatrace.com/activegate-authtoken=false to disable</p>
+<h3 style='text-align:left;margin-left: 25px;'>Bugfixes 🪲</h3>
+<p style='text-align:left;margin-left: 25px;'>- Only create secret in monitored namespaces, if it's not present by @0sewa0 in #1222</p>
+<p style='text-align:left;margin-left: 25px;'>- Only require the activeGateTokenManagement.create scope on the api token, if activeGate is used by @0sewa0 in #1220</p>
+<p style='text-align:left;margin-left: 25px;'>- Update CRD caBundle if certificate secret is up to date by @chrismuellner in #1240</p>
+<p style='text-align:left;margin-left: 25px;'>- Default to unprivileged classic oneagent container and allow configuration via feature flag by @chrismuellner in #1254</p>
+<p style='text-align:left;margin-left: 25px;'>- Fix CSI driver pods being stuck in Terminating after restart by @0sewa0 in #1252</p>
+<p style='text-align:left;margin-left: 25px;'>- Fix issues in CSI driver in case of using a Tenant alias by @0sewa0 in #1228</p>
+<p style='text-align:left;margin-left: 25px;'>- Clarify error message in case of missing Dynakube in troubleshoot command by @meik99 in #1235</p>
+<p style='text-align:left;margin-left: 25px;'>Full Changelog: v0.9.0...v0.9.1</p>
+<h3 style='text-align:left;margin-left: 25px;'>Contributors</h3>
+<p style='text-align:left;margin-left: 25px;'>- </p>
+<p style='text-align:left;margin-left: 25px;'>- </p>
+<p style='text-align:left;margin-left: 25px;'>- </p>
+<p style='text-align:left;margin-left: 25px;'>- ❤️
+2 reactions</p>
+  
+<h2 style='text-align:left'>Footer</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Footer navigation</h3>
+<p style='text-align:left;margin-left: 25px;'>- Terms</p>
+<p style='text-align:left;margin-left: 25px;'>- Privacy</p>
+<p style='text-align:left;margin-left: 25px;'>- Security</p>
+<p style='text-align:left;margin-left: 25px;'>- Status</p>
+<p style='text-align:left;margin-left: 25px;'>- Docs</p>
+<p style='text-align:left;margin-left: 25px;'>- Contact GitHub</p>
+<p style='text-align:left;margin-left: 25px;'>- Pricing</p>
+<p style='text-align:left;margin-left: 25px;'>- API</p>
+<p style='text-align:left;margin-left: 25px;'>- Training</p>
+<p style='text-align:left;margin-left: 25px;'>- Blog</p>
+<p style='text-align:left;margin-left: 25px;'>- About</p>
