@@ -43,6 +43,10 @@
         "1.252": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252",
             "rollout": "Oct 11, 2022"
+        },
+        "1.253": {
+            "url": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-253",
+            "rollout": "Oct 25, 2022"
         }
     },
     "Dynatrace Managed": {
@@ -175,6 +179,10 @@
         "1.242": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-242",
             "rollout": "May 30, 2022"
+        },
+        "1.253": {
+            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-253",
+            "rollout": "Oct 25 2022"
         }
     },
     "Cloud Automation": {

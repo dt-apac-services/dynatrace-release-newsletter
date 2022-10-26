@@ -1,0 +1,67 @@
+<h1 style='text-align:left'>Dynatrace API changelog version 1.253</h1>
+<p style='text-align:left'>Rollout start: Oct 25 2022</p>
+  
+<h2 style='text-align:left'>Environment API</h2>
+<p style='text-align:left;margin-left: 25px;'>- Credential vault API
+
+New response code in the POST a set of credentials request:
+403
+Removed response code in the GET credentials details request:
+403</p>
+<p style='text-align:left;margin-left: 25px;'>Credential vault API</p>
+<p style='text-align:left;margin-left: 25px;'>- New response code in the POST a set of credentials request:
+403</p>
+<p style='text-align:left;margin-left: 25px;'>- Removed response code in the GET credentials details request:
+403</p>
+<p style='text-align:left;margin-left: 25px;'>- Breaking change Metrics API v2
+
+Changed type of the parameter field in the MetricData object:
+number(double) –> number
+New possible values in the type field of the MetricData object:
+COUNT
+VALUE</p>
+<p style='text-align:left;margin-left: 25px;'>Breaking change Metrics API v2</p>
+<p style='text-align:left;margin-left: 25px;'>- Changed type of the parameter field in the MetricData object:
+number(double) –> number</p>
+<p style='text-align:left;margin-left: 25px;'>- New possible values in the type field of the MetricData object:
+COUNT
+VALUE</p>
+<p style='text-align:left;margin-left: 25px;'>- Security problems API
+
+New query parameter in the GET a problem request:
+from (String)
+Removed value in the reason field of the SecurityProblemUnmute object:
+INITIAL_STATE</p>
+<p style='text-align:left;margin-left: 25px;'>Security problems API</p>
+<p style='text-align:left;margin-left: 25px;'>- New query parameter in the GET a problem request:
+from (String)</p>
+<p style='text-align:left;margin-left: 25px;'>- Removed value in the reason field of the SecurityProblemUnmute object:
+INITIAL_STATE</p>
+<p style='text-align:left;margin-left: 25px;'>- Synthetic nodes API v2
+
+Documentation fix Renamed property in the Nodes object:
+[oneAgentRoutingEnabled ] –> oneAgentRoutingEnabled</p>
+<p style='text-align:left;margin-left: 25px;'>Synthetic nodes API v2</p>
+<p style='text-align:left;margin-left: 25px;'>- Documentation fix Renamed property in the Nodes object:
+[oneAgentRoutingEnabled ] –> oneAgentRoutingEnabled</p>
+  
+<h2 style='text-align:left'>Configuration API</h2>
+<p style='text-align:left;margin-left: 25px;'>- Web application configuration API
+
+New possible value in the type field of the WebApplicationConfig object:
+RESPONSE_HEADER</p>
+<p style='text-align:left;margin-left: 25px;'>Web application configuration API</p>
+<p style='text-align:left;margin-left: 25px;'>- New possible value in the type field of the WebApplicationConfig object:
+RESPONSE_HEADER</p>
+<p style='text-align:left;margin-left: 25px;'>- Service metrics API
+
+New field in the CalculatedServiceMetric object:
+
+ignoreMutedRequests (Boolean)</p>
+<p style='text-align:left;margin-left: 25px;'>Service metrics API</p>
+<p style='text-align:left;margin-left: 25px;'>- New field in the CalculatedServiceMetric object:
+
+ignoreMutedRequests (Boolean)</p>
+<p style='text-align:left;margin-left: 25px;'>- ignoreMutedRequests (Boolean)</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace SaaS release notes version 1.253Release notes for Dynatrace SaaS, version 1.253</p>
+<p style='text-align:left;margin-left: 25px;'>Release notes for Dynatrace SaaS, version 1.253</p>

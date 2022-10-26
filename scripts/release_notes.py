@@ -39,7 +39,7 @@ def get_component_and_versions(release_info):
     soup = BeautifulSoup(page.content, 'html.parser')
 
     tags = ['h2','td']
-    regex = "((?:Changelog )?[Vv]ersion\s.*|\w*\s\d{1,2},\s\d{4}|^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$)"
+    regex = "((?:Changelog )?[Vv]ersion\s.*|\w*\s\d{1,2}.\s\d{4}|^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$)"
     results = soup.find_all(tags,string=re.compile(regex))
     ver_regex = "(?:Changelog )?[Vv]ersion\s(.*)"
     component = ""
