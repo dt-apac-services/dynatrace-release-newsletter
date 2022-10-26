@@ -27,7 +27,8 @@ def scrape_and_update_local_blogs_file():
     
     local_blog_csv_data = read_write.read_local_blogs_csv_file()
     
-    i=0    
+    i=0
+    position = 0
     blog_list=[]
     for i in range(max_pages_to_check):
         i+=1
@@ -37,30 +38,33 @@ def scrape_and_update_local_blogs_file():
         regex = re.compile('feeditem js-feeditem hentry h-entry post-.*')        
         blog_data = soup.find_all(True, {"class":regex})
 
-        for item in blog_data:            
-            blog_url = item['href']
-            blog_title = item.find('h2').text.strip()
-            blog_date = item.find('time').text.strip()
-            blog_author = item.find("span",{"class":"fn p-name"}).text.strip()            
-            blog_entry = [blog_title,blog_date,blog_author,blog_url] 
-            
-            # Get blog post tags
-            blog_classes = item['class']
-            for c in blog_classes:
-                if ("tag-" in c):
-                    blog_entry.append(c.split("-",1)[1])                
+        for item in blog_data:
+            if position > 2:                                            # Skip first 3 highlighted blogs
+                blog_url = item['href']
+                blog_title = item.find('h2').text.strip()
+                blog_date = item.find('time').text.strip()
+                blog_author = item.find("span",{"class":"fn p-name"}).text.strip()            
+                blog_entry = [blog_title,blog_date,blog_author,blog_url] 
+                
+                # Get blog post tags
+                blog_classes = item['class']
+                for c in blog_classes:
+                    if ("tag-" in c):
+                        blog_entry.append(c.split("-",1)[1])                
 
-            # if blog_title == local_blog_csv_data[1][0]: 
-            #     break
-            if any(blog_title in entry for entry in local_blog_csv_data):
-                continue
-            elif any(blog_title in entry for entry in blog_list):
-                continue
+                if blog_title == local_blog_csv_data[1][0]: 
+                    break
+                if any(blog_title in entry for entry in local_blog_csv_data):
+                    continue
+                elif any(blog_title in entry for entry in blog_list):
+                    continue
+                else:
+                    blog_list.append(blog_entry)
             else:
-                blog_list.append(blog_entry)
-        else:            
-            continue
-        # break
+                position +=1
+        # else:            
+        #     continue
+        break
     
     ############# Write to csv file file ##############
     new_blog_csv_data=[]
