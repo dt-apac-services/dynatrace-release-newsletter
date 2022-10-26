@@ -31,9 +31,16 @@ def main():
 
         # Send email
         email.send_email(components)
+
+        # Print email sent message
+        print("Email sent")
+        read_write.write_to_log_file("Email sent")
+        
     
     else:
         print("All up to date")
+        read_write.write_to_log_file("All up to date")
+
 
 if __name__ == "__main__":
     main()
