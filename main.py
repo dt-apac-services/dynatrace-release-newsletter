@@ -13,6 +13,11 @@ def main():
     # Get latest release notes and save to html file
     components = release_notes.scrape_release_page()
 
+    # req_components ={}
+    # for component,version in components.items():
+    #     if component in ['Dynatrace SaaS','Dynatrace Managed','OneAgent','ActiveGate']:
+    #         req_components[component]=version
+
     if len(components) > 0:         # Only proceed if there is a new version 
 
         # Get latest blogs and save to html file
@@ -26,9 +31,16 @@ def main():
 
         # Send email
         email.send_email(components)
+
+        # Print email sent message
+        print("Email sent")
+        read_write.write_to_log_file("Email sent")
+        
     
     else:
         print("All up to date")
+        read_write.write_to_log_file("All up to date")
+
 
 if __name__ == "__main__":
     main()

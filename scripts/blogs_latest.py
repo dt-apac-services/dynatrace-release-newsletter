@@ -50,9 +50,9 @@ def scrape_and_update_local_blogs_file():
                 if ("tag-" in c):
                     blog_entry.append(c.split("-",1)[1])                
 
-            if blog_title == local_blog_csv_data[1][0]: 
-                break
-            elif any(blog_title in entry for entry in local_blog_csv_data):
+            # if blog_title == local_blog_csv_data[1][0]: 
+            #     break
+            if any(blog_title in entry for entry in local_blog_csv_data):
                 continue
             elif any(blog_title in entry for entry in blog_list):
                 continue
@@ -60,7 +60,7 @@ def scrape_and_update_local_blogs_file():
                 blog_list.append(blog_entry)
         else:            
             continue
-        break
+        # break
     
     ############# Write to csv file file ##############
     new_blog_csv_data=[]

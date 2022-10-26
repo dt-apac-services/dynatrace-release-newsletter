@@ -168,35 +168,84 @@
                 <tr>
                     <td class="pad">
                         <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
-                            <h1 style='text-align:left'>Dynatrace Managed  version 1.252</h1>
-<p style='text-align:left'>Rollout start: Oct 19, 2022</p>
-<p style='text-align:left;margin-left: 25px;'>Published date: 2022-10-12</p>
-<p style='text-align:left;margin-left: 25px;'>These release notes relate to Dynatrace Managed specific changes. To learn about general Dynatrace changes included in this Dynatrace Managed release, see:</p>
-<p style='text-align:left;margin-left: 25px;'>- Dynatrace SaaS release notes version 1.252 and Dynatrace SaaS release notes version 1.251</p>
-<p style='text-align:left;margin-left: 25px;'>- Dynatrace API changelog version 1.252 and Dynatrace API changelog version 1.251</p>
-  
-<h2 style='text-align:left'>Announcements</h2>
-<p style='text-align:left;margin-left: 25px;'>- CentOS/RHEL/OL 8.2, CentOS 8.4, CentOS 8.5, Suse LES 11.4 operating systems are no longer allowed to install new cluster nodes. Dynatrace Managed version 1.258 will be the last one that you can upgrade at one of these operating systems.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Davis Assistant end of life</h3>
-<p style='text-align:left;margin-left: 25px;'>Dynatrace Davis Assistant will reach end of life on January 31, 2023. After this date, the service will be shut down, and interactions with Davis Assistant will no longer be possible. Existing integrations, for example, with Slack or Microsoft Teams, will cease to work at that time.</p>
-<p style='text-align:left;margin-left: 25px;'>For options and best practices on managing the push of problem notifications to your preferred third-party incident management or ChatOps service, see problem notifications documentation.</p>
+                            <h1 style='text-align:left'>Dynatrace SaaS  version 1.253</h1>
+<p style='text-align:left'>Rollout start: Oct 25, 2022</p>
+<p style='text-align:left;margin-left: 25px;'>- Metric events: Set up anomaly detection based on your business needsDynatrace Davis® AI automatically analyzes abnormal situations within your IT infrastructure, identifies their impact and root cause, and covers many observability use cases out of the box. Davis also provides the flexibility to adapt to domain-specific requirements using the newly released configuration settings, "metric events." These allow you to observe any metric, choose the best monitoring strategy for that metric, and create event triggers for detected anomalies.</p>
+<p style='text-align:left;margin-left: 25px;'>Dynatrace Davis® AI automatically analyzes abnormal situations within your IT infrastructure, identifies their impact and root cause, and covers many observability use cases out of the box. Davis also provides the flexibility to adapt to domain-specific requirements using the newly released configuration settings, "metric events." These allow you to observe any metric, choose the best monitoring strategy for that metric, and create event triggers for detected anomalies.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Predictable data retention management</h3>
-<p style='text-align:left;margin-left: 25px;'>When there's not enough free disk space to store new data, the Dynatrace Managed cluster automatically adjusts the retention times of data stored in Elasticsearch and transaction storage if both are placed on the same disk partition. The data retention adjustment is applied equally to all environments in the cluster.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Application Security threat intelligence automatically updated</h3>
-<p style='text-align:left;margin-left: 25px;'>To ensure you always have up-to-date Dynatrace threat intelligence in the Application Security module, third-party vulnerability feed metadata is automatically downloaded from Mission Control. If you have enabled Application Security, you can't opt out from downloading the metadata—it's an essential part of this solution. Feeds are downloaded on demand. You can audit each successful and failed attempt on the Cluster Management Console Events page.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Improved SAML-based SSO configuration</h3>
-<p style='text-align:left;margin-left: 25px;'>The HTTP Content Security Policy (CSP) form-action directive restricts the URLs that can be used as the target of form submissions from a given context. If there is a redirect from the Identity Provider (IdP) to other hosts during sign-in or sign-out, you can add them in the new configuration input field.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Grail</h3>
+<p style='text-align:left;margin-left: 25px;'>Cross solutions</p>
+<p style='text-align:left;margin-left: 25px;'>Grail data lakehouse is now available in Dynatrace SaaS on AWS. Grail is built for observability data and optimized for Dynatrace Davis® AI, with Dynatrace Query Language as the single interface exploring all data persisted in Grail. Storing data in Grail does not require index setup, hot/cold storage management, or determining your data use cases beforehand (for example, at ingest).</p>
+<p style='text-align:left;margin-left: 25px;'>For more information, see Grail.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Dynatrace Query Language</h3>
+<p style='text-align:left;margin-left: 25px;'>Cross solutions</p>
+<p style='text-align:left;margin-left: 25px;'>The new Dynatrace Query Language is key to accessing data stored in Grail, built for processing arbitrary event and time series data, requiring no up-front description of the input data's schema.</p>
 <p style='text-align:left;margin-left: 25px;'></p>
-<h3 style='text-align:left;margin-left: 25px;'>Upgraded JRE</h3>
-<p style='text-align:left;margin-left: 25px;'>To take advantage of performance improvements, the latest security-vulnerability enhancements, and bug fixes, we've upgraded JRE for the following cluster node components:</p>
-<p style='text-align:left;margin-left: 25px;'>- Cassandra now uses JRE 8u345</p>
-<p style='text-align:left;margin-left: 25px;'>- Other components now use JRE 11.0.16.1</p>
-<h3 style='text-align:left;margin-left: 25px;'>Improved email validation in CMC</h3>
-<p style='text-align:left;margin-left: 25px;'>When setting up user accounts and notifications, you can now use email addresses with a single letter in a top-level domain.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Simplified file structure of Dynatrace Managed installation</h3>
-<p style='text-align:left;margin-left: 25px;'>When a custom Linux system user is used to run Dynatrace Managed services, there was a custom directory created under the user's home directory (/home/<user running managed>/.javacpp/cache/). This is the technical directory that was moved to /var/opt/dynatrace-managed/.javacpp/cache/ to ease the management of the deployment.</p>
+<p style='text-align:left;margin-left: 25px;'>A DQL query is a read-only request to process data and return results. The request is stated in plain text, using a pipeline-based data-flow model that is easy to read, author, and automate.</p>
+<p style='text-align:left;margin-left: 25px;'>For more information, see DQL.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Log Management and Analytics powered by Grail</h3>
+<p style='text-align:left;margin-left: 25px;'>Log Management and Analytics powered by Grail is one of the first parts of Dynatrace utilizing the power of Grail.</p>
+<p style='text-align:left;margin-left: 25px;'>Use your existing ingestion configuration or set it up easily to bring log data to Dynatrace at an enterprise scale. Route different log data to buckets with different retention period. Get answers from log data in context or from complex analytical queries with schema-on-read and DQL.</p>
+<p style='text-align:left;margin-left: 25px;'>- Log Management and Analytics
+Find out how to analyze and present logs powered by Grail.</p>
+<p style='text-align:left;margin-left: 25px;'>- Log on Grail examples
+See common use cases for advanced analytics with DQL in Grail.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Business Analytics on Grail</h3>
+<p style='text-align:left;margin-left: 25px;'>Business Analytics</p>
+<p style='text-align:left;margin-left: 25px;'>Dynatrace Business Analytics is a powerful tool for ingesting, exploring, and analyzing your organization's critical business data.</p>
+<p style='text-align:left;margin-left: 25px;'>- Business Analytics helps you approach 100% accuracy of your analyses. Events are captured without sampling, on a real-time basis, from multiple sources.</p>
+<p style='text-align:left;margin-left: 25px;'>- Business Analytics allows you to collect business events and transform them according to your needs using pipeline and DQL capabilities so that you can create the visualizations, charts, dashboards, and metrics your teams need to make informed business decisions.</p>
+<p style='text-align:left;margin-left: 25px;'>New to Business Analytics, business events powered by Grail are designed to deliver real-time business data with lossless precision. OneAgent enhancements prioritize business events and introduce deep access to the in-flight application payload to expose previously obscured business data – without code changes. Grail ensures schemaless long-term data availability without the need for indexing or predefining your use cases. The new Dynatrace Query Language is built for exploratory analysis of arbitrary business event and time series data.</p>
+<p style='text-align:left;margin-left: 25px;'>This release supports business events from OneAgent, from the web and mobile RUM, and from external (API) sources.</p>
+<p style='text-align:left;margin-left: 25px;'>- Business Analytics in Dynatrace
+Find out how to analyze and present business events data.</p>
+<p style='text-align:left;margin-left: 25px;'>- Business Analytics examples
+See common use cases for advanced analytics with DQL in Grail.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Show data retention on service analysis charts</h3>
+<p style='text-align:left;margin-left: 25px;'>You can now turn on Show data retention to segment chart data according to data retention periods on the following pages:</p>
+<p style='text-align:left;margin-left: 25px;'>- Service-specific  multidimensional analysis</p>
+<p style='text-align:left;margin-left: 25px;'>- Request charting</p>
+<h3 style='text-align:left;margin-left: 25px;'>Ignore muted requests for calculated service metrics</h3>
+<p style='text-align:left;margin-left: 25px;'>You can now exclude the data contribution of muted requests from calculated service metrics, either via the Service metrics API or by selecting Ignore muted requests in the web UI.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Easier filtering in tables and dropdown boxes</h3>
+<p style='text-align:left;margin-left: 25px;'>Cross solutions</p>
+<p style='text-align:left;margin-left: 25px;'>Tables and many dropdown boxes can now be filtered easier because the filter string is interpreted in tokens. For example, alerting rule will now match the item alerting great rule.</p>
+<h3 style='text-align:left;margin-left: 25px;'>New calendar picker</h3>
+<p style='text-align:left;margin-left: 25px;'>On most settings pages, the date properties can now be modified with a new and convenient calendar picker.</p>
+<h3 style='text-align:left;margin-left: 25px;'>OneAgent log module on AIX</h3>
+<p style='text-align:left;margin-left: 25px;'>Starting with Dynatrace version 1.253, we introduced limited support for the OneAgent log module for AIX systems. OneAgent version 1.251+ log module support is limited only to custom log sources. No log auto-detection is performed.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Kubernetes services</h3>
+<p style='text-align:left;margin-left: 25px;'>- On the Kubernetes services overview page, you can now filter for services by Problem impact.</p>
+<p style='text-align:left;margin-left: 25px;'>- The Properties section of a Kubernetes service now displays the Kubernetes service selector labels. This is limited to 25 labels.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Updated metric events</h3>
+<p style='text-align:left;margin-left: 25px;'>- The configuration of metric events is now redesigned and adapted to the Settings 2.0 framework. All existing configurations are migrated automatically, with no manual steps needed.</p>
+<p style='text-align:left;margin-left: 25px;'>- Auto-adaptive baseline is now called auto-adaptive threshold.</p>
+<p style='text-align:left;margin-left: 25px;'>- The Seasonal baseline model is now available.</p>
+<p style='text-align:left;margin-left: 25px;'>- Various improvements:
+
+Overview of limitations of your configurations.
+Overview of your configurations that failed within the last 24 hours.
+The preview of the metric event now shows every dimension separately. Also, the preview range of 7 days is now available.</p>
+<p style='text-align:left;margin-left: 25px;'>- Overview of limitations of your configurations.</p>
+<p style='text-align:left;margin-left: 25px;'>- Overview of your configurations that failed within the last 24 hours.</p>
+<p style='text-align:left;margin-left: 25px;'>- The preview of the metric event now shows every dimension separately. Also, the preview range of 7 days is now available.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Data explorer usability improvements</h3>
+<p style='text-align:left;margin-left: 25px;'>- After you run a query, you can copy the request for use in an API request.</p>
+<p style='text-align:left;margin-left: 25px;'>After you run a query, you can copy the request for use in an API request.</p>
+<p style='text-align:left;margin-left: 25px;'>- To reorder metrics, select and drag the metric to a new position in the list of metrics. A query's metrics are rendered in order from top to bottom, so the last one is rendered on top of the others.</p>
+<p style='text-align:left;margin-left: 25px;'>To reorder metrics, select and drag the metric to a new position in the list of metrics. A query's metrics are rendered in order from top to bottom, so the last one is rendered on top of the others.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<p style='text-align:left;margin-left: 25px;'>- The Run query button displays the status of the displayed results:</p>
+<p style='text-align:left;margin-left: 25px;'>The Run query button displays the status of the displayed results:</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<p style='text-align:left;margin-left: 25px;'>- The Pin to dashboard pop-up window is now searchable: select in the Dashboard list and start typing to filter the list, and then select the target dashboard from the filtered list.</p>
+<p style='text-align:left;margin-left: 25px;'>The Pin to dashboard pop-up window is now searchable: select in the Dashboard list and start typing to filter the list, and then select the target dashboard from the filtered list.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Metric selector update</h3>
+<p style='text-align:left;margin-left: 25px;'>We changed the serialization of numeric values in the metric selector:</p>
+<p style='text-align:left;margin-left: 25px;'>- Integer values are serialized as Java long (for example, a selector containing 012 is serialized as 12).</p>
+<p style='text-align:left;margin-left: 25px;'>- Floating values are serialized as Java double (for example, 100. and 1e2 are both serialized as 100.0).</p>
   
 
                         </div>
@@ -211,7 +260,7 @@
 						<tr>
 						<td align="center" bgcolor="#8a3c90" style="padding:9px 15px;" valign="top">
 						<![endif]-->
-						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-252" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
+						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-253" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
                             <strong style="text-decoration: none; color: #ffffff;">Read More</strong>
                         </a>
 						<!--[if mso]>
@@ -281,17 +330,7 @@
                 <tr>
                     <td class="pad" style="padding-bottom:30px;">
                         <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
-                            <h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/new-critical-vulnerability-cve-2022-42889-in-apache-commons-text-discovered-but-no-need-to-panic/>New high severity vulnerability, CVE-2022-42889, in Apache Commons Text discovered (but no need to panic)</a></h2>
-<p style='text-align:left'>October 18, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/oneagent-release-notes-version-1-251/>OneAgent release notes version 1.251</a></h2>
-<p style='text-align:left'>October 18, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/applying-real-world-aiops-use-cases-to-your-operations/>Applying real-world AIOps use cases to your operations</a></h2>
-<p style='text-align:left'>October 17, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/metric-events-set-up-anomaly-detection-based-on-your-business-needs/>Metric events: Set up anomaly detection based on your business needs</a></h2>
-<p style='text-align:left'>October 17, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-aiops-2/>What is AIOps? An insider’s guide to AI for ITOps — and beyond</a></h2>
-<p style='text-align:left'>October 17, 2022</p>
-
+                            
                         </div>
                     </td>
                 </tr>
@@ -421,6 +460,47 @@
 									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px;" width="680">
 										<tbody>
 											<tr>
+												<td class="column column-1" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="text_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class="pad" style="padding-bottom:15px;padding-left:10px;padding-right:10px;padding-top:15px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 12px; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2;">
+																		<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><em><strong><a href="https://notes.lab.dynatrace.org/" target="_blank" style="text-decoration: underline;" rel="noopener"><span style="color:#085ff5;">Lab Notes (VPN)</span></a></strong></em></p>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td class="column column-2" width="50%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="text_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class="pad" style="padding-bottom:15px;padding-left:10px;padding-right:10px;padding-top:15px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 12px; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2;">
+																		<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><a href="https://one.dynatrace.com/hc/en-us/sections/1500001410022-Undocumented-Release-Notes?_ga=2.235076355.301142987.1666672333-494838658.1664746538" target="_blank" style="text-decoration: underline;" rel="noopener"><span style="color:#085ff5;"><em><strong>Undocumented Release Notes</strong></em></span></a></p>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<table class="row row-10" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+						<tbody>
+							<tr>
+								<td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px;" width="680">
+										<tbody>
+											<tr>
 												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 0px; padding-bottom: 0px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
 													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 														<tr>
@@ -461,7 +541,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<table class="row row-10" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+					<table class="row row-11" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
 						<tbody>
 							<tr>
 								<td>

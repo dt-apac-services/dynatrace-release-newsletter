@@ -43,6 +43,10 @@
         "1.252": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-252",
             "rollout": "Oct 11, 2022"
+        },
+        "1.253": {
+            "url": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-253",
+            "rollout": "Oct 25, 2022"
         }
     },
     "Dynatrace Managed": {
@@ -129,120 +133,6 @@
         "1.251": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-251",
             "rollout": "Oct 14, 2022"
-        }
-    },
-    "Dynatrace API": {
-        "1.252": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-252",
-            "rollout": "Oct 11, 2022"
-        },
-        "1.251": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-251",
-            "rollout": "Sep 27, 2022"
-        },
-        "1.250": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-250",
-            "rollout": "Sep 14, 2022"
-        },
-        "1.249": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-249",
-            "rollout": "Aug 30, 2022"
-        },
-        "1.248": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-248",
-            "rollout": "Aug 22, 2022"
-        },
-        "1.247": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-247",
-            "rollout": "Aug 3, 2022"
-        },
-        "1.246": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-246",
-            "rollout": "Jul 25, 2022"
-        },
-        "1.245": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-245",
-            "rollout": "Jul 6, 2022"
-        },
-        "1.244": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-244",
-            "rollout": "Jun 27, 2022"
-        },
-        "1.243": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-243",
-            "rollout": "Jun 8, 2022"
-        },
-        "1.242": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/dynatrace-api/sprint-242",
-            "rollout": "May 30, 2022"
-        }
-    },
-    "Cloud Automation": {
-        "253.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-253-1-0",
-            "rollout": "Sep 26, 2022"
-        },
-        "248.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-248-1-0",
-            "rollout": "July 28, 2022"
-        },
-        "244.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-244-1-0",
-            "rollout": "May 31, 2022"
-        },
-        "242.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-242-1-0",
-            "rollout": "April 26, 2022"
-        },
-        "240.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-240-1-0",
-            "rollout": "April 13, 2022"
-        },
-        "238.2.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-238-2-0",
-            "rollout": "March 16, 2022"
-        },
-        "238.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-238",
-            "rollout": "March 2, 2022"
-        },
-        "233.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-233",
-            "rollout": "Dec 9, 2021"
-        },
-        "232.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-232",
-            "rollout": "Nov 15, 2021"
-        },
-        "228.1.0": {
-            "url": "https://dynatrace.com/support/help/whats-new/release-notes/cloud-automation/ca-sprint-228",
-            "rollout": "Sep 27, 2021"
-        }
-    },
-    "Dynatrace Operator": {
-        "0.9.0": {
-            "url": "https://github.com/Dynatrace/dynatrace-operator/releases/tag/v0.9.0",
-            "rollout": "Sep 29, 2022"
-        },
-        "0.7.3": {
-            "url": "https://github.com/Dynatrace/dynatrace-operator/releases/tag/v0.7.3",
-            "rollout": "Sep 8, 2022"
-        },
-        "0.8.2": {
-            "url": "https://github.com/Dynatrace/dynatrace-operator/releases/tag/v0.8.2",
-            "rollout": "Aug 30, 2022"
-        },
-        "0.8.1": {
-            "url": "https://github.com/Dynatrace/dynatrace-operator/releases/tag/v0.8.1",
-            "rollout": "Jul 13, 2022"
-        },
-        "0.7.2": {
-            "url": "https://github.com/Dynatrace/dynatrace-operator/releases/tag/v0.7.2",
-            "rollout": "ActiveGate"
-        },
-        "0.9.1": {
-            "url": "https://github.com/Dynatrace/dynatrace-operator/releases/tag/v0.9.1",
-            "rollout": "Oct 20, 2022"
         }
     }
 }

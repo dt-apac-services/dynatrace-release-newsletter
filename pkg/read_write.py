@@ -125,3 +125,12 @@ def read_github_creds():
     f.close()
 
     return email_creds
+
+def write_to_log_file(entry):
+    file_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ),"..","data","logs.txt"))
+
+    log_date = datetime.today().strftime('%d-%m-%Y %H:%M')
+
+    with open(file_path, "a") as log:
+        log.write("\n"+log_date+": "+entry)
+    log.close()
