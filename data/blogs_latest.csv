@@ -1,1 +1,6 @@
 Name,Date,Author,Link,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7
+"New high severity vulnerability, CVE-2022-42889, in Apache Commons Text discovered","October 18, 2022",Robin Wyss,https://www.dynatrace.com/news/blog/new-critical-vulnerability-cve-2022-42889-in-apache-commons-text-discovered-but-no-need-to-panic/,apache,apache-commons-text-vulnerability,security-vulnerability
+Dynatrace SaaS release notes version 1.253,"October 25, 2022",Ilya Gutin,https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-253/
+Prevent potential problems quickly and efficiently with Davis exploratory analysis,"October 25, 2022",Mario Mauracher,https://www.dynatrace.com/news/blog/davis-ai-exploratory-analysis/,davis-ai,exploratory-analysis,featured
+Path to NoOps part 1: How modern AIOps brings NoOps within reach,"October 25, 2022",Ram Vasu,https://www.dynatrace.com/news/blog/modern-aiops-brings-noops-within-reach/,aiops,autonomous-cloud,noops
+How OpenFeature — and feature flag standardization —enables high-quality continuous software delivery,"October 24, 2022",Michael Beemer,https://www.dynatrace.com/news/blog/openfeature-and-feature-flag-standardization/,cloud-automation,cncf,featured,openfeature

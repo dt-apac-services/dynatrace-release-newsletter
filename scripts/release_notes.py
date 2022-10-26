@@ -38,6 +38,8 @@ def get_component_and_versions(release_info):
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, 'html.parser')
 
+    req_components = ['Dynatrace SaaS','Dynatrace Managed','OneAgent','ActiveGate']
+
     tags = ['h2','td']
     regex = "((?:Changelog )?[Vv]ersion\s.*|\w*\s\d{1,2}.\s\d{4}|^Dynatrace\s\S*\w$|^OneAgent$|^ActiveGate$|^Cloud Automation$)"
     results = soup.find_all(tags,string=re.compile(regex))
@@ -61,7 +63,11 @@ def get_component_and_versions(release_info):
                 release_info[component][version]={}
                 release_info[component][version]["url"] = url                 
             else:
-                release_info[component][version]["rollout"] = val                
+                release_info[component][version]["rollout"] = val 
+
+    for component in release_info.copy():
+        if component not in req_components:
+            del release_info[component]             
 
     return release_info
 

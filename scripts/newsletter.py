@@ -16,16 +16,13 @@ def create_newsletter(components):
     
     # copy template to root folder
     shutil.copyfile(master_file_template,master_file)
-    
-
 
     # Update Release Notes section
     release_info_from_file=read_write.read_release_info_file()
 
     for k in components:
         
-        update_file = os.path.join(Path(__file__).parent.parent,"data",k+"_release_notes.html")     
-                     
+        update_file = os.path.join(Path(__file__).parent.parent,"data",k+"_release_notes.html")                     
         
         url = release_info_from_file[k][components[k]]["url"]     
 
