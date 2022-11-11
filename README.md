@@ -15,7 +15,4 @@ Work in progress..
 5. Get public blogs (since last update)
     - Scrape heading & some content
     - Prepare HTML
-6. Get lab notes (since last update)
-    - Scrape heading & some content
-    - Prepare HTML
-7. Combine HTML and send out notification
+6. Combine HTML to create newsletter and send out notification
