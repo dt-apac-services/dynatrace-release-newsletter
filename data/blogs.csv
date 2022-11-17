@@ -1,4 +1,9 @@
 Name,Date,Author,Link,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7
+Dynatrace Managed release notes version 1.254,"November 16, 2022",Radoslaw Szulgo,https://www.dynatrace.com/news/blog/dynatrace-managed-release-notes-version-1-254/,managed,whats-new
+Dynatrace enhances Business Analytics with business events powered by Grail,"November 15, 2022",Gary Kaiser,https://www.dynatrace.com/news/blog/dynatrace-enhances-business-analytics/,business-analytics,business-events
+What is hyperconverged infrastructure? Realizing the benefits of HCI,"November 11, 2022",Adrian Phillips,https://www.dynatrace.com/news/blog/what-is-hyperconverged-infrastructure/,cloud,converged-infrastructure,hci-benefits,hci-challenges,hci-deployments,hyperconverged-infrastructure,observability
+Enhanced root cause analysis using events,"November 11, 2022",Adam Gardner,https://www.dynatrace.com/news/blog/enhanced-root-cause-analysis-using-events/,best-practices,devops,observability
+Optimize your observability pipeline for AWS Lambda serverless functions,"November 10, 2022",Patrick Thurner,https://www.dynatrace.com/news/blog/optimize-your-observability-pipeline-aws-lambda-telemetry/
 What is cloud-native architecture? Set yourself up for cloud success,"November 10, 2022",Adrian Phillips,https://www.dynatrace.com/news/blog/what-is-cloud-native-architecture/,cloud,cloud-monitoring,cloud-native-architecture,containers,microservices,multicloud
 Dynatrace SaaS release notes version 1.254,"November 10, 2022",Jaroslaw Orlowski,https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-254/
 What’s the hype with hyperscale computing?,"November 9, 2022",Adrian Phillips,https://www.dynatrace.com/news/blog/the-hype-with-hyperscale/,automation,cloud,digital-transformation,hyperscale,hyperscale-computing,hyperscale-data-centers,observability

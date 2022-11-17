@@ -168,53 +168,22 @@
                 <tr>
                     <td class="pad">
                         <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
-                            <h1 style='text-align:left'>Dynatrace SaaS  version 1.254</h1>
-<p style='text-align:left'>Rollout start: Nov 9, 2022</p>
-  
-<h2 style='text-align:left'>Breaking changes</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Updates no longer available for Synthetic-enabled ActiveGate on Ubuntu 16</h3>
-<p style='text-align:left;margin-left: 25px;'>We previously announced the end of support for installing Synthetic-enabled ActiveGate on Ubuntu 16 after ActiveGate version 1.251. Now, with the Dynatrace version 1.254, you can no longer update Synthetic-enabled ActiveGate on Ubuntu 16; the Update button in the Deployment status tab for such ActiveGate instances is no longer available.</p>
+                            <h1 style='text-align:left'>Dynatrace Managed  version 1.254</h1>
+<p style='text-align:left'>Rollout start: Nov 16, 2022</p>
+<p style='text-align:left;margin-left: 25px;'>Published date: 2022-11-16</p>
+<p style='text-align:left;margin-left: 25px;'>These release notes relate to Dynatrace Managed specific changes. To learn about general Dynatrace changes included in this Dynatrace Managed release, see:</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace SaaS release notes version 1.254 and Dynatrace SaaS release notes version 1.253</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace API changelog version 1.254 and Dynatrace API changelog version 1.253</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace OneAgent release notes version 1.253</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Entity extraction from events</h3>
-<p style='text-align:left;margin-left: 25px;'>Davis® AI is now capable of extraction of custom entities from events. Additionally, events can be mapped to such extracted entities.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Optimizing a DQL statement</h3>
-<p style='text-align:left;margin-left: 25px;'>You can now improve the performance of a DQL query for various usage patterns and scenarios. The best practices page explains compiling a query and optimizing a DQL statement for use cases while working with DQL.</p>
-<p style='text-align:left;margin-left: 25px;'>- DQL Best practices</p>
-<h3 style='text-align:left;margin-left: 25px;'>Davis exploratory analysis</h3>
-<p style='text-align:left;margin-left: 25px;'>You can now leverage the full AI power of Davis for exploratory proactive analysis on unified analysis pages (for example, a host overview page or Kubernetes page). You can explore related signals that match the behavior of the signal you're investigating. Davis takes domain and topology knowledge into account and helps you to understand the signal's behavior in full context.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Istio metrics on Kubernetes services details page</h3>
-<p style='text-align:left;margin-left: 25px;'>On the Kubernetes services details page, a new section called Istio metrics is displayed when Istio metrics are available.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Out-of-the-box Kubernetes alerting</h3>
-<p style='text-align:left;margin-left: 25px;'>You can now configure alerts at a Kubernetes cluster, node, namespace, or workload level in the Kubernetes settings under Anomaly detection.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Availability changes are ignored for Kubernetes problems</h3>
-<p style='text-align:left;margin-left: 25px;'>When analyzing Kubernetes problems, Davis now ignores process-level availability changes. A stopped or started process (inside pods) is the normal behavior in Kubernetes.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Show data retention on service comparison charts</h3>
-<p style='text-align:left;margin-left: 25px;'>Show data retention is now available on the Compare page. When enabled, charted data is segmented according to data retention periods.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Cross-environment connection for tracing</h3>
-<p style='text-align:left;margin-left: 25px;'>- Once a connection to a remote environment is configured correctly, Dynatrace automatically displays the call Aggregated requests, which aggregates all the data of detected requests on each respective connected remote environment.</p>
-<p style='text-align:left;margin-left: 25px;'>- New SaaS availability of Find in remote environments—its selection triggers a manual search for the trace in known remote environments, even for connections containing configuration errors.</p>
-<h3 style='text-align:left;margin-left: 25px;'>FaaS and z/OS traces are excluded from adaptive traffic management</h3>
-<p style='text-align:left;margin-left: 25px;'>Adaptive traffic management no longer includes FaaS- and z/OS-based tracing, as licensing for them is not based on host units.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Prometheus token</h3>
-<p style='text-align:left;margin-left: 25px;'>Prometheus token maximum length is now 2500.</p>
-<h3 style='text-align:left;margin-left: 25px;'>New calendar picker</h3>
-<p style='text-align:left;margin-left: 25px;'>On most settings pages, the date properties can now be modified with a new and convenient calendar picker.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Custom log source configuration</h3>
-<p style='text-align:left;margin-left: 25px;'>Custom log source configuration enables you to manually add log sources that have not been autodetected. Autodiscovery might not identify a log source if a log file is not kept open for writing during a process. It might also fail to find log sources that are not part of any processes or are part of short-lived processes. In such cases, you can define, configure, and customize log sources to your needs. In the OneAgent version 1.251 and older, you need to add log files manually.</p>
-<h3 style='text-align:left;margin-left: 25px;'>OpenTelemetry metrics ingestion on ActiveGates</h3>
-<p style='text-align:left;margin-left: 25px;'>OpenTelemetry</p>
-<p style='text-align:left;margin-left: 25px;'>You can ingest OpenTelemetry metrics in the OpenTelemetry Protocol (OTLP) as binary Protobuf over HTTP.</p>
-<p style='text-align:left;margin-left: 25px;'>For more information, see OpenTelemetry metrics ingest API.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Assign Synthetic-enabled ActiveGate to a private location during installation</h3>
-<p style='text-align:left;margin-left: 25px;'>With Dynatrace version 1.254 and ActiveGate 1.253, you can optionally select and assign private location to a Synthetic-enabled ActiveGate during the ActiveGate deployent workflow. As before, you can also assign a location after setting up your ActiveGate.</p>
-<p style='text-align:left;margin-left: 25px;'></p>
-<h3 style='text-align:left;margin-left: 25px;'>On-demand synthetic monitor executions from any location via API</h3>
-<p style='text-align:left;margin-left: 25px;'>While you can execute browser and HTTP monitors on demand from assigned locations from the Dynatrace web UI, you can now execute monitors from any location via the Synthetic - On-demand monitor executions API. If no location ID is specified for the POST request, specified monitors are executed from all assigned locations.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Monitor script changes available immediately for on-demand execution</h3>
-<p style='text-align:left;margin-left: 25px;'>Any changes you make to a monitor script are available immediately for execution on demand from public or private locations, so you can edit, execute, and gather data on your synthetic monitors on the fly.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Browser monitor timeouts via API used for local playback and wait times</h3>
-<p style='text-align:left;margin-left: 25px;'>Default browser monitor timeouts (5 minutes for monitors and 60 seconds for script events) can be changed via the PUT configuration method of the Synthetic configuration API v2 for all browser monitor executions on private locations within an environment. These changed timeouts are now also applicable when configuring event wait times via the UI and for local playback.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Root cause for cluster events</h3>
+<p style='text-align:left;margin-left: 25px;'>Cluster events related to transaction storage truncation now present the specific root cause - insufficient disk space or a disk quota limit.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Configuration changes in audit log</h3>
+<p style='text-align:left;margin-left: 25px;'>Cluster configuration changes based on Cluster API v2 Settings are now also included in the Audit Log UI.</p>
+<h3 style='text-align:left;margin-left: 25px;'>New opt out options</h3>
+<p style='text-align:left;margin-left: 25px;'>You can now opt out from sending user names, user email addresses, and associated permissions to Mission Control. By opting out, you block access to Dynatrace support services to manage support tickets.</p>
+<p style='text-align:left;margin-left: 25px;'>- Cluster preferences settings</p>
   
 
                         </div>
@@ -229,7 +198,7 @@
 						<tr>
 						<td align="center" bgcolor="#8a3c90" style="padding:9px 15px;" valign="top">
 						<![endif]-->
-						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-254" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
+						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-254" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
                             <strong style="text-decoration: none; color: #ffffff;">Read More</strong>
                         </a>
 						<!--[if mso]>
@@ -243,8 +212,112 @@
         </td>
     </tr>
 </tbody>
-                                        <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_2-->
-                                        <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_3-->
+                                        <tbody>
+    <tr>
+        <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+            <table class="html_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad">
+                        <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
+                            <h1 style='text-align:left'>OneAgent  version 1.253</h1>
+<p style='text-align:left'>Rollout start: Nov 14, 2022</p>
+  
+<h2 style='text-align:left'>Node.js</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for SQLite3 (context passing only) 5.1+</p>
+  
+<h2 style='text-align:left'>New features and enhancements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>New IMS message processing region process ID calculation</h3>
+<p style='text-align:left;margin-left: 25px;'>z/OS</p>
+<p style='text-align:left;margin-left: 25px;'>The IMS message processing region (MPR) process IDs could change, resulting in new process and service entities in Dynatrace. To prevent this process ID change, we’ve introduced a more stable ID calculation with the consequence that all IMS MPR process and service entities will change once but then remain stable after an update of the zRemote module with OneAgent version 1.253.</p>
+<p style='text-align:left;margin-left: 25px;'>To opt out of the new IMS MPR process ID calculation, see Customize the zRemote module.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Container monitoring - cgroups v2 support</h3>
+<p style='text-align:left;margin-left: 25px;'>Since OneAgent version 243, OneAgent has supported containers based on Control Group v2 (cgroup v2), but this required that OneAgent be deployed on the host or in Kubernetes as a privileged OneAgent container or in a non-Kubernetes Docker container with cgroupns=host parameter. For details, see Introducing cgroups v2 support.</p>
+<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent version 1.253, support for containers based on cgroup v2 has been extended to cases in which OneAgent is deployed in a Kubernetes unprivileged container or in a non-Kubernetes Docker container without the cgroupns=host parameter.</p>
+<h3 style='text-align:left;margin-left: 25px;'>AWS Nitro hypervisor is now detected</h3>
+<p style='text-align:left;margin-left: 25px;'>The AWS Nitro hypervisor type is now detected on Windows and Linux.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Tracing SQS-triggered AWS Lambda for Python & Node.js (manual)</h3>
+<p style='text-align:left;margin-left: 25px;'>The Dynatrace AWS Lambda extension for Python and Node.js now supports tracing for AWS SQS. For details, see OpenTelemetry interoperability on AWS Lambda.</p>
+  
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad" style="padding-bottom:40px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">                        
+                        <!--[if mso]>
+						<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+						<td align="center" bgcolor="#8a3c90" style="padding:9px 15px;" valign="top">
+						<![endif]-->
+						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-253" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
+                            <strong style="text-decoration: none; color: #ffffff;">Read More</strong>
+                        </a>
+						<!--[if mso]>
+						</td>
+						</tr>
+						</table>
+						<![endif]-->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</tbody>
+                                        <tbody>
+    <tr>
+        <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+            <table class="html_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad">
+                        <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
+                            <h1 style='text-align:left'>ActiveGate  version 1.253</h1>
+<p style='text-align:left'>Rollout start: Nov 14, 2022</p>
+  
+<h2 style='text-align:left'>Updates no longer available for Synthetic-enabled ActiveGate on Ubuntu 16</h2>
+<p style='text-align:left;margin-left: 25px;'>We previously announced the end of support for installing Synthetic-enabled ActiveGate on Ubuntu 16 after ActiveGate version 1.251. Now, with Dynatrace version 1.254, you can no longer update Synthetic-enabled ActiveGate on Ubuntu 16; the Update button in the Deployment status tab for such ActiveGate instances is no longer available.</p>
+  
+<h2 style='text-align:left'>Assign Synthetic-enabled ActiveGate to a private location during installation</h2>
+<p style='text-align:left;margin-left: 25px;'>With Dynatrace version 1.254 and ActiveGate 1.253, you can optionally select and assign a private location to a Synthetic-enabled ActiveGate during the ActiveGate deployent workflow. As before, you can also assign a location after setting up your ActiveGate.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+  
+<h2 style='text-align:left'>Chromium support for private Synthetic locations</h2>
+<p style='text-align:left;margin-left: 25px;'>Chromium 106 is the latest supported version for Synthetic-enabled ActiveGate installed on:</p>
+<p style='text-align:left;margin-left: 25px;'>- Ubuntu 18.04, 20.04, and 22.04</p>
+<p style='text-align:left;margin-left: 25px;'>- Red Hat Enterprise Linux 7 and 8</p>
+<p style='text-align:left;margin-left: 25px;'>- CentOS 7</p>
+<p style='text-align:left;margin-left: 25px;'>- Amazon Linux 2</p>
+<p style='text-align:left;margin-left: 25px;'>Chromium 106 is bundled with the Windows ActiveGate installer.</p>
+<p style='text-align:left;margin-left: 25px;'>For more information on supported and provided Chromium versions, see Requirements for private Synthetic locations and Create a private Synthetic location.</p>
+  
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                    <td class="pad" style="padding-bottom:40px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">                        
+                        <!--[if mso]>
+						<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+						<td align="center" bgcolor="#8a3c90" style="padding:9px 15px;" valign="top">
+						<![endif]-->
+						<a class="button" href="https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-253" target="_blank" style="background-color:#8a3c90;border-collapse:separate !important;border-top:14px solid #8a3c90;border-right:30px solid #8a3c90;border-bottom:14px solid #8a3c90;border-left:30px solid #8a3c90;color:#ffffff;display:inline-block;font-family:Tahoma, Verdana, sans-serif;font-size:16px;line-height:16px;text-align:center;text-decoration:none; border-radius:4px;">
+                            <strong style="text-decoration: none; color: #ffffff;">Read More</strong>
+                        </a>
+						<!--[if mso]>
+						</td>
+						</tr>
+						</table>
+						<![endif]-->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</tbody>
                                         <!--REPLACE_WITH_RELEASE_NOTES_BLOCK_4-->
 									</table>
 								</td>
@@ -299,26 +372,14 @@
                 <tr>
                     <td class="pad" style="padding-bottom:30px;">
                         <div style="font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;text-align:center;" align="center">
-                            <h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-cloud-native-architecture/>What is cloud-native architecture? Set yourself up for cloud success</a></h2>
-<p style='text-align:left'>November 10, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-254/>Dynatrace SaaS release notes version 1.254</a></h2>
-<p style='text-align:left'>November 10, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/the-hype-with-hyperscale/>What’s the hype with hyperscale computing?</a></h2>
-<p style='text-align:left'>November 9, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/the-capabilities-government-leaders-need-as-they-manage-the-clouds-data-explosion/>The capabilities government leaders need as they manage the cloud’s data explosion</a></h2>
-<p style='text-align:left'>November 4, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-container-as-a-service/>What is container as a service? How CaaS compares to PaaS, IaaS, and FaaS</a></h2>
-<p style='text-align:left'>November 3, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-digital-immunity-how-modern-observability-promotes-secure-and-resilient-software-development/>What is digital immunity? Creating secure, resilient software with observability</a></h2>
-<p style='text-align:left'>November 2, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/amplify-powerup-powering-modernization-through-observability/>Amplify PowerUP: Powering modernization through observability</a></h2>
-<p style='text-align:left'>November 2, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/mobile-app-monitoring-and-advancing-mobile-devops/>Mobile application monitoring with Dynatrace: How an end-to-end platform advances mobile DevOps</a></h2>
-<p style='text-align:left'>November 1, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-mttr/>What is MTTR? How mean time to repair helps define DevOps incident management</a></h2>
-<p style='text-align:left'>November 1, 2022</p>
-<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/why-aiops-and-digital-transformation-are-modernizing-bt/>AIOps and digital transformation modernize BT</a></h2>
-<p style='text-align:left'>October 28, 2022</p>
+                            <h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/dynatrace-managed-release-notes-version-1-254/>Dynatrace Managed release notes version 1.254</a></h2>
+<p style='text-align:left'>November 16, 2022</p>
+<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/dynatrace-enhances-business-analytics/>Dynatrace enhances Business Analytics with business events powered by Grail</a></h2>
+<p style='text-align:left'>November 15, 2022</p>
+<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/what-is-hyperconverged-infrastructure/>What is hyperconverged infrastructure? Realizing the benefits of HCI</a></h2>
+<p style='text-align:left'>November 11, 2022</p>
+<h2 style='text-align:left'><a href=https://www.dynatrace.com/news/blog/enhanced-root-cause-analysis-using-events/>Enhanced root cause analysis using events</a></h2>
+<p style='text-align:left'>November 11, 2022</p>
 
                         </div>
                     </td>

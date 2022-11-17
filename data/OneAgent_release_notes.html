@@ -1,46 +1,19 @@
-<h1 style='text-align:left'>OneAgent  version 1.251</h1>
-<p style='text-align:left'>Rollout start: Oct 14, 2022</p>
-  
-<h2 style='text-align:left'>Announcements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Npcap installed by default starting OneAgent version 1.255</h3>
-<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent version 1.255, the OneAgent installer on Windows installs the Npcap driver by default.</p>
-<p style='text-align:left;margin-left: 25px;'>This may cause potential network disruption during OneAgent installation on Windows Server 2016, or Windows Server 2019 build 1809 and Windows 10 build 1809 without the KB4571748 hotfix or any of its superseding hotfixes.</p>
-<p style='text-align:left;margin-left: 25px;'>If your hosts don't have the KB4571748 hotfix, upgrade them now or use other documented options to prevent potential disruptions.</p>
-  
-<h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>RUM JavaScript API</h3>
-<p style='text-align:left;margin-left: 25px;'>- Removed functionality from startThirdParty, stopThirdParty, and sendSignal dtrum methods.</p>
-<p style='text-align:left;margin-left: 25px;'>- In the enterXhrAction dtrum method, the  xmode paramter with value of 2 is now deprecated and will fall back to the value of 1.</p>
-<p style='text-align:left;margin-left: 25px;'>- In the enterAction dtrum method, the type parameter is now deprecated and will no longer have any effect.</p>
-  
-<h2 style='text-align:left'>Java</h2>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Akka Http client 10.0, 10.2</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Apache HttpCore 5.x</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Jetty HTTP server 10</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry agent 1.17.x - 1.18.x</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Oracle HotSpot VM 19</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for OpenJDK 19</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for SAP JVM 19</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Amazon Corretto 19</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Azul Platform Core (Zulu) 19</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Bellsoft Liberica 19</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Eclipse Temurin (a.k.a. 'Adoptium') 19</p>
+<h1 style='text-align:left'>OneAgent  version 1.253</h1>
+<p style='text-align:left'>Rollout start: Nov 14, 2022</p>
   
 <h2 style='text-align:left'>Node.js</h2>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Node.js (AWS Lambda functions) 16</p>
-<p style='text-align:left;margin-left: 25px;'>- Certain frameworks use setTimeout to delay the actual client requests. Increasing the default internal timeout tracking limit to 51 ms allows you to trace such requests as long as the delay is below this limit.</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for SQLite3 (context passing only) 5.1+</p>
   
-<h2 style='text-align:left'>Go</h2>
-<p style='text-align:left;margin-left: 25px;'>- Added support for PostgreSQL (jackc/pgx) 4.11.0 - 4.17.2</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for Go (GCP functions)</p>
-  
-<h2 style='text-align:left'>PHP</h2>
-<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.12</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.13</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.14</p>
-<p style='text-align:left;margin-left: 25px;'>- Added support for OpenTelemetry 0.0.15</p>
-  
-<h2 style='text-align:left'>Mainframe</h2>
-<p style='text-align:left;margin-left: 25px;'>- Added support for IBM z/OS Connect EE MQ service provider).</p>
-<p style='text-align:left;margin-left: 25px;'>- The CICS code module can now capture the CICS transaction class, Service class, and Reporting service class as defined by the z/OS Workload Manager. These attributes are shown on the CICS distributed traces page if available.</p>
+<h2 style='text-align:left'>New features and enhancements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>New IMS message processing region process ID calculation</h3>
+<p style='text-align:left;margin-left: 25px;'>z/OS</p>
+<p style='text-align:left;margin-left: 25px;'>The IMS message processing region (MPR) process IDs could change, resulting in new process and service entities in Dynatrace. To prevent this process ID change, we’ve introduced a more stable ID calculation with the consequence that all IMS MPR process and service entities will change once but then remain stable after an update of the zRemote module with OneAgent version 1.253.</p>
+<p style='text-align:left;margin-left: 25px;'>To opt out of the new IMS MPR process ID calculation, see Customize the zRemote module.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Container monitoring - cgroups v2 support</h3>
+<p style='text-align:left;margin-left: 25px;'>Since OneAgent version 243, OneAgent has supported containers based on Control Group v2 (cgroup v2), but this required that OneAgent be deployed on the host or in Kubernetes as a privileged OneAgent container or in a non-Kubernetes Docker container with cgroupns=host parameter. For details, see Introducing cgroups v2 support.</p>
+<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent version 1.253, support for containers based on cgroup v2 has been extended to cases in which OneAgent is deployed in a Kubernetes unprivileged container or in a non-Kubernetes Docker container without the cgroupns=host parameter.</p>
+<h3 style='text-align:left;margin-left: 25px;'>AWS Nitro hypervisor is now detected</h3>
+<p style='text-align:left;margin-left: 25px;'>The AWS Nitro hypervisor type is now detected on Windows and Linux.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Tracing SQS-triggered AWS Lambda for Python & Node.js (manual)</h3>
+<p style='text-align:left;margin-left: 25px;'>The Dynatrace AWS Lambda extension for Python and Node.js now supports tracing for AWS SQS. For details, see OpenTelemetry interoperability on AWS Lambda.</p>
   
