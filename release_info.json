@@ -51,6 +51,10 @@
         "1.254": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-254",
             "rollout": "Nov 9, 2022"
+        },
+        "1.255": {
+            "url": "https://dynatrace.com/support/help/whats-new/release-notes/saas/sprint-255",
+            "rollout": "Nov 29, 2022"
         }
     },
     "Dynatrace Managed": {

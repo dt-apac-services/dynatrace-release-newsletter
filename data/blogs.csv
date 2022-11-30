@@ -1,4 +1,10 @@
 Name,Date,Author,Link,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7
+Path to NoOps part 2: How infrastructure as code makes cloud automation attainable—and repeatable—at scale,"November 29, 2022",Ram Vasu,https://www.dynatrace.com/news/blog/infrastructure-as-code-for-cloud-automation/,autonomous-cloud,cloud-automation,infrastructure,infrastructure-as-code,noops
+Dynatrace for AWS Compute Optimizer,"November 29, 2022",Mandy Swinton,https://www.dynatrace.com/news/blog/dynatrace-for-aws-compute-optimizer/,aws-compute-optimizer,aws-reinvent
+Dynatrace supports SnapStart for Lambda as an AWS launch partner,"November 28, 2022",Erick Leon,https://www.dynatrace.com/news/blog/dynatrace-supports-snapstart-for-lambda-as-an-aws-launch-partner/,application-modernization,aws-lambda
+Amplify PowerUP: Powering modernization with observability,"November 24, 2022",April Slattery,https://www.dynatrace.com/news/blog/amplify-powerup-powering-modernization-with-observability/
+Five-nines availability: Always-on infrastructure delivers system availability during the holidays’ peak loads,"November 22, 2022",Jane Mulcaster,https://www.dynatrace.com/news/blog/five-nines-availability-for-system-availability/,five-nines,infrastructure-monitoring,slos
+Get to know Dynatracers: Hannah Seelye,"November 17, 2022",Sydney Reynolds,https://www.dynatrace.com/news/blog/get-to-know-dynatracers-hannah-seelye/,dynatrace-life,get-to-know-dynatracers
 Dynatrace Managed release notes version 1.254,"November 16, 2022",Radoslaw Szulgo,https://www.dynatrace.com/news/blog/dynatrace-managed-release-notes-version-1-254/,managed,whats-new
 Dynatrace enhances Business Analytics with business events powered by Grail,"November 15, 2022",Gary Kaiser,https://www.dynatrace.com/news/blog/dynatrace-enhances-business-analytics/,business-analytics,business-events
 What is hyperconverged infrastructure? Realizing the benefits of HCI,"November 11, 2022",Adrian Phillips,https://www.dynatrace.com/news/blog/what-is-hyperconverged-infrastructure/,cloud,converged-infrastructure,hci-benefits,hci-challenges,hci-deployments,hyperconverged-infrastructure,observability
