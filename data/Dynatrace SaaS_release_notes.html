@@ -1,23 +1,57 @@
-<h1 style='text-align:left'>Dynatrace SaaS  version 1.255</h1>
-<p style='text-align:left'>Rollout start: Nov 29, 2022</p>
-<p style='text-align:left;margin-left: 25px;'>Rollout start: Nov 29, 2022</p>
+<h1 style='text-align:left'>Dynatrace SaaS  version 1.256</h1>
+<p style='text-align:left'>Rollout start: Dec 6, 2022</p>
+<p style='text-align:left;margin-left: 25px;'>Rollout start: Dec 6, 2022</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Vulnerability detection in .NET common language runtime</h3>
-<p style='text-align:left;margin-left: 25px;'>Vulnerability detection in runtimes is now extended to the .NET common language runtime (CLR).</p>
-<p style='text-align:left;margin-left: 25px;'>Vulnerabilities in .NET CLR are now visible on the Third-party vulnerabilities page.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Istio metrics on Kubernetes namespace and workload details pages</h3>
-<p style='text-align:left;margin-left: 25px;'>The Istio metrics section displayed on the Kubernetes services details page is now also displayed on the Kubernetes namespace and workload details pages when Istio metrics are available.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Additional DQL functions</h3>
-<p style='text-align:left;margin-left: 25px;'>Now you can include the following functions in your DQL queries:</p>
-<p style='text-align:left;margin-left: 25px;'>- DQL round function</p>
-<p style='text-align:left;margin-left: 25px;'>- DQL abs function</p>
-<p style='text-align:left;margin-left: 25px;'>- DQL ceil function</p>
-<p style='text-align:left;margin-left: 25px;'>- DQL floor function</p>
-<p style='text-align:left;margin-left: 25px;'>- DQL signum function</p>
-<h3 style='text-align:left;margin-left: 25px;'>New preconfigured dashboard for adaptive traffic management</h3>
-<p style='text-align:left;margin-left: 25px;'>A new preconfigured dashboard dedicated to adaptive traffic management is now available, making it easier to oversee and analyze traffic control of Purepath distributed traces ingested by OneAgent.</p>
-  
-<h2 style='text-align:left'>Change in default anomaly detection setting</h2>
-<p style='text-align:left;margin-left: 25px;'>The default anomaly detection setting for Request to unmonitored hosts and Requests to public networks services is now disabled.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Support for the Gitlab group endpoint in IssueTracker</h3>
+<p style='text-align:left;margin-left: 25px;'>For GitLab, when you add an issue-tracking query, you can now enter the /groups API endpoint in the Target URL field to define queries to multiple projects.</p>
+<h3 style='text-align:left;margin-left: 25px;'>More flexibility for muting and unmuting vulnerabilities</h3>
+<p style='text-align:left;margin-left: 25px;'>The Mute button for third-party and code-level vulnerabilities is renamed to Change status.</p>
+<p style='text-align:left;margin-left: 25px;'>You can now change the status of a vulnerability by muting, unmuting, or muting it again with a different reason or comment.</p>
+<h3 style='text-align:left;margin-left: 25px;'>New columns for Kubernetes services</h3>
+<p style='text-align:left;margin-left: 25px;'>- On the Kubernetes services details page, the Target port name and Target port number columns are merged into Target port.</p>
+<p style='text-align:left;margin-left: 25px;'>- On the workload and pod details pages, the Kubernetes services section has a new Ports column.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Schemaless metrics under management zones</h3>
+<p style='text-align:left;margin-left: 25px;'>Schemaless built-in metrics are now properly shown under a selected management zone, even without the dimensional rule for metrics.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Meaningful colors for Kubernetes metrics</h3>
+<p style='text-align:left;margin-left: 25px;'>Kubernetes metrics now use consistent colors throughout the charts.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Improved Heatmap</h3>
+<p style='text-align:left;margin-left: 25px;'>The heatmap visualization now offers options for setting thresholds, displaying bucket headings, and showing/hiding a legend.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Extensions 2.0 schema changes</h3>
+<h4 style='text-align:left;margin-left: 25px;'>Metric metadata</h4>
+<p style='text-align:left;margin-left: 25px;'>You can now specify sourceEntityType in the metric metadata.</p>
+<h4 style='text-align:left;margin-left: 25px;'>Unified analysis</h4>
+<p style='text-align:left;margin-left: 25px;'>- Limits
+
+Increased actionExpression length to 1500.
+Increased metricSelector length to 1000.
+Increased entitySelectorTemplate length to 500.
+Increased actions list length to 15.</p>
+<p style='text-align:left;margin-left: 25px;'>- Increased actionExpression length to 1500.</p>
+<p style='text-align:left;margin-left: 25px;'>- Increased metricSelector length to 1000.</p>
+<p style='text-align:left;margin-left: 25px;'>- Increased entitySelectorTemplate length to 500.</p>
+<p style='text-align:left;margin-left: 25px;'>- Increased actions list length to 15.</p>
+<p style='text-align:left;margin-left: 25px;'>- New cards:
+
+Metric table
+Injections
+Break line (new line for half-sized cards)</p>
+<p style='text-align:left;margin-left: 25px;'>- Metric table</p>
+<p style='text-align:left;margin-left: 25px;'>- Injections</p>
+<p style='text-align:left;margin-left: 25px;'>- Break line (new line for half-sized cards)</p>
+<p style='text-align:left;margin-left: 25px;'>- You can now
+
+Add card description.
+Display related entity tags in the properties card.
+Set a property as important and display it in the header.
+Exclude charts (summaryChart, detailedChar, and chartAsColumn) from the entities list card.
+Connect data gaps in a chart using linear interpolation.
+Add a sparkline (micro chart) to tables.</p>
+<p style='text-align:left;margin-left: 25px;'>- Add card description.</p>
+<p style='text-align:left;margin-left: 25px;'>- Display related entity tags in the properties card.</p>
+<p style='text-align:left;margin-left: 25px;'>- Set a property as important and display it in the header.</p>
+<p style='text-align:left;margin-left: 25px;'>- Exclude charts (summaryChart, detailedChar, and chartAsColumn) from the entities list card.</p>
+<p style='text-align:left;margin-left: 25px;'>- Connect data gaps in a chart using linear interpolation.</p>
+<p style='text-align:left;margin-left: 25px;'>- Add a sparkline (micro chart) to tables.</p>
+<p style='text-align:left;margin-left: 25px;'>For more information on the unified analysis framework, see Extend Dynatrace with domain-specific web UI.</p>
   
