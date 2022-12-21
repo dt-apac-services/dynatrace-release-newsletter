@@ -1,19 +1,31 @@
-<h1 style='text-align:left'>OneAgent  version 1.253</h1>
-<p style='text-align:left'>Rollout start: Nov 14, 2022</p>
+<h1 style='text-align:left'>OneAgent  version 1.255</h1>
+<p style='text-align:left'>Rollout start: Dec 12, 2022</p>
   
 <h2 style='text-align:left'>Node.js</h2>
-<p style='text-align:left;margin-left: 25px;'>- Added support for SQLite3 (context passing only) 5.1+</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for GraphQL 15+</p>
+  
+<h2 style='text-align:left'>Go</h2>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Microsoft SQL Server (denisenkom/go-mssqldb) 0.11.0-0.12.3</p>
+<p style='text-align:left;margin-left: 25px;'>- Added support for Microsoft SQL Server (microsoft/go-mssqldb) 0.11.0-0.17.0</p>
+  
+<h2 style='text-align:left'>Announcements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Npcap installed by default starting OneAgent version 1.255</h3>
+<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent version 1.255, the OneAgent installer on Windows installs the Npcap driver by default.</p>
+<p style='text-align:left;margin-left: 25px;'>This may cause potential network disruption during OneAgent installation on Windows Server 2016, or Windows Server 2019 build 1809 and Windows 10 build 1809 without the KB4571748 hotfix or any of its superseding hotfixes.</p>
+<p style='text-align:left;margin-left: 25px;'>If your hosts don't have the KB4571748 hotfix, upgrade them now or use other documented options to prevent potential disruptions.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>New IMS message processing region process ID calculation</h3>
-<p style='text-align:left;margin-left: 25px;'>z/OS</p>
-<p style='text-align:left;margin-left: 25px;'>The IMS message processing region (MPR) process IDs could change, resulting in new process and service entities in Dynatrace. To prevent this process ID change, we’ve introduced a more stable ID calculation with the consequence that all IMS MPR process and service entities will change once but then remain stable after an update of the zRemote module with OneAgent version 1.253.</p>
-<p style='text-align:left;margin-left: 25px;'>To opt out of the new IMS MPR process ID calculation, see Customize the zRemote module.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Container monitoring - cgroups v2 support</h3>
-<p style='text-align:left;margin-left: 25px;'>Since OneAgent version 243, OneAgent has supported containers based on Control Group v2 (cgroup v2), but this required that OneAgent be deployed on the host or in Kubernetes as a privileged OneAgent container or in a non-Kubernetes Docker container with cgroupns=host parameter. For details, see Introducing cgroups v2 support.</p>
-<p style='text-align:left;margin-left: 25px;'>Starting with OneAgent version 1.253, support for containers based on cgroup v2 has been extended to cases in which OneAgent is deployed in a Kubernetes unprivileged container or in a non-Kubernetes Docker container without the cgroupns=host parameter.</p>
-<h3 style='text-align:left;margin-left: 25px;'>AWS Nitro hypervisor is now detected</h3>
-<p style='text-align:left;margin-left: 25px;'>The AWS Nitro hypervisor type is now detected on Windows and Linux.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Tracing SQS-triggered AWS Lambda for Python & Node.js (manual)</h3>
-<p style='text-align:left;margin-left: 25px;'>The Dynatrace AWS Lambda extension for Python and Node.js now supports tracing for AWS SQS. For details, see OpenTelemetry interoperability on AWS Lambda.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Improved injection driver blocklist handling in Windows containers</h3>
+<p style='text-align:left;margin-left: 25px;'>The injection driver now reads the blocklist from the host's registry instead of trying to read it from the container's registry.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Added MSSQL (go-mssqldb) driver support for Go</h3>
+<p style='text-align:left;margin-left: 25px;'>OneAgent now supports MSSQL (go-mssqldb) driver tracing for Go.</p>
+<h3 style='text-align:left;margin-left: 25px;'>OneAgent for Android</h3>
+<p style='text-align:left;margin-left: 25px;'>- Updated Javadoc for class WebRequestTiming</p>
+<h3 style='text-align:left;margin-left: 25px;'>OneAgent for iOS</h3>
+<p style='text-align:left;margin-left: 25px;'>- Breaking change 8.257 drops support for Xcode 13, bitcode, iOS 9, and iOS 10. For Xcode 14 users, no change is required. If you need support for one of the desupported technologies. please use 8.255.</p>
+<p style='text-align:left;margin-left: 25px;'>- Removed dependency on third-party library ssziparchive.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Additional metrics supported</h3>
+<p style='text-align:left;margin-left: 25px;'>- Per host: builtin:host.zos.gcpu_time, builtin:host.zos.ziip_time, builtin:host.zos.ziip_usage</p>
+<p style='text-align:left;margin-left: 25px;'>- Per PGI: builtin:tech.zos.service_units</p>
+<p style='text-align:left;margin-left: 25px;'>- Calculate the service units per transaction (PurePath).</p>
   

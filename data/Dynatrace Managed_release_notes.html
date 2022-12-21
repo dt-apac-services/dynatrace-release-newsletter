@@ -1,17 +1,20 @@
-<h1 style='text-align:left'>Dynatrace Managed  version 1.254</h1>
-<p style='text-align:left'>Rollout start: Nov 16, 2022</p>
-<p style='text-align:left;margin-left: 25px;'>Published date: 2022-11-16</p>
+<h1 style='text-align:left'>Dynatrace Managed  version 1.256</h1>
+<p style='text-align:left'>Rollout start: Dec 12, 2022</p>
+<p style='text-align:left;margin-left: 25px;'>Published date: 2022-12-09</p>
 <p style='text-align:left;margin-left: 25px;'>These release notes relate to Dynatrace Managed specific changes. To learn about general Dynatrace changes included in this Dynatrace Managed release, see:</p>
-<p style='text-align:left;margin-left: 25px;'>- Dynatrace SaaS release notes version 1.254 and Dynatrace SaaS release notes version 1.253</p>
-<p style='text-align:left;margin-left: 25px;'>- Dynatrace API changelog version 1.254 and Dynatrace API changelog version 1.253</p>
-<p style='text-align:left;margin-left: 25px;'>- Dynatrace OneAgent release notes version 1.253</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace SaaS release notes version 1.256 and Dynatrace SaaS release notes version 1.255</p>
+<p style='text-align:left;margin-left: 25px;'>- Dynatrace API changelog version 1.256 and Dynatrace API changelog version 1.255</p>
+  
+<h2 style='text-align:left'>Announcements</h2>
+<p style='text-align:left;margin-left: 25px;'>- Suse LES 12.3 operating system is no longer allowed to install new cluster nodes. Dynatrace Managed version 1.258 will be the last one that you can upgrade to this operating system.</p>
+<p style='text-align:left;margin-left: 25px;'>Suse LES 12.3 operating system is no longer allowed to install new cluster nodes. Dynatrace Managed version 1.258 will be the last one that you can upgrade to this operating system.</p>
+<p style='text-align:left;margin-left: 25px;'>- Debian 9 operating system is no longer allowed to install new cluster nodes. Dynatrace Managed version 1.260 will be the last one that you can upgrade to this operating system.</p>
+<p style='text-align:left;margin-left: 25px;'>Debian 9 operating system is no longer allowed to install new cluster nodes. Dynatrace Managed version 1.260 will be the last one that you can upgrade to this operating system.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Root cause for cluster events</h3>
-<p style='text-align:left;margin-left: 25px;'>Cluster events related to transaction storage truncation now present the specific root cause - insufficient disk space or a disk quota limit.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Configuration changes in audit log</h3>
-<p style='text-align:left;margin-left: 25px;'>Cluster configuration changes based on Cluster API v2 Settings are now also included in the Audit Log UI.</p>
-<h3 style='text-align:left;margin-left: 25px;'>New opt out options</h3>
-<p style='text-align:left;margin-left: 25px;'>You can now opt out from sending user names, user email addresses, and associated permissions to Mission Control. By opting out, you block access to Dynatrace support services to manage support tickets.</p>
-<p style='text-align:left;margin-left: 25px;'>- Cluster preferences settings</p>
+<h3 style='text-align:left;margin-left: 25px;'>Cluster resilience improvements</h3>
+<p style='text-align:left;margin-left: 25px;'>- To prevent a data loss in case of a severely undersized disk for Transaction and Session Replay storage, the cluster node will disable OneAgent traffic on itself and will no longer accept incoming data. For example, this might be a result of a disk size misconfiguration. At startup, the cluster node won't be able to start successfully. You'll receive a dedicated cluster event when such a situation happens.</p>
+<p style='text-align:left;margin-left: 25px;'>To prevent a data loss in case of a severely undersized disk for Transaction and Session Replay storage, the cluster node will disable OneAgent traffic on itself and will no longer accept incoming data. For example, this might be a result of a disk size misconfiguration. At startup, the cluster node won't be able to start successfully. You'll receive a dedicated cluster event when such a situation happens.</p>
+<p style='text-align:left;margin-left: 25px;'>- To improve the resilience of cluster nodes replication between DCs, a cluster node will not start if data synchronization hasn't been finished. The procedure of data replication for Premium High Availability deployements has been updated.</p>
+<p style='text-align:left;margin-left: 25px;'>To improve the resilience of cluster nodes replication between DCs, a cluster node will not start if data synchronization hasn't been finished. The procedure of data replication for Premium High Availability deployements has been updated.</p>
   
