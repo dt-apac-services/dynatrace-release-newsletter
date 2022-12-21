@@ -1,9 +1,2 @@
 Name,Date,Author,Link,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7
-How to boost SRE productivity with observability-driven DevOps,"December 6, 2022",Rob Jahn,https://www.dynatrace.com/news/blog/getting-started-observability-driven-devops/,devops,observability,observability-driven-devops,sre,sre-automation
-What is digital transformation? How to transform your business strategy,"December 6, 2022",Jay Livens,https://www.dynatrace.com/news/blog/what-is-digital-transformation/,digital-transformation,digital-transformation-strategy,multicloud,observability
-Dynatrace SaaS release notes version 1.256,"December 6, 2022",Ilya Gutin,https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-256/
-Feature flags done right with the OpenFeature initiative and Dynatrace,"December 6, 2022",Adam Gardner,https://www.dynatrace.com/news/blog/feature-flags-with-openfeature-and-dynatrace/,feature-flag,open-source,openfeature
-What is DevOps orchestration? And why invest in orchestration tools?,"December 5, 2022",Saif Gunja,https://www.dynatrace.com/news/blog/what-is-orchestration/,devops,devops-orchestration
-Kubernetes OOMKilled troubleshooting: Diagnosing out-of-memory issues automatically,"December 5, 2022",Andreas Grabner,https://www.dynatrace.com/news/blog/kubernetes-oomkilled-out-of-memory-troubleshooting/,container-monitoring,java-memory-management,kubernetes,out-of-memory
-Accelerate resolution of network issues with AI-powered event reporting based on SNMP traps,"November 30, 2022",Dariusz Glugla,https://www.dynatrace.com/news/blog/accelerate-resolution-of-network-issues-with-ai-powered-event-reporting/,extensions,featured,network-monitoring,snmp
-Dynatrace SaaS release notes version 1.255,"November 30, 2022",Ilya Gutin,https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-255/
+OneAgent release notes version 1.255,"December 12, 2022",Bartek Gatz,https://www.dynatrace.com/news/blog/oneagent-release-notes-version-1-255/,oneagent,whats-new

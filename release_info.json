@@ -89,6 +89,10 @@
         "1.254": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-254",
             "rollout": "Nov 16, 2022"
+        },
+        "1.256": {
+            "url": "https://dynatrace.com/support/help/whats-new/release-notes/managed/sprint-256",
+            "rollout": "Dec 12, 2022"
         }
     },
     "OneAgent": {
@@ -123,6 +127,10 @@
         "1.253": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-253",
             "rollout": "Nov 14, 2022"
+        },
+        "1.255": {
+            "url": "https://dynatrace.com/support/help/whats-new/release-notes/oneagent/sprint-255",
+            "rollout": "Dec 12, 2022"
         }
     },
     "ActiveGate": {
@@ -157,6 +165,10 @@
         "1.253": {
             "url": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-253",
             "rollout": "Nov 14, 2022"
+        },
+        "1.255": {
+            "url": "https://dynatrace.com/support/help/whats-new/release-notes/activegate/sprint-255",
+            "rollout": "Dec 12, 2022"
         }
     }
 }
