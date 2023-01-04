@@ -1,57 +1,102 @@
-<h1 style='text-align:left'>Dynatrace SaaS  version 1.256</h1>
-<p style='text-align:left'>Rollout start: Dec 6, 2022</p>
-<p style='text-align:left;margin-left: 25px;'>Rollout start: Dec 6, 2022</p>
+<h1 style='text-align:left'>Dynatrace SaaS  version 1.257</h1>
+<p style='text-align:left'>Rollout start: Jan 2, 2023</p>
+<p style='text-align:left;margin-left: 25px;'>Rollout start: Jan 2, 2023</p>
+  
+<h2 style='text-align:left'>Announcements</h2>
+<h3 style='text-align:left;margin-left: 25px;'>Log Management and Analytics</h3>
+<p style='text-align:left;margin-left: 25px;'>Log Management and Analytics powered by Grail documentation now covers the full lifecycle of setting up Log powered by Grail, bringing in your log data to Dynatrace, configuring options like masking, buckets and processing log data, to analytics. Pick your preferred method for ingesting log data with OneAgent with all the scalable configuration options like auto-discovery of logs or Kubernetes support, or integrating generic ingest API with your existing log shippers. Configure log metrics or events with support for DQL-based matchers, whether you upgrade from previous log solution or are a new user. Start getting answers from log data with log and events viewer or creating automations and dashboards.</p>
+<p style='text-align:left;margin-left: 25px;'>- Log Management and Analytics use cases</p>
+<p style='text-align:left;margin-left: 25px;'>- Log Management and Analytics roadmap</p>
+<p style='text-align:left;margin-left: 25px;'>- Migration to Log powered by Grail</p>
+<p style='text-align:left;margin-left: 25px;'>- Log content transformation</p>
+<p style='text-align:left;margin-left: 25px;'>- Generic log ingestion</p>
+<p style='text-align:left;margin-left: 25px;'>- Log ingestion via OneAgent</p>
+<p style='text-align:left;margin-left: 25px;'>- Log processing</p>
+<p style='text-align:left;margin-left: 25px;'>- Log buckets and retention</p>
+<p style='text-align:left;margin-left: 25px;'>- Log content analysis</p>
+<p style='text-align:left;margin-left: 25px;'>- Log Management and Analytics default limits</p>
+<p style='text-align:left;margin-left: 25px;'>- Log on Grail examples</p>
+<h3 style='text-align:left;margin-left: 25px;'>Davis Assistant end of life</h3>
+<p style='text-align:left;margin-left: 25px;'>Dynatrace Davis Assistant will reach end of life on January 31, 2023. After this date, the service will be shut down, and interactions with Davis Assistant will no longer be possible. Existing integrations, for example, with Slack or Microsoft Teams, will cease to work at that time.</p>
+<p style='text-align:left;margin-left: 25px;'>For options and best practices on managing the push of problem notifications to your preferred third-party incident management or ChatOps service, see problem notifications documentation.</p>
   
 <h2 style='text-align:left'>New features and enhancements</h2>
-<h3 style='text-align:left;margin-left: 25px;'>Support for the Gitlab group endpoint in IssueTracker</h3>
-<p style='text-align:left;margin-left: 25px;'>For GitLab, when you add an issue-tracking query, you can now enter the /groups API endpoint in the Target URL field to define queries to multiple projects.</p>
-<h3 style='text-align:left;margin-left: 25px;'>More flexibility for muting and unmuting vulnerabilities</h3>
-<p style='text-align:left;margin-left: 25px;'>The Mute button for third-party and code-level vulnerabilities is renamed to Change status.</p>
-<p style='text-align:left;margin-left: 25px;'>You can now change the status of a vulnerability by muting, unmuting, or muting it again with a different reason or comment.</p>
-<h3 style='text-align:left;margin-left: 25px;'>New columns for Kubernetes services</h3>
-<p style='text-align:left;margin-left: 25px;'>- On the Kubernetes services details page, the Target port name and Target port number columns are merged into Target port.</p>
-<p style='text-align:left;margin-left: 25px;'>- On the workload and pod details pages, the Kubernetes services section has a new Ports column.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Schemaless metrics under management zones</h3>
-<p style='text-align:left;margin-left: 25px;'>Schemaless built-in metrics are now properly shown under a selected management zone, even without the dimensional rule for metrics.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Meaningful colors for Kubernetes metrics</h3>
-<p style='text-align:left;margin-left: 25px;'>Kubernetes metrics now use consistent colors throughout the charts.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Improved Heatmap</h3>
-<p style='text-align:left;margin-left: 25px;'>The heatmap visualization now offers options for setting thresholds, displaying bucket headings, and showing/hiding a legend.</p>
-<h3 style='text-align:left;margin-left: 25px;'>Extensions 2.0 schema changes</h3>
-<h4 style='text-align:left;margin-left: 25px;'>Metric metadata</h4>
-<p style='text-align:left;margin-left: 25px;'>You can now specify sourceEntityType in the metric metadata.</p>
-<h4 style='text-align:left;margin-left: 25px;'>Unified analysis</h4>
-<p style='text-align:left;margin-left: 25px;'>- Limits
+<h3 style='text-align:left;margin-left: 25px;'>Improved metric browsing in Data explorer</h3>
+<p style='text-align:left;margin-left: 25px;'>The metric selector in the Data explorer has been improved to make it easier to find and select metrics for your data queries.</p>
+<p style='text-align:left;margin-left: 25px;'>- If you have favorited any metrics in the Metrics browser browser, those metrics are displayed at the top of the list in the metric selector.</p>
+<p style='text-align:left;margin-left: 25px;'>If you have favorited any metrics in the Metrics browser browser, those metrics are displayed at the top of the list in the metric selector.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<p style='text-align:left;margin-left: 25px;'>- You can select a metric category to focus the list of metrics.</p>
+<p style='text-align:left;margin-left: 25px;'>You can select a metric category to focus the list of metrics.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<h3 style='text-align:left;margin-left: 25px;'>Previously deprecated metrics are no longer available</h3>
+<p style='text-align:left;margin-left: 25px;'>The two previously deprecated metrics—builtin:apps.other.reportedErrorCount.osAndVersion and builtin:apps.other.sessionCount—are no longer available in Data Explorer and Dynatrace API. Instead, use the following metrics:</p>
+<p style='text-align:left;margin-left: 25px;'>- For mobile apps
 
-Increased actionExpression length to 1500.
-Increased metricSelector length to 1000.
-Increased entitySelectorTemplate length to 500.
-Increased actions list length to 15.</p>
-<p style='text-align:left;margin-left: 25px;'>- Increased actionExpression length to 1500.</p>
-<p style='text-align:left;margin-left: 25px;'>- Increased metricSelector length to 1000.</p>
-<p style='text-align:left;margin-left: 25px;'>- Increased entitySelectorTemplate length to 500.</p>
-<p style='text-align:left;margin-left: 25px;'>- Increased actions list length to 15.</p>
-<p style='text-align:left;margin-left: 25px;'>- New cards:
+builtin:apps.mobile.reportedErrorCount
+builtin:apps.mobile.sessionCount</p>
+<p style='text-align:left;margin-left: 25px;'>- builtin:apps.mobile.reportedErrorCount</p>
+<p style='text-align:left;margin-left: 25px;'>- builtin:apps.mobile.sessionCount</p>
+<p style='text-align:left;margin-left: 25px;'>- For custom apps
 
-Metric table
-Injections
-Break line (new line for half-sized cards)</p>
-<p style='text-align:left;margin-left: 25px;'>- Metric table</p>
-<p style='text-align:left;margin-left: 25px;'>- Injections</p>
-<p style='text-align:left;margin-left: 25px;'>- Break line (new line for half-sized cards)</p>
-<p style='text-align:left;margin-left: 25px;'>- You can now
+builtin:apps.custom.reportedErrorCount
+builtin:apps.custom.sessionCount</p>
+<p style='text-align:left;margin-left: 25px;'>- builtin:apps.custom.reportedErrorCount</p>
+<p style='text-align:left;margin-left: 25px;'>- builtin:apps.custom.sessionCount</p>
+<h3 style='text-align:left;margin-left: 25px;'>Fail on-demand HTTP monitor executions for SSL certificate issues</h3>
+<p style='text-align:left;margin-left: 25px;'>The new Fail on missing or expiring SSL certificate toggle enables you to fail on-demand HTTP monitor executions when HTTP requests encounter expired, missing, or expiring SSL certificates. Note that this setting only works if SSL expiration date verification has already been enabled for an HTTP request in monitor settings; it uses the request-level setting to check for SSL certificate validity within the specified number of days.</p>
+<h3 style='text-align:left;margin-left: 25px;'>90-character limit for blocking requests in browser monitors</h3>
+<p style='text-align:left;margin-left: 25px;'>In transitioning to Manifest Version 3, the latest iteration of the Chrome extension platform, the Block specific requests setting for browser monitors is now limited to URLS or regular expressions with a maximum length of 90 characters. For browser monitors with URL/regex strings exceeding 90 characters:</p>
+<p style='text-align:left;margin-left: 25px;'>- The Block specific requests setting is not being applied and needs to be fixed to meet the 90-character length requirement.</p>
+<p style='text-align:left;margin-left: 25px;'>The Block specific requests setting is not being applied and needs to be fixed to meet the 90-character length requirement.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<p style='text-align:left;margin-left: 25px;'>- You will not be able to save certain changes to browser monitor configuration such as adding a request or validation. You can, however, change monitor name, frequency, outage handling, and thresholds. The Block specific requests setting needs to be fixed before you can save all changes.</p>
+<p style='text-align:left;margin-left: 25px;'>You will not be able to save certain changes to browser monitor configuration such as adding a request or validation. You can, however, change monitor name, frequency, outage handling, and thresholds. The Block specific requests setting needs to be fixed before you can save all changes.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Compare execution details for on-demand HTTP monitor executions</h3>
+<p style='text-align:left;margin-left: 25px;'>Now when you Analyze execution details for HTTP monitors, in addition to the last successful and failed executions per location, you can also compare the on-demand executions from the last six hours.</p>
+<p style='text-align:left;margin-left: 25px;'></p>
+<h3 style='text-align:left;margin-left: 25px;'>Tags on the OS Service page</h3>
+<p style='text-align:left;margin-left: 25px;'>You can now see the tags assigned to a specific service on the OS service page.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Query-level visibility and log events support in SQL Datasource</h3>
+<p style='text-align:left;margin-left: 25px;'>Oracle monitoring extensions are extended with query-level visibility. It leverages the SQL DataSource's new capability of collecting log-based data, such as query execution statistics, execution plans, or audit logs.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Updated JRE version in ActiveGate installer</h3>
+<p style='text-align:left;margin-left: 25px;'>ActiveGate installer now uses Adoptium JRE version 11.0.17.</p>
+<h3 style='text-align:left;margin-left: 25px;'>Business event metric extraction</h3>
+<p style='text-align:left;margin-left: 25px;'>Business event metric extraction is a convenient way to create your business metrics. It enables you to:</p>
+<p style='text-align:left;margin-left: 25px;'>- Create custom alerts, such as when a certain value surges or drops. Alerts can be based on attribute values or specific business events occurrences.</p>
+<p style='text-align:left;margin-left: 25px;'>Create custom alerts, such as when a certain value surges or drops. Alerts can be based on attribute values or specific business events occurrences.</p>
+<p style='text-align:left;margin-left: 25px;'>- Reduce your DDU consumption and lower your costs.</p>
+<p style='text-align:left;margin-left: 25px;'>Reduce your DDU consumption and lower your costs.</p>
+<p style='text-align:left;margin-left: 25px;'>- Business event metric extraction</p>
+<p style='text-align:left;margin-left: 25px;'>Business event metric extraction</p>
+<h3 style='text-align:left;margin-left: 25px;'>Additional DQL functions</h3>
+<p style='text-align:left;margin-left: 25px;'>Now you can include the following functions in your DQL queries:</p>
+<p style='text-align:left;margin-left: 25px;'>- Mathematical functions
 
-Add card description.
-Display related entity tags in the properties card.
-Set a property as important and display it in the header.
-Exclude charts (summaryChart, detailedChar, and chartAsColumn) from the entities list card.
-Connect data gaps in a chart using linear interpolation.
-Add a sparkline (micro chart) to tables.</p>
-<p style='text-align:left;margin-left: 25px;'>- Add card description.</p>
-<p style='text-align:left;margin-left: 25px;'>- Display related entity tags in the properties card.</p>
-<p style='text-align:left;margin-left: 25px;'>- Set a property as important and display it in the header.</p>
-<p style='text-align:left;margin-left: 25px;'>- Exclude charts (summaryChart, detailedChar, and chartAsColumn) from the entities list card.</p>
-<p style='text-align:left;margin-left: 25px;'>- Connect data gaps in a chart using linear interpolation.</p>
-<p style='text-align:left;margin-left: 25px;'>- Add a sparkline (micro chart) to tables.</p>
-<p style='text-align:left;margin-left: 25px;'>For more information on the unified analysis framework, see Extend Dynatrace with domain-specific web UI.</p>
+Power function
+Exp function
+Log function
+Root function</p>
+<p style='text-align:left;margin-left: 25px;'>Mathematical functions</p>
+<p style='text-align:left;margin-left: 25px;'>- Power function</p>
+<p style='text-align:left;margin-left: 25px;'>- Exp function</p>
+<p style='text-align:left;margin-left: 25px;'>- Log function</p>
+<p style='text-align:left;margin-left: 25px;'>- Root function</p>
+<p style='text-align:left;margin-left: 25px;'>- String functions
+
+IndexOf function
+LastIndexOf function
+GetCharacter function
+StringLength function
+Substring function
+Split function
+Trim function</p>
+<p style='text-align:left;margin-left: 25px;'>String functions</p>
+<p style='text-align:left;margin-left: 25px;'>- IndexOf function</p>
+<p style='text-align:left;margin-left: 25px;'>- LastIndexOf function</p>
+<p style='text-align:left;margin-left: 25px;'>- GetCharacter function</p>
+<p style='text-align:left;margin-left: 25px;'>- StringLength function</p>
+<p style='text-align:left;margin-left: 25px;'>- Substring function</p>
+<p style='text-align:left;margin-left: 25px;'>- Split function</p>
+<p style='text-align:left;margin-left: 25px;'>- Trim function</p>
   

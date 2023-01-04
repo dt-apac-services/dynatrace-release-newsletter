@@ -1,4 +1,13 @@
 Name,Date,Author,Link,Tag1,Tag2,Tag3,Tag4,Tag5,Tag6,Tag7
+Dynatrace SaaS release notes version 1.257,"January 3, 2023",Ilya Gutin,https://www.dynatrace.com/news/blog/dynatrace-saas-release-notes-version-1-257/
+Implementing service-level objectives to improve software quality,"December 27, 2022",Paco Porro,https://www.dynatrace.com/news/blog/implementing-service-level-objectives/,devops-automation,service-level-objectives,slos
+Tackling cloud modernization,"December 21, 2022",Michael Allen,https://www.dynatrace.com/news/blog/tackling-cloud-modernization/,cloud-app-modernization,cloud-modernization,digital-transformation
+Dynatrace tops cloud-native observability solutions quadrant for the third year in a row,"December 20, 2022",Kayla Bondy,https://www.dynatrace.com/news/blog/dynatrace-tops-isg-observability-quadrant/,cloud-native,isg,isg-provider-lens
+"Dynatrace named a Leader in The Forrester Wave™: Artificial Intelligence for IT Operations (AIOps), Q4 2022 report","December 16, 2022",Bipin Singh,https://www.dynatrace.com/news/blog/dynatrace-named-a-leader-in-aiops/
+The value of open platforms: How an open software intelligence platform accelerates innovation,"December 16, 2022",Bipin Singh,https://www.dynatrace.com/news/blog/the-value-of-open-platforms/,observability,open-platform,open-source,opentelemetry,software-intelligence
+Three smart log ingestion strategies in Dynatrace,"December 15, 2022",Tomasz Rybczynski,https://www.dynatrace.com/news/blog/three-smart-log-ingestion-strategies/,log-analytics,log-data,log-management,log-management-and-analytics,logging,logs,oneagent-log-files
+What is ITOps? Why IT operations is more crucial than ever in a multicloud world,"December 15, 2022",Bipin Singh,https://www.dynatrace.com/news/blog/what-is-itops/,aiops,devops,devsecops,hybrid-cloud,it-operations,itops,multicloud
+Four observability trends IT leaders should have on the radar in 2023,"December 15, 2022",Bernd Greifeneder,https://www.dynatrace.com/news/blog/four-observability-trends-for-2023/,digital-transformation,it-trends-2023,observability,observability-trends-2023
 OneAgent release notes version 1.255,"December 12, 2022",Bartek Gatz,https://www.dynatrace.com/news/blog/oneagent-release-notes-version-1-255/,oneagent,whats-new
 Dynatrace Managed release notes version 1.256,"December 9, 2022",Radoslaw Szulgo,https://www.dynatrace.com/news/blog/dynatrace-managed-release-notes-version-1-256/,managed,whats-new
 "DevOps engineer tools: Deploy, test, evaluate, repeat","December 8, 2022",Dynatrace Editorial Team,https://www.dynatrace.com/news/blog/devops-engineers-tools-deploy-test-evaluate-repeat/,devops,devops-engineers
